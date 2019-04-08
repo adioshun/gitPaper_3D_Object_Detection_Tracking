@@ -1,7 +1,5 @@
 # Summary
 
-* [Introduction](README.md)
-* [What is XYZ?](first-question.md)
-* [How can I do X?](second-question.md)
+* [README](README.md)
 * [2014-Frame Rate Fusion and Upsampling of EO/LIDAR Data for Multiple Platforms](2014-frame-rate-fusion-and-upsampling-of-eolidar-data-for-multiple-platforms.md)
 
