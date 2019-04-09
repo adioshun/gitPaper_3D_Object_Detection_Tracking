@@ -28,4 +28,5 @@
 * [2017-SqueezeSeg: Convolutional Neural Nets with Recurrent CRF for Real-Time Road-Object Segmentation from 3D LiDAR Point Cloud](2017-squeezeseg-convolutional-neural-nets-with-recurrent-crf-for-real-time-road-object-segmentation-from-3d-lidar-point-cloud.md)
 * [2018-SECOND:Sparsely Embedded Convolutional Detection](2018-secondsparsely-embedded-convolutional-detection.md)
 * [2018-PU-Net: Point Cloud Upsampling Network](2018-pu-net-point-cloud-upsampling-network.md)
+* [2019-Pseudo-LiDAR from Visual Depth Estimation](2019-pseudo-lidar-from-visual-depth-estimation.md)
 
