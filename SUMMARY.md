@@ -18,4 +18,8 @@
 * [2016-FPNN: Field Probing Neural Networks for 3D Data](2016-fpnn-field-probing-neural-networks-for-3d-data.md)
 * [2017-PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation](2017-pointnet-deep-learning-on-point-sets-for-3d-classification-and-segmentation.md)
 * [2016-PointNet: A 3D Convolutional Neural Network for real-time object class recognition](2016-pointnet-a-3d-convolutional-neural-network-for-real-time-object-class-recognition.md)
+* [2016-3D Fully Convolutional Network for Vehicle Detection in Point Cloud](2016-3d-fully-convolutional-network-for-vehicle-detection-in-point-cloud.md)
+* [2017-Efficient Online Segmentation for Sparse 3D Laser Scans](2017-efficient-online-segmentation-for-sparse-3d-laser-scans.md)
+* [2017-Vote3Deep: Fast Object Detection in 3D Point Clouds Using Efficient Convolutional Neural Networks](2017-vote3deep-fast-object-detection-in-3d-point-clouds-using-efficient-convolutional-neural-networks.md)
+* [2017-Multi-View 3D Object Detection Network for Autonomous Driving ](2017-multi-view-3d-object-detection-network-for-autonomous-driving.md)
 
