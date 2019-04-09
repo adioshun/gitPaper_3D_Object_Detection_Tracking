@@ -25,4 +25,5 @@
 * [2017-SEGCloud: Semantic Segmentation of 3D Point Clouds ](2017-segcloud-semantic-segmentation-of-3d-point-clouds.md)
 * [2017-VoxelNet: End-to-End Learning for Point Cloud Based 3D Object Detection](2017-voxelnet-end-to-end-learning-for-point-cloud-based-3d-object-detection.md)
 * [2017-Fast LIDAR-based Road Detection Using Fully Convolutional Neural Networks](2017-fast-lidar-based-road-detection-using-fully-convolutional-neural-networks.md)
+* [2017-SqueezeSeg: Convolutional Neural Nets with Recurrent CRF for Real-Time Road-Object Segmentation from 3D LiDAR Point Cloud](2017-squeezeseg-convolutional-neural-nets-with-recurrent-crf-for-real-time-road-object-segmentation-from-3d-lidar-point-cloud.md)
 
