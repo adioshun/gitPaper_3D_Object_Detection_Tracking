@@ -12,4 +12,9 @@
 * [2015-3D ShapeNets: A Deep Representation for Volumetric Shapes](2015-3d-shapenets-a-deep-representation-for-volumetric-shapes.md)
 * [2015-VoxNet: A 3D Convolutional Neural Network for Real-Time Object Recognition](2015-voxnet-a-3d-convolutional-neural-network-for-real-time-object-recognition.md)
 * [2016-Volumetric and Multi-View CNNs for Object Classification on 3D Data](2016-volumetric-and-multi-view-cnns-for-object-classification-on-3d-data.md)
+* [2016-Pairwise Decomposition of Image Sequences for Active Multi-View Recognition](2016-pairwise-decomposition-of-image-sequences-for-active-multi-view-recognition.md)
+* [2016-Vehicle Detection from 3D Lidar Using Fully Convolutional Network](2016-vehicle-detection-from-3d-lidar-using-fully-convolutional-network.md)
+* [2016-Accelerated Generative Models for 3D Point Cloud Data](2016-accelerated-generative-models-for-3d-point-cloud-data.md)
+* [2016-FPNN: Field Probing Neural Networks for 3D Data](2016-fpnn-field-probing-neural-networks-for-3d-data.md)
+* [2017-PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation](2017-pointnet-deep-learning-on-point-sets-for-3d-classification-and-segmentation.md)
 
