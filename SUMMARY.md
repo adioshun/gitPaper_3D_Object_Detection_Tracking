@@ -24,4 +24,5 @@
 * [2017-Multi-View 3D Object Detection Network for Autonomous Driving ](2017-multi-view-3d-object-detection-network-for-autonomous-driving.md)
 * [2017-SEGCloud: Semantic Segmentation of 3D Point Clouds ](2017-segcloud-semantic-segmentation-of-3d-point-clouds.md)
 * [2017-VoxelNet: End-to-End Learning for Point Cloud Based 3D Object Detection](2017-voxelnet-end-to-end-learning-for-point-cloud-based-3d-object-detection.md)
+* [2017-Fast LIDAR-based Road Detection Using Fully Convolutional Neural Networks](2017-fast-lidar-based-road-detection-using-fully-convolutional-neural-networks.md)
 
