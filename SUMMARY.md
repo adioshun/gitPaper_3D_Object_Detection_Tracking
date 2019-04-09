@@ -22,4 +22,6 @@
 * [2017-Efficient Online Segmentation for Sparse 3D Laser Scans](2017-efficient-online-segmentation-for-sparse-3d-laser-scans.md)
 * [2017-Vote3Deep: Fast Object Detection in 3D Point Clouds Using Efficient Convolutional Neural Networks](2017-vote3deep-fast-object-detection-in-3d-point-clouds-using-efficient-convolutional-neural-networks.md)
 * [2017-Multi-View 3D Object Detection Network for Autonomous Driving ](2017-multi-view-3d-object-detection-network-for-autonomous-driving.md)
+* [2017-SEGCloud: Semantic Segmentation of 3D Point Clouds ](2017-segcloud-semantic-segmentation-of-3d-point-clouds.md)
+* [2017-VoxelNet: End-to-End Learning for Point Cloud Based 3D Object Detection](2017-voxelnet-end-to-end-learning-for-point-cloud-based-3d-object-detection.md)
 
