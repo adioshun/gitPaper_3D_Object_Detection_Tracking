@@ -32,4 +32,5 @@
 * [2017-OctNet: Learning Deep 3D Representations at High Resolutions](2017-octnet-learning-deep-3d-representations-at-high-resolutions.md)
 * [2016-3D-R2N2: A Unified Approach for Single and Multi-view 3D Object Reconstruction](2016-3d-r2n2-a-unified-approach-for-single-and-multi-view-3d-object-reconstruction.md)
 * [2015-3D Deep Shape Descriptor](2015-3d-deep-shape-descriptor.md)
+* [2015-Deep Learning Representation using Autoencoder for 3D Shape Retrieval](2015-deep-learning-representation-using-autoencoder-for-3d-shape-retrieval.md)
 
