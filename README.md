@@ -1,1 +1,4 @@
-This file serves as an introduction to your Knowledge Base, it is displayed on the homepage of your website. Use it to provide more context to your visitors.
+3D 물체 탐지 관련 논문들
+
+[분류기준](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d) : Stereo, Flow, Multiview, Laser Point, Additional training Data 
+
