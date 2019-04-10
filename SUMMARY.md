@@ -53,4 +53,6 @@
 * [2017-Toward Domain Independence for Learning-Based Monocular Depth Estimation](2017-toward-domain-independence-for-learning-based-monocular-depth-estimation.md)
 * [2015-FlowNet: Learning Optical Flow with Convolutional Networks](2015-flownet-learning-optical-flow-with-convolutional-networks.md)
 * [2016-A Large Dataset to Train Convolutional Networks for Disparity, Optical Flow, and Scene Flow Estimation](2016-a-large-dataset-to-train-convolutional-networks-for-disparity-optical-flow-and-scene-flow-estimation.md)
+* [2016-Efficient Deep Learning for Stereo Matching](2016-efficient-deep-learning-for-stereo-matching.md)
+* [2016-Deep Stereo Fusion: combining multiple disparity hypotheses with deep-learning](2016-deep-stereo-fusion-combining-multiple-disparity-hypotheses-with-deep-learning.md)
 
