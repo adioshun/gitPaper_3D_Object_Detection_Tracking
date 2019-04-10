@@ -31,4 +31,5 @@
 * [2016-Multi-Sensor Fusion of Occupancy Grids based on Integer Arithmetic](2016-multi-sensor-fusion-of-occupancy-grids-based-on-integer-arithmetic.md)
 * [2017-OctNet: Learning Deep 3D Representations at High Resolutions](2017-octnet-learning-deep-3d-representations-at-high-resolutions.md)
 * [2016-3D-R2N2: A Unified Approach for Single and Multi-view 3D Object Reconstruction](2016-3d-r2n2-a-unified-approach-for-single-and-multi-view-3d-object-reconstruction.md)
+* [2015-3D Deep Shape Descriptor](2015-3d-deep-shape-descriptor.md)
 
