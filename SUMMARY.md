@@ -47,4 +47,5 @@
 * [2014-단일 카메라 영상에서의 보행자 거리 추정](2014b2e8-c77c-ce74-ba54-b77c-c601-c0c1-c5d0-c11c-c758-bcf4-d589-c790-ac70-b9ac-cd94-c815.md)
 * [2016-단일 카메라를 이용한 차량 검출 및 거리추정](2016b2e8-c77c-ce74-ba54-b77c-b97c-c774-c6a9-d55c-cc28-b7c9-ac80-cd9c-bc0f-ac70-b9ac-cd94-c815.md)
 * [2017-Single image depth estimation by dilated deep residual convolutional neural network and soft-weight-sum inference](2017-single-image-depth-estimation-by-dilated-deep-residual-convolutional-neural-network-and-soft-weight-sum-inference.md)
+* [2015-Depth Map Prediction from a Single Image using a Multi-Scale Deep Network](2015-depth-map-prediction-from-a-single-image-using-a-multi-scale-deep-network.md)
 
