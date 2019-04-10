@@ -50,4 +50,5 @@
 * [2015-Depth Map Prediction from a Single Image using a Multi-Scale Deep Network](2015-depth-map-prediction-from-a-single-image-using-a-multi-scale-deep-network.md)
 * [2015-Learning Depth from Single Monocular Images Using Deep Convolutional Neural Fields ](2015-learning-depth-from-single-monocular-images-using-deep-convolutional-neural-fields.md)
 * [2017-Unsupervised Monocular Depth Estimation with Left-Right Consistency](2017-unsupervised-monocular-depth-estimation-with-left-right-consistency.md)
+* [2017-Toward Domain Independence for Learning-Based Monocular Depth Estimation](2017-toward-domain-independence-for-learning-based-monocular-depth-estimation.md)
 
