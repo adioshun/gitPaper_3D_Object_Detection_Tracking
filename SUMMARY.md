@@ -35,4 +35,5 @@
 * [2015-Deep Learning Representation using Autoencoder for 3D Shape Retrieval](2015-deep-learning-representation-using-autoencoder-for-3d-shape-retrieval.md)
 * [2015-3D Mesh Labeling via Deep Convolutional Neural Networks ](2015-3d-mesh-labeling-via-deep-convolutional-neural-networks.md)
 * [2014-Deep Learning Representation using Autoencoder for 3D Shape Retrieval](2014-deep-learning-representation-using-autoencoder-for-3d-shape-retrieval.md)
+* [2017-3D Object Proposals using Stereo Imagery for Accurate Object Class Detection](2017-3d-object-proposals-using-stereo-imagery-for-accurate-object-class-detection.md)
 
