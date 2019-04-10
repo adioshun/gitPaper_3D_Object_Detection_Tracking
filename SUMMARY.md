@@ -40,4 +40,5 @@
 * [2017-Depth Estimation from Single Image Using CNN-Residual Network](2017-depth-estimation-from-single-image-using-cnn-residual-network.md)
 * [2016-Can we unify monocular detectors for autonomous driving by using the pixel-wise semantic segmentation of CNNs?](2016-can-we-unify-monocular-detectors-for-autonomous-driving-by-using-the-pixel-wise-semantic-segmentation-of-cnns.md)
 * [2016-Monocular 3D Object Detection for Autonomous Driving](2016-monocular-3d-object-detection-for-autonomous-driving.md)
+* [2017-3D Bounding Box Estimation Using Deep Learning and Geometry](2017-3d-bounding-box-estimation-using-deep-learning-and-geometry.md)
 
