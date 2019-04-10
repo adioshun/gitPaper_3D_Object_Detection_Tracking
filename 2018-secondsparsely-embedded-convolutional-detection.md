@@ -410,6 +410,12 @@ cd /workspace
 git clone https://github.com/traveller59/second.pytorch.git
 ```
 
-"pybind11/detail/common.h:112:20: fatal error: Python.h: No such file or directory" -> apt install python3.6-dev
+-- 
+
+# 에러 처리 
+
+`/usr/lib/x86_64-linux-gnu/libcuda.so: file too short` -> libcuda.so의 심볼릭 링크 확인 후 재 설
+
+`pybind11/detail/common.h:112:20: fatal error: Python.h: No such file or directory` -> apt install python3.6-dev
 
 
