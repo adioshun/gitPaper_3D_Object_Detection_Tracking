@@ -307,6 +307,68 @@ Evaluate : `python ./pytorch/train.py evaluate --config_path=./configs/car.fhd.c
 
 ## 코드 설치로 진행 
 
+### Recommended 
+
+#### 1. Clone code
+
+```bash
+git clone https://github.com/nutonomy/second.pytorch.git
+```
+
+#### 2. Install Python packages
+
+It is recommend to use the Anaconda package manager.
+
+First, use Anaconda to configure as many packages as possible.
+```bash
+conda create -n pointpillars python=3.7 anaconda
+source activate pointpillars
+conda install shapely pybind11 protobuf scikit-image numba pillow
+conda install pytorch torchvision -c pytorch
+conda install google-sparsehash -c bioconda
+```
+
+Then use pip for the packages missing from Anaconda.
+```bash
+pip install --upgrade pip
+pip install fire tensorboardX
+```
+
+Finally, install SparseConvNet. This is not required for PointPillars, but the general SECOND code base expects this
+to be correctly configured. 
+```bash
+git clone git@github.com:facebookresearch/SparseConvNet.git
+cd SparseConvNet/
+bash build.sh
+# NOTE: if bash build.sh fails, try bash develop.sh instead
+```
+
+Additionally, you may need to install Boost geometry:
+
+```bash
+sudo apt-get install libboost-all-dev
+```
+
+
+#### 3. Setup cuda for numba
+
+You need to add following environment variables for numba to ~/.bashrc:
+
+```bash
+export NUMBAPRO_CUDA_DRIVER=/usr/lib/x86_64-linux-gnu/libcuda.so
+export NUMBAPRO_NVVM=/usr/local/cuda/nvvm/lib64/libnvvm.so
+export NUMBAPRO_LIBDEVICE=/usr/local/cuda/nvvm/libdevice
+```
+
+#### 4. PYTHONPATH
+
+Add second.pytorch/ to your PYTHONPATH.
+
+
+---
+
+### 기존방식 
+
 ```
 wget https://github.com/Kitware/CMake/releases/download/v3.13.3/cmake-3.13.3.tar.gz
 ./bootstrap
