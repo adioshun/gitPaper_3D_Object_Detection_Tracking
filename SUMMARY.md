@@ -29,4 +29,5 @@
 * [2018-PU-Net: Point Cloud Upsampling Network](2018-pu-net-point-cloud-upsampling-network.md)
 * [2019-Pseudo-LiDAR from Visual Depth Estimation](2019-pseudo-lidar-from-visual-depth-estimation.md)
 * [2016-Multi-Sensor Fusion of Occupancy Grids based on Integer Arithmetic](2016-multi-sensor-fusion-of-occupancy-grids-based-on-integer-arithmetic.md)
+* [2017-OctNet: Learning Deep 3D Representations at High Resolutions](2017-octnet-learning-deep-3d-representations-at-high-resolutions.md)
 
