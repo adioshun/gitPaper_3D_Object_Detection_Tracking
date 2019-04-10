@@ -43,4 +43,5 @@
 * [2017-3D Bounding Box Estimation Using Deep Learning and Geometry](2017-3d-bounding-box-estimation-using-deep-learning-and-geometry.md)
 * [2017-J-MOD^2: Joint Monocular Obstacle Detection and Depth Estimation](2017-j-mod2-joint-monocular-obstacle-detection-and-depth-estimation.md)
 * [2015-단일 카메라를 이용한 3차원 공간 정보 생성](2015b2e8-c77c-ce74-ba54-b77c-b97c-c774-c6a9-d55c-3-cc28-c6d0-acf5-ac04-c815-bcf4-c0dd-c131.md)
+* [2008-단일 카메라를 이용한 보행자의 높이 및 위치 추정 기법](2008b2e8-c77c-ce74-ba54-b77c-b97c-c774-c6a9-d55c-bcf4-d589-c790-c758-b192-c774-bc0f-c704-ce58-cd94-c815-ae30-bc95.md)
 
