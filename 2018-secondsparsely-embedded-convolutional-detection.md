@@ -16,6 +16,7 @@
 |2017|Benjamin Graham|[Submanifold Sparse Convolutional Networks](https://arxiv.org/abs/1706.01307)|[SparseConvNet](https://github.com/facebookresearch/SparseConvNet)|
 |2018|Benjamin Graham|[3D Semantic Segmentation with Submanifold Sparse Convolutional Networks](https://arxiv.org/abs/1711.10275)|~~[SparseConvNet(deprecated)](https://github.com/facebookresearch/SparseConvNet)~~,[spconv](https://github.com/traveller59/spconv)|
 |2018|Bo Li|[SECOND:Sparsely Embedded Convolutional Detection](https://www.mdpi.com/1424-8220/18/10/3337)|[SECOND](https://github.com/traveller59/second.pytorch)|
+|2019|Alex H. Lang|[PointPillars: Fast Encoders for Object Detection from Point Clouds](https://arxiv.org/abs/1812.05784)|[PointPillars](https://github.com/nutonomy/second.pytorch)|
 
 
 
