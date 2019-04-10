@@ -38,4 +38,5 @@
 * [2017-3D Object Proposals using Stereo Imagery for Accurate Object Class Detection](2017-3d-object-proposals-using-stereo-imagery-for-accurate-object-class-detection.md)
 * [2014-Know Your Limits: Accuracy of Long Range Stereoscopic Object Measurements in Practice](2014-know-your-limits-accuracy-of-long-range-stereoscopic-object-measurements-in-practice.md)
 * [2017-Depth Estimation from Single Image Using CNN-Residual Network](2017-depth-estimation-from-single-image-using-cnn-residual-network.md)
+* [2016-Can we unify monocular detectors for autonomous driving by using the pixel-wise semantic segmentation of CNNs?](2016-can-we-unify-monocular-detectors-for-autonomous-driving-by-using-the-pixel-wise-semantic-segmentation-of-cnns.md)
 
