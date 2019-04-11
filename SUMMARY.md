@@ -55,4 +55,5 @@
 * [2016-A Large Dataset to Train Convolutional Networks for Disparity, Optical Flow, and Scene Flow Estimation](2016-a-large-dataset-to-train-convolutional-networks-for-disparity-optical-flow-and-scene-flow-estimation.md)
 * [2016-Efficient Deep Learning for Stereo Matching](2016-efficient-deep-learning-for-stereo-matching.md)
 * [2016-Deep Stereo Fusion: combining multiple disparity hypotheses with deep-learning](2016-deep-stereo-fusion-combining-multiple-disparity-hypotheses-with-deep-learning.md)
+* [2012-Are we ready for Autonomous Driving? The KITTI Vision Benchmark Suite](2012-are-we-ready-for-autonomous-driving-the-kitti-vision-benchmark-suite.md)
 
