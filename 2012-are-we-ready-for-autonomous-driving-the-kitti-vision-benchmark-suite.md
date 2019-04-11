@@ -56,6 +56,7 @@
 
 - 사람이 직접 진행
 -
+
 ### 2.4. Benchmark Selection
 
 ### 2.5. Evaluation Metrics
@@ -86,6 +87,53 @@
 ## 3. Experimental Evaluation
 
 ### 3.1. Stereo Matching
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY4OTAyNDcyN119
--->
+
+### 3.2. Optical Flow Estimation
+
+### 3.3. Visual Odometry/SLAM
+
+### 3.4. 3D Object Detection / Orientation Estimation
+
+섹션 2.5에서 언급한 내용을 아래 세개의 항목에 대하여 `average precision`와 `average orientation similarity`를 평가 하였다. `We evaluate object detection as well as joint detection and orientation estimation using average precision and average orientation similarity as described in Sec. 2.5.`
+- object detection 
+- joint detection 
+- orientation estimation
+
+
+Our benchmark extracted from the full dataset comprises 12, 000 images with 40, 000 objects. 
+
+We first subdivide the training set into 16 orientation classes and use 100 non-occluded examples per class for training the part-based object detector of [18] using three different settings: We train the model in an unsupervised fashion (variable), by initializing the components to the 16 classes but letting the components vary during optimization (fixed init) and by initializing the components and additionally fixing the latent variables to the 16 classes (fixed).
+
+
+We evaluate all non- and weakly-occluded (< 20%) objects which are neither truncated nor smaller than 40 px in height. 
+
+We do not count detecting truncated or occluded objects as false positives. 
+
+For our object detection experiment, we require a bounding box overlap of at least 50%, results are shown in Fig. 6(a). 
+
+For detection and orientation estimation we require the same overlap and plot the average orientation similarity (Eq. 5) over recall for the two unsupervised variants (Fig. 6(b)). 
+
+Note that the precision is an upper bound to the average orientation similarity.
+
+Overall, we could not find any substantial difference between the part-based detector variants we investigated. 
+
+All of them achieve high precision, while the recall seems to be limited by some hard to detect objects. 
+
+We plan to extend our online evaluation to more complex scenarios such as semi-occluded or truncated objects and other object classes
+like vans, trucks, pedestrians and cyclists. 
+
+Finally, we also evaluate object orientation estimation. 
+
+We extract 100 car instances per orientation bin, using 16 orientation bins. 
+
+We compute HOG features [12] on all cropped and resized bounding boxes with 19 × 13 blocks, 8×8 pixel cells and 12 orientation bins. 
+
+We evaluate multiple classification and regression algorithms and report average orientation similarity (Eq. 5). 
+
+Table 3 shows our results. 
+
+We found that for the classification task SVMs [11] clearly outperform nearest neighbor classification. 
+
+For the regression task, Gaussian Process regression [36] performs best.
+
+
