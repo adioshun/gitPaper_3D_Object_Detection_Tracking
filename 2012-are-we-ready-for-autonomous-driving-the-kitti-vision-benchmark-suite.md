@@ -71,18 +71,33 @@
 - 3단계로 구분 되어 있다. `Our 3D object detection and orientation estimation benchmark is split into three parts: `
 
 ##### 가. average precision (AP)
-- First, we evaluate classical 2D object detection by measuring performance
-- using the well established **average precision (AP)** metric as described in [16].
+
+- First, we evaluate classical 2D object detection by measuring performance using the well established **average precision (AP)** metric as described in [16].
 
 - Detections are iteratively assigned to ground truth labels starting with the largest overlap, measured by bounding box intersection over union.
 
 - We require true positives to overlap by more than 50% and count multiple detections of the same object as false positives.
 
-- We assess the performance of jointly detecting objects and estimating their 3D orientation using a novel measure which we called the **average orientation similarity (AOS)**
+- We assess the performance of **jointly detecting objects** and estimating their **3D orientation** using a novel measure which we called the **average orientation similarity (AOS)**
 
-##### 다.
+![](https://i.imgur.com/KohYFCS.png)
 
-- Finally, we also evaluate pure classification (16 bins for cars) and regression (continuous orientation) performance on the task of 3D object orientation estimation in terms of orientation similarity.
+- r = TP / (TP + FN) : the PASCAL object detection recall, where detected 2D bounding boxes are correct if they overlap by at least 50% with a ground truth bounding box. 
+
+- The orientation similarity s ∈ [0, 1] at recall r is a normalized ([0..1]) variant of the cosine similarity defined as
+
+![](https://i.imgur.com/3sXuOKi.png)
+
+- D(r) denotes the set of all object detections at recall rate r 
+- ∆^(i)_θ : the difference in angle between estimated and ground truth orientation of detection i. 
+
+To penalize multiple detections which explain a single object, 
+- we set δi = 1 if detection i has been assigned to a ground truth bounding box (overlaps by at least 50%) 
+- δi = 0 if it has not been assigned.
+
+##### 다. 3D object orientation estimation
+
+- Finally, we also evaluate pure classification (16 bins for cars) and regression (continuous orientation) performance on the task of 3D object orientation estimation in terms of **orientation similarity**.
 
 ## 3. Experimental Evaluation
 
