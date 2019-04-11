@@ -64,6 +64,7 @@
 
 #### A. stereo and optical flow
 - we evaluate **stereo** and **optical flow** using the average number of **erroneous pixels** in terms of disparity and end-point error.
+
 #### B. visual odometry/SLAM
 
 #### C. 3D object
