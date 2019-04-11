@@ -5,7 +5,7 @@
 | 키워드 | |
 | 데이터셋(센서)/모델 | |
 | 관련연구||
-| 참고 |[홈페이지](http://www.cvlibs.net/datasets/kitti/) |
+| 참고 |[홈페이지](http://www.cvlibs.net/datasets/kitti/), [깃북설명](https://github.com/hunjung-lim/awesome-vehicle-datasets/tree/master/vehicle/kitti) |
 | 코드 |[Download stereo 2015/flow 2015/scene flow 2015 data set (2 GB)](http://kitti.is.tue.mpg.de/kitti/data_scene_flow.zip) |
 
 
