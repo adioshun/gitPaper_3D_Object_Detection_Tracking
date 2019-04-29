@@ -155,6 +155,10 @@ That the floor is level is there a simplifying assumption that is valid at least
 
 For estimating the parameters of a plane present in the data in the presence of Outliers and other objects can be analyzed using the Random Sample Consensus method (RANSAC), originally introduced in [Fis81]. 
 
+```
+F ISCHLER , Martin A. und B OLLES , Robert C.: Random sample consensus: a paradigm for model fitting with applications to image analysis and automated cartography. Communications of the ACM (1981), Band 24(6):Seiten 381–395
+```
+
 At first a subset of the entire point cloud selected at random and one level adapted to it. 
 
 All points of the original a cloud whose distance from the plane does not exceed a threshold will be included referred to as inliers and form the consensus set. 
