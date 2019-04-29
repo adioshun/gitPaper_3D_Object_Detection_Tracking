@@ -209,7 +209,7 @@ The preprocessor also implements the possibility of pre-processing results perma
 
 This is going through The option described in section 3.3 achieves the objects created in the framework serialize.
 
-##### . data processors
+###### data processors
 
 The Framework contains some implementations of data processors, which in particular include the Functions of downsampling, viewport constraint, ground plane processing, implement and remove invalid values. 
 
@@ -233,7 +233,7 @@ The removal of invalid values ​​leads an ordered point cloud (see section 3.
 
 rearranged point cloud. If further processing needs no order, then the application is This data processor makes sense, since the processing of the actual points on this Way is accelerated.
 
-##### . Reconstruction from stereo recordings
+###### Reconstruction from stereo recordings
 
 The stereo reconstruction is controlled by a Reconstructor class that has one or more
 Takes matcher classes as configuration. A single matcher calculates the disparity card
