@@ -93,6 +93,28 @@ The rest of the paper is structured as follows:
 - In Section V, conclusions are drawn.
 
 
+## II. HIGH-LEVEL FUSION ARCHITECTURE FOR COOPERATIVE PERCEPTION
+
+In automotive applications, different architectures for sensor data fusion have been studied in the past. In low-level
+fusion architectures, raw data from the different sensors
+is sent to a global fusion unit. Since sensor data is not
+preprocessed before sending it to the fusion unit, a high data
+bandwidth is required in this kind of architecture. Another
+drawback of low-level fusion is its lacking modularity. Extending a low-level architecture with a new sensor requires
+significant changes to the fusion module in general, since
+raw data formats differ from sensor to sensor. In contrast to
+that, high-level fusion architectures rely on the assumption
+that every sensor preprocesses its raw data and provides the
+central fusion unit with a local list of tracks, all including
+the tracks’ states and covariances. Except for the fact that
+the number of states estimated varies with each sensor,
+the interface between the sensors and the central fusion
+module is standardized. The central fusion module combines
+the local track lists to a global one. For distributed sensor
+networks, as in cooperative perception systems, a high-level
+fusion architecture is preferable due to its reduced communication bandwidth and its high modularity. In [6], a fusion
+architecture for cooperative perception systems is introduced.
+This architecture is briefly described in the following.
 
 
 
