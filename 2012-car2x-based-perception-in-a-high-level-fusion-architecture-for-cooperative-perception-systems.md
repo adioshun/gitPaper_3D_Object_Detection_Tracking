@@ -65,22 +65,32 @@ Obtained object data from the employed perception sensors is sent to equipped ve
 
 ### 1.4 본 논문의 목적 
 
-The goal of this paper is to present a virtual sensor
-approach in a generic high-level fusion architecture that
-processes incoming object data from communicating vehicles
-or roadside stations in a way so that its output is suitable for high-level fusion with object data from the local
-perception of the host vehicle. For this purpose, incoming
-object data is predicted to the current time step using a
-CTRA motion model in the objects’ spatially oriented body
-coordinate frame in combination with an unscented Kalman
-filter (UKF). This new approach allows for the incorporation
-of non-horizontal motion of communicating vehicles, for
-example on inclined road surfaces. In the second step, the
-predicted objects are transformed into the host vehicle’s
-local coordinate frame. In both preprocessing steps, a correct
-treatment of the state uncertainties is of great importance, because adequate uncertainty measures for the estimated states
-are vital for later fusion with the local perception’s output
+본 논문의 목적은 이웃차량이나 RSU를 이용하여 받은 정보를 퓨전하여 호스트 차량에서 물체 탐지 인지를 가능하게 하는 가상센서를 제안하다. `The goal of this paper is to present a virtual sensor approach in a generic high-level fusion architecture that processes incoming object data from communicating vehicles or roadside stations in a way so that its output is suitable for high-level fusion with object data from the local perception of the host vehicle. `
 
+For this purpose, incoming object data is predicted to the current time step using a CTRA motion model in the objects’ spatially oriented body coordinate frame in combination with an unscented Kalman filter (UKF). 
+
+This new approach allows for the incorporation of non-horizontal motion of communicating vehicles, for example on inclined road surfaces. 
+
+In the second step, the predicted objects are transformed into the host vehicle’s local coordinate frame. 
+
+In both preprocessing steps, a correct treatment of the state uncertainties is of great importance, because adequate uncertainty measures for the estimated states are vital for later fusion with the local perception’s output.
+
+For the prediction, the unscented Kalman filter incorporates the process noise inherent to the prediction in the local coordinate frame directly into the global state of the received object. 
+
+로컬 좌표로의 변형을 위해 두 방식이 비교 되었다. : **A linearized** &  **an unscented transformation** `For the transformation into the local coordinate frame, the consistency of two approaches, a linearized and an unscented transformation, are compared. `
+
+성능 측정을 위해 **Kullback-Leibler divergence**가 사용되었다. `In this context, the Kullback-Leibler divergence is used as performance measure.`
+
+The output of the virtual sensor is evaluated in a real world scenario concerning accuracy and consisteny using data from two experimental vehicles.
+
+### 1.5 논문의 구성 
+
+The rest of the paper is structured as follows: 
+- Section II presents a high-level fusion architecture for cooperative perception. 
+- In Section III, the concept of the virtual sensor for a Car2X-based perception is outlined. 
+    - In this context, the two main steps of the virtual sensor approach, temporal and spatial alignment, are described. 
+- Section IV provides experimental results with an implementation of the virtual sensor concept. 
+- In Section V, conclusions are drawn.
 
 
 
