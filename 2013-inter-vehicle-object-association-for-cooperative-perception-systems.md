@@ -1,3 +1,15 @@
+|논문명|Inter-Vehicle Object Association for Cooperative Perception Systems
+|-|-|
+|저자(소속)|Andreas Rauch (BMW)|
+|학회/년도| 2013, [논문](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6728345)|
+|키워드|협조탐지,Auction-ICP algorithm |
+|참고||
+|코드||
+
+
+
+
+
 # [Inter-Vehicle Object Association for Cooperative Perception Systems](https://ieeexplore.ieee.org/abstract/document/6728345)
 
 
