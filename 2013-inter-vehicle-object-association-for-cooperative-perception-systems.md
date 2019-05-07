@@ -22,7 +22,7 @@ Analysis of V2X communication parameters for the development of a fusion archite
 
 협조 인지 시스템이란? In cooperative perception systems, different vehicles share object data obtained by their local environment perception sensors, like radar or lidar, via wireless communication. Inaccurate self-localizations of the vehicles complicate association of locally perceived objects and objects detected and transmitted by other vehicles. 
 
-제안 내용 In this paper, a method for intervehicle object association is presented. 
+제안 내용 In this paper, a method for **intervehicle object association** is presented. 
 - Position and orientation offsets between object lists from different vehicles are estimated by applying point matching algorithms. 
 - Different algorithms are analyzed in simulations concerning their robustness and performance. 
 
@@ -31,7 +31,7 @@ Analysis of V2X communication parameters for the development of a fusion archite
 ## I. INTRODUCTION
 
 
-Current research projects like simTD [1] try to exploit the benefits of wireless communication for advanced driver assistance systems. Therefor, every equipped vehicle and roadside station broadcasts its own position and dynamic state. 
+기존 프로젝트 `simTD` : Current research projects like simTD [1] try to exploit the benefits of wireless communication for advanced driver assistance systems. Therefor, every equipped vehicle and roadside station broadcasts its own position and dynamic state. 
 - With this information, assistance systems like traffic light assistance, local hazard warning or cross traffic assistance can be realized. 
 
 The project initiative Ko-FAS [2] with its joint project Ko-PER tries to enhance the scope of communication-based assistance systems by providing driver assistance systems a global view of the traffic environment.
@@ -47,19 +47,23 @@ A major challenge for cooperative perception systems and communication-based ass
 
 In a cooperative perception system, a vehicle receives information about dynamic objects from other equipped vehicles or roadside stations. 
 
-In order to combine these perception data with its own local environment model, temporal and spatial alignment is crucial. 
+챌린지 : 자신의 로컬 환경 모델과 수신된 정보를 합치기 위해서는 시공간 정합은 필수 적이다. `In order to combine these perception data with its own local environment model, temporal and spatial alignment is crucial. `
 
 ### 1.2 기존 해결 책 
 
-In [3], a method for temporal and spatial alignment in a cooperative perception system is proposed. 
+이전연구에서 시공간 정합 문제를 다루었다. `In [3], a method for temporal and spatial alignment in a cooperative perception system is proposed. `
 
-However, the results of spatial alignment very much depend on the quality of the communication partners’ self-localizations. 
+```
+[3] A. Rauch, F. Klanner, R. Rasshofer, and K. Dietmayer, “Car2xbased perception in a high-level fusion architecture for cooperative perception systems,” in Proceedings of the IEEE Intelligent Vehicles Symposium (IV), june 2012, pp. 270 –275.
+```
 
-고정 물체의 경우 컨트롤된 상황에서 GPS이용 하여 측정하면 된다. `For static entities like roadside stations, the position and orientation can be determined by highly accurate means like carrier-phase differential GPS systems under optimal conditions.`
+하지만 통신대상의 자차위치 탐지 성능에 따라 결과가 매우 의존적인 단점이 있다. `However, the results of spatial alignment very much depend on the quality of the communication partners’ self-localizations.`
 
-그러나 차량의 경우는 GPS가 효율적이지 않다. `However, vehicles often suffer from localization errors caused for example by GPS outage or multi-path effects in urban environments.`
+- 고정 물체의 경우 컨트롤된 상황에서 GPS이용 하여 측정하면 된다. `For static entities like roadside stations, the position and orientation can be determined by highly accurate means like carrier-phase differential GPS systems under optimal conditions.`
 
-As soon as the self-localizations of the vehicles become deficient, the relative position and orientation of transmitted objects in the host vehicle’s reference frame become inaccurate, too. 
+- 그러나 차량의 경우는 GPS가 효율적이지 않다. `However, vehicles often suffer from localization errors caused for example by GPS outage or multi-path effects in urban environments.`
+
+이 문제가 해결 되지 않으면 전체결과도 나쁘게 된다. As soon as the self-localizations of the vehicles become deficient, the relative position and orientation of transmitted objects in the host vehicle’s reference frame become inaccurate, too. 
 
 Such errors can have a strong negative impact on the quality of object association and fusion. 
 
@@ -67,7 +71,7 @@ Furthermore, there is no way to correct the state of objects which are only seen
 
 ### 1.3 본 논문의 목적 
 
-The goal of this paper is to reduce the negative impact of inaccurate self-localizations on the association and fusion quality. 
+논 논문의 목적은 불확실한 자차위치로 인한 부정적 영향을 최소화 하는것이다. `The goal of this paper is to reduce the negative impact of inaccurate self-localizations on the association and fusion quality. `
 
 Therefore, an approach which aims to eliminate the bias between transmitted and local objects by estimating their optimal alignment is developed.
 
