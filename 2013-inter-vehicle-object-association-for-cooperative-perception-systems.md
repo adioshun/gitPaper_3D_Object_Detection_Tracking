@@ -1,12 +1,16 @@
 |논문명|Inter-Vehicle Object Association for Cooperative Perception Systems
 |-|-|
 |저자(소속)|Andreas Rauch (BMW)|
-|학회/년도| 2013, [논문](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6728345)|
+|학회/년도| ITSC 2013, [논문](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6728345)|
 |키워드|협조탐지,Auction-ICP algorithm |
 |참고||
 |코드||
 
 
+
+Car2X-based perception in a high-level fusion architecture for cooperative perception systems, 2012
+
+Analysis of V2X communication parameters for the development of a fusion architecture for cooperative perception systems, 2011
 
 
 
