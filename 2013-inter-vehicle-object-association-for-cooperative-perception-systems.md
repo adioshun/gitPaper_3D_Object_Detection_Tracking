@@ -81,6 +81,53 @@ Subsequently, the paper is structured as follows:
 - In Section VI, conclusions are drawn and future work is presented.
 
 
+## II. HIGH-LEVEL FUSION ARCHITECTURE FOR COOPERATIVE PERCEPTION
+
+
+In automotive applications, different architectures for sensor data fusion have been studied in the past. 
+
+For distributed sensor networks, as in cooperative perception systems, a high-level fusion architecture is preferable due to its reduced communication bandwidth and its modularity. 
+
+In [4], such a fusion architecture for cooperative perception systems has been introduced. 
+
+This architecture is briefly described as follows.
+
+![](https://i.imgur.com/l2IttMP.png)
+
+Figure 1 illustrates the proposed architecture for a cooperative perception system within the host vehicle. 
+
+The fusion of the local perception sensors is performed within the local perception module which can also be based on a high-level fusion approach [5]. 
+
+The result of this local fusion is an object list containing the states and corresponding covariance matrices, classification results and existence probabilities of the objects detected by the host vehicle’s local perception sensors.
+
+
+The counterpart of the local perception is denoted as Car2X-based perception. 
+
+In this module, communicated object data is prepared for later fusion with the output of the local perception. 
+
+The temporal and spatial alignment according to the local perception’s reference frame is the major task of this module. 
+
+As an output, an object list is passed to the global fusion module. 
+
+The Car2X-based perception is based on messages like the cooperative awareness message (CAM) and the cooperative perception message (CPM). 
+
+The latter either originates from a vehicle (v) or an infrastructure unit (i). 
+
+The contents of these messages as well as further details of the proposed architecture for a cooperative perception system are described in [4]. 
+
+A more detailed description of the Car2X-based perception module is provided in [3].
+
+
+Both modules are supported with information about the position and dynamic state of the host vehicle by the ego data module.
+
+In the global fusion module, objects detected by the host vehicle’s local perception and corresponding objects received from other vehicles or infrastructure units have to be associated. 
+
+Appropriate association algorithms accounting for relative position and orientation errors of the object lists are presented in the remainder of this paper. 
+
+After association, corresponding objects have to be fused in order to improve state estimation. 
+
+As a result, the global fusion module provides a consistent global object list, which serves as input for the driver assistance system.
+
 
 
 
