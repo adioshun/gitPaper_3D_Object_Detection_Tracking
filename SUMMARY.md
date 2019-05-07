@@ -58,4 +58,5 @@
 * [2012-Are we ready for Autonomous Driving? The KITTI Vision Benchmark Suite](2012-are-we-ready-for-autonomous-driving-the-kitti-vision-benchmark-suite.md)
 * [2019-Stereo R-CNN based 3D Object Detection for Autonomous Driving](2019-stereo-r-cnn-based-3d-object-detection-for-autonomous-driving.md)
 * [2015-PyDriver: Entwicklung eines Frameworks für räumliche Detektion und Klassifikation von Objekten in Fahrzeugumgebung](2015-pydriver-entwicklung-eines-frameworks-fur-raumliche-detektion-und-klassifikation-von-objekten-in-fahrzeugumgebung.md)
+* [2013-Inter-Vehicle Object Association for Cooperative Perception Systems](2013-inter-vehicle-object-association-for-cooperative-perception-systems.md)
 
