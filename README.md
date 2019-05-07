@@ -2,12 +2,6 @@
 - [분류기준](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d) : Stereo, Flow, Multiview, Laser Point, Additional training Data 
 - GitBook : [3D Object Detection](https://legacy.gitbook.com/book/adioshun/deep_drive/details)
 
-
-
-## 협조 탐지 
-
-* [2013-Inter-Vehicle Object Association for Cooperative Perception Systems](2013-inter-vehicle-object-association-for-cooperative-perception-systems.md)
-* [2017-Survey on Ranging Sensors and Cooperative Techniques for Relative Positioning of Vehicles](2017-survey-on-ranging-sensors-and-cooperative-techniques-for-relative-positioning-of-vehicles.md)
-
-
+개인적인 연구 노트로 간략한 주석 및 가독성 중심으로 정리 되어 있습니다. 
+- 진행 상태 : 개요(10%), 관련연구(30%), 제안 내용(70%), 구현/성능평가(100%)
 
