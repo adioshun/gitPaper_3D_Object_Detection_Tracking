@@ -1,4 +1,4 @@
-|논문명|Inter-Vehicle Object Association for Cooperative Perception Systems
+|논문명|Inter-Vehicle Object Association for Cooperative Perception Systems|
 |-|-|
 |저자(소속)|Andreas Rauch (BMW)|
 |학회/년도| ITSC 2013, [논문](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6728345)|
@@ -7,10 +7,15 @@
 |코드||
 
 
+|년도|1st 저자|논문명|코드|
+|-|-|-|-|
+|2013|Andreas Rauch|Inter-Vehicle Object Association for Cooperative Perception Systems||
+|2012|Andreas Rauch|Car2X-based perception in a high-level fusion architecture for cooperative perception systems||
+|2011|Andreas Rauch|Analysis of V2X communication parameters for the development of a fusion architecture for cooperative perception systems||
 
-Car2X-based perception in a high-level fusion architecture for cooperative perception systems, 2012
 
-Analysis of V2X communication parameters for the development of a fusion architecture for cooperative perception systems, 2011
+
+
 
 
 

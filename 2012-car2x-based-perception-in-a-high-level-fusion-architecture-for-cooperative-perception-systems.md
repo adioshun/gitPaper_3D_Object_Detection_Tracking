@@ -2,6 +2,18 @@
 
 https://ieeexplore.ieee.org/document/6232130
 
+|년도|1st 저자|논문명|코드|
+|-|-|-|-|
+|2013|Andreas Rauch|Inter-Vehicle Object Association for Cooperative Perception Systems||
+|2012|Andreas Rauch|Car2X-based perception in a high-level fusion architecture for cooperative perception systems||
+|2011|Andreas Rauch|Analysis of V2X communication parameters for the development of a fusion architecture for cooperative perception systems||
+
+
+
+
+
+
+
 
 
 In cooperative perception systems, different vehicles share object data obtained by their local environment perception sensors, like radar or lidar, via wireless communication. 
