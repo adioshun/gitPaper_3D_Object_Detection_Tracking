@@ -37,6 +37,11 @@ As mentioned above, past research in the field of Car2X communication focused on
 - 성공적으로 association되었다면 로컬에서 인지된 물체는 통신으로 받은 데이터를 이용하여 크기나 class정보가 보정 되었다. `In case of a successful association, the locally perceived object is complemented by additional data from the wirelessly communicated object, like object size and class. `
 - 평가를 위해서 **correct association rate**값을 사용 하였다. `For the evaluation of the system, the correct association rate is used.`
 
+
+```
+[3] S. Wender and K. Dietmayer, “Extending onboard sensor information by wireless communication,” in Proceedings of the 2007 IEEE Intelligent Vehicles Symposium, Istanbul, Turkey, June 2007, pp. 535 –540.
+```
+
 ### 1.2 이전연구 [4]
 
 > DGPS / EKF를 이용 조향, 속도 모션 모델 보정 
@@ -51,6 +56,9 @@ For efficient fusion with object data obtained by a local radar sensor, the cova
 
 For the evaluation, the DGPS positions of the communicating vehicles are assumed as ground truth.
 
+```
+[4] G. Thomaidis, K. Vassilis, P. Lytrivis, M. Tsogas, G. Karaseitanidis, and A. Amditis, “Target tracking and fusion in vehicular networks,” in Proc. IEEE Intelligent Vehicles Symp. (IV), Baden-Baden, Germany,2011, pp. 1080–1085.
+```
 
 ### 1.3 이전연구 [5]
 
@@ -61,6 +69,10 @@ In INTERSAFE-2 [5], a European research project, another preparing leap towards 
 Infrastructure units as an additional information source are equipped with perception sensors to obtain a more complete view of complex traffic situations at intersections. 
 
 Obtained object data from the employed perception sensors is sent to equipped vehicles within range of the intersection and can then be used for fusion with local perception data.
+
+```
+[5] [Online]. Available: http://www.intersafe-2.eu
+```
 
 
 ### 1.4 본 논문의 목적 
@@ -95,27 +107,74 @@ The rest of the paper is structured as follows:
 
 ## II. HIGH-LEVEL FUSION ARCHITECTURE FOR COOPERATIVE PERCEPTION
 
-In automotive applications, different architectures for sensor data fusion have been studied in the past. In low-level
-fusion architectures, raw data from the different sensors
-is sent to a global fusion unit. Since sensor data is not
-preprocessed before sending it to the fusion unit, a high data
-bandwidth is required in this kind of architecture. Another
-drawback of low-level fusion is its lacking modularity. Extending a low-level architecture with a new sensor requires
-significant changes to the fusion module in general, since
-raw data formats differ from sensor to sensor. In contrast to
-that, high-level fusion architectures rely on the assumption
-that every sensor preprocesses its raw data and provides the
-central fusion unit with a local list of tracks, all including
-the tracks’ states and covariances. Except for the fact that
-the number of states estimated varies with each sensor,
-the interface between the sensors and the central fusion
-module is standardized. The central fusion module combines
-the local track lists to a global one. For distributed sensor
-networks, as in cooperative perception systems, a high-level
-fusion architecture is preferable due to its reduced communication bandwidth and its high modularity. In [6], a fusion
-architecture for cooperative perception systems is introduced.
+센서 퓨전에 대한 많은 연구가 진행 되었다. `In automotive applications, different architectures for sensor data fusion have been studied in the past. `
+
+### 2.1 Low-level fusion
+
+각기 다른 센서에서의 raw데이터가 사용되었다. `In low-level fusion architectures, raw data from the different sensors is sent to a global fusion unit. `
+
+전처리전의 데이터가 사용되기 때문에 높은 대역폭이 필요 하다. 또한 모듈화의 제약이 있다. `Since sensor data is not preprocessed before sending it to the fusion unit, a high data bandwidth is required in this kind of architecture. Another drawback of low-level fusion is its lacking modularity. `
+
+Extending a low-level architecture with a new sensor requires significant changes to the fusion module in general, since raw data formats differ from sensor to sensor. 
+
+### 2.2 High-level fusion
+
+전처리된 하기 정보들이 사용된다. `In contrast to that, high-level fusion architectures rely on the assumption that every sensor preprocesses its raw data and provides the central fusion unit with`
+- a local list of tracks, 
+- all including the tracks’ states and covariances. 
+
+Except for the fact that the number of states estimated varies with each sensor, the interface between the sensors and the central fusion module is standardized. 
+
+The central fusion module combines the local track lists to a global one. 
+
+협조 인지 시스템과 같은 분산센서네트워크에서는 이런 high-level퓨전을 선호 한다. `For distributed sensor networks, as in cooperative perception systems, a high-level fusion architecture is preferable due to its reduced communication bandwidth and its high modularity.`
+
+
+### 2.3 이전 연구 [6] 소개 
+
+기존 연구 [6]에서는 이런 협조인지시스템이 소개 되었다. `In [6], a fusion architecture for cooperative perception systems is introduced. `
+
+```
+[6] A. Rauch, F. Klanner, and K. Dietmayer, “Analysis of V2X communication parameters for the development of a fusion architecture for cooperative perception systems,” in Proc. IEEE Intelligent Vehicles Symp. (IV), Baden-Baden, Germany, 2011, pp. 685–690.
+```
+
 This architecture is briefly described in the following.
 
+
+![](https://i.imgur.com/l2IttMP.png)
+`Fig. 1 illustrates the proposed architecture for a cooperative perception system within the host vehicle. `
+
+#### A. local perception모듈  
+
+**local perception**모듈에서 로컬 인지 센서의 퓨전이 수행된다. `The fusion of the local perception sensors is performed within the local perception module which can also be based on a high-level fusion approach [7]. `
+
+Local Fusion의 결과물은 Object List로 포함 내용은 다음과 같다. The result of this local fusion is an object list containing the states and corresponding covariance matrices, classification results and existence probabilities of the objects detected by the host vehicle’s local perception sensors.`
+- the states and corresponding covariance matrices, 
+- classification results 
+- existence probabilities of the objects detected by the host vehicle’s local perception sensors.
+
+
+#### B. Car2X-based perceptio 모듈  
+
+**local perception**의 상대 모듈은 **Car2X-based perception**이다. `The counterpart of the local perception is denoted as Car2X-based perception.`
+- 이 모듈에서 **local perception**의 결과값과 퓨전될 Object Data들이 준비 된다. `In this module, communicated object data is prepared for later fusion with the output of the local perception. `
+- 이 모듈의 중요 역할중 하나는 local perception의 좌표계로의 **temporal & spatial alignment**이다. `The temporal and spatial alignment according to the local perception’s reference frame is the major task of this module. `
+
+#### C. global fusion 모듈  
+
+As an output, an object list is passed to the global fusion module.
+
+Both modules are supported with information about the position and dynamic state of the host vehicle by the ego data module. 
+
+The global fusion module fuses both incoming object lists to one consistent global object list, which serves as input for the driver assistance system.
+
+#### D. 통신 모듈 & 메시지 
+
+The Car2X-based perception module is based on messages like the cooperative awareness message (CAM) and the cooperative perception message (CPM) which originates either from a vehicle (v) or an infrastructure unit (i). 
+
+Additional messages like the MAP (intersection geometry and topology), the SPaT (signal phase and timing) or the DEN (decentralized environmental notification) message support the driver assistance system in its decisions. 
+
+The contents of these messages as well as further details of the proposed architecture for a cooperative perception system are described in [6].
 
 
 
