@@ -167,7 +167,7 @@ Therefore, locally perceived objects as well as transmitted objects are converte
 
 
 
-
+클라우드 포인트 전체가 아닌 탐지된 객체의 x,y 중앙값 matching
 
 
 
