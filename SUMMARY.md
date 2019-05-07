@@ -59,4 +59,5 @@
 * [2019-Stereo R-CNN based 3D Object Detection for Autonomous Driving](2019-stereo-r-cnn-based-3d-object-detection-for-autonomous-driving.md)
 * [2015-PyDriver: Entwicklung eines Frameworks für räumliche Detektion und Klassifikation von Objekten in Fahrzeugumgebung](2015-pydriver-entwicklung-eines-frameworks-fur-raumliche-detektion-und-klassifikation-von-objekten-in-fahrzeugumgebung.md)
 * [2013-Inter-Vehicle Object Association for Cooperative Perception Systems](2013-inter-vehicle-object-association-for-cooperative-perception-systems.md)
+* [2017-Survey on Ranging Sensors and Cooperative Techniques for Relative Positioning of Vehicles](2017-survey-on-ranging-sensors-and-cooperative-techniques-for-relative-positioning-of-vehicles.md)
 
