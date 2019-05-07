@@ -64,7 +64,7 @@
 
 ## 협조탐지
 
-* [2013-Inter-Vehicle Object Association for Cooperative Perception Systems](2013-inter-vehicle-object-association-for-cooperative-perception-systems.md)
+* [2013-Inter-Vehicle Object Association for Cooperative Perception Systems \(10%\)](2013-inter-vehicle-object-association-for-cooperative-perception-systems.md)
 * [2017-Survey on Ranging Sensors and Cooperative Techniques for Relative Positioning of Vehicles](2017-survey-on-ranging-sensors-and-cooperative-techniques-for-relative-positioning-of-vehicles.md)
-* [2012-Car2X-based perception in a high-level fusion architecture for cooperative perception systems](2012-car2x-based-perception-in-a-high-level-fusion-architecture-for-cooperative-perception-systems.md)
+* [2012-Car2X-based perception in a high-level fusion architecture for cooperative perception systems \(30%\)](2012-car2x-based-perception-in-a-high-level-fusion-architecture-for-cooperative-perception-systems.md)
 

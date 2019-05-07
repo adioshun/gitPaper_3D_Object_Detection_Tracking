@@ -177,8 +177,18 @@ Additional messages like the MAP (intersection geometry and topology), the SPaT 
 The contents of these messages as well as further details of the proposed architecture for a cooperative perception system are described in [6].
 
 
+## III. CAR2X-BASED PERCEPTION
+
+In order to preserve the modularity of the high-level fusion architecture, received data is preprocessed within the Car2Xbased perception module. 
+
+The current time step as well as the coordinate frame used by the local perception unit serves as a reference for the virtual sensor’s temporal and spatial alignment. 
+
+The steps necessary to perform these alignments are described in the following.
+
+### 3.1 Temporal Alignment
 
 
 
 
+### 3.2 Spatial Alignment
 
