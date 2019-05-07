@@ -109,10 +109,11 @@ This architecture is briefly described as follows.
 
 Figure 1 illustrates the proposed architecture for a cooperative perception system within the host vehicle. 
 
+2012논문 내용과 동일 (SKIP)
+```
 The fusion of the local perception sensors is performed within the local perception module which can also be based on a high-level fusion approach [5]. 
 
 The result of this local fusion is an object list containing the states and corresponding covariance matrices, classification results and existence probabilities of the objects detected by the host vehicle’s local perception sensors.
-
 
 The counterpart of the local perception is denoted as Car2X-based perception. 
 
@@ -129,7 +130,7 @@ The latter either originates from a vehicle (v) or an infrastructure unit (i).
 The contents of these messages as well as further details of the proposed architecture for a cooperative perception system are described in [4]. 
 
 A more detailed description of the Car2X-based perception module is provided in [3].
-
+```
 
 Both modules are supported with information about the position and dynamic state of the host vehicle by the ego data module.
 
@@ -142,6 +143,13 @@ After association, corresponding objects have to be fused in order to improve st
 As a result, the global fusion module provides a consistent global object list, which serves as input for the driver assistance system.
 
 
+## III. INTER-VEHICLE OBJECT ASSOCIATION USING POINT MATCHING ALGORITHMS
+
+### 3.1 Requirements of Inter-Vehicle Object Association
+
+
+
+### 3.2 Point Matching Algorithms
 
 
 
@@ -150,8 +158,7 @@ As a result, the global fusion module provides a consistent global object list, 
 
 
 
-
-
+## IV. PERFORMANCE ANALYSIS USING MONTE CARLO SIMULATIONS
 
 
 
