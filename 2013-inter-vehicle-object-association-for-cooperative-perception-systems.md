@@ -147,6 +147,22 @@ As a result, the global fusion module provides a consistent global object list, 
 
 ### 3.1 Requirements of Inter-Vehicle Object Association
 
+As the name implies, point matching algorithms are designed to match two sets of discrete points. However, in
+the automotive scenario of this work, two sets of extended
+objects must be matched, namely the objects perceived
+by the host vehicle and the objects perceived by another
+vehicle or infrastructure unit communicating with the host
+vehicle. For convenience, the latter will subsequently be
+denoted as sender. One would assume that it is possible to use the perceived objects’ centroids as input for matching.
+Unfortunately, if a tracked object is orientated in such a
+way that only one of its sides is exposed to the observing
+vehicle’s sensors, neither its dimensions nor its centroid can
+be estimated correctly. To avoid this problem, we utilize
+instead the object corners which can be observed by both the
+host vehicle and the sender as a basis for point matching.
+Therefore, locally perceived objects as well as transmitted
+objects are converted to point clouds that consist of points
+in two dimensions which can be described as the four-tuple
 
 
 ### 3.2 Point Matching Algorithms
