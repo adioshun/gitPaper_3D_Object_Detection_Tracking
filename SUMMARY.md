@@ -61,7 +61,7 @@
 ## Detection
 
 * [README](Detection/README.md)
-- 2018-PIXOR: Real-time 3D Object Detection from Point Clouds 
+* [2018-PIXOR: Real-time 3D Object Detection from Point Clouds ](Detection/2018-pixor-real-time-3d-object-detection-from-point-clouds.md)
 
 ## Tracking
 
