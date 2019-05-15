@@ -64,6 +64,9 @@
 * [2017-Online learning for human classification in 3D LiDAR-based tracking](Tracking/2017-online-learning-for-human-classification-in-3d-lidar-based-tracking.md)
 * [2017-3D-LIDAR Multi Object Tracking for Autonomous Driving](Tracking/2017-3d-lidar-multi-object-tracking-for-autonomous-driving.md)
 * [2008-Model Based Vehicle Tracking for Autonomous Driving in Urban Environments](Tracking/2008-model-based-vehicle-tracking-for-autonomous-driving-in-urban-environments.md)
+* [2010-Tracking People with a 360-Degree Lidar \|](Tracking/2010-tracking-people-with-a-360-degree-lidar.md)
+* [2011-Tracking People in 3D Using a Bottom-Up Top-Down Detector ](Tracking/2011-tracking-people-in-3d-using-a-bottom-up-top-down-detector.md)
+* [2012-LIDAR-BASED MULTI-OBJECT TRACKING SYSTEM WITH DYNAMIC MODELING](Tracking/2012-lidar-based-multi-object-tracking-system-with-dynamic-modeling.md)
 
 ## Pose Estimation
 
