@@ -74,9 +74,8 @@
 * [2014-Confidence-Based Pedestrian Tracking in Unstructured Environments Using 3D Laser Distance Measurements](Tracking/2014-confidence-based-pedestrian-tracking-in-unstructured-environments-using-3d-laser-distance-measurements.md)
 * [2015-Person Tracking and Following with 2D Laser Scanners](Tracking/2015-person-tracking-and-following-with-2d-laser-scanners.md)
 * [2017-Low resolution lidar-based multi-object tracking for driving application](Tracking/2017-low-resolution-lidar-based-multi-object-tracking-for-driving-application.md)
-* [2017-3D-LIDAR Multi Object Tracking for Autonomous Driving](Tracking/2017-3d-lidar-multi-object-tracking-for-autonomous-driving.md)
+* [\[추천\] 2017-3D-LIDAR Multi Object Tracking for Autonomous Driving](Tracking/2017-3d-lidar-multi-object-tracking-for-autonomous-driving.md)
 * [2017-Online learning for human classification in 3D LiDAR-based tracking](Tracking/2017-online-learning-for-human-classification-in-3d-lidar-based--tracking.md)
-
 
 ## Pose Estimation
 
