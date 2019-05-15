@@ -190,9 +190,57 @@ computer likely to have limited computational power.
 
 #### A. Model-based
 
+##### 가. 모양과 관련하여 
+
+모델 기반 방식은 최적화 기법을 이용하여 반복하여 차량을 cuboid등에 맞춘다. `Model-based pose estimation uses optimization-based iteration to fit vehicle into cuboid or rectangle representation. `
+
+The cuboid object is parametrized and the most probable vehicle pose from the segment points are iterated. 
+
+In order to fit clusters of points into a model, edge-like features are to be extracted and "best-fit" method is utilised to fit it into a known model.
+
+
+Barrois[84]
+- A notable example is in Barrois[84] where the optimization problem is formulated as the minimization of the polar distance between the scene points obtained and the visible sides to compute the best vehicle pose.
+
+Petrovskaya and Thurn[21]
+- Petrovskaya and Thurn[21] use importance sampling scoring based on the fitting of measurement to a predetermined geometric model. 
+
+Another interesting approach is by Morris et.al.[85] 
+- whose matched filter takes view-dependent self-occlusion effects into account, 
+- and utilise 4 rectangles to represent the inner and outer sides of the vehicle.
+
+##### 나. 방향과 관련하여 
+
+Another the major challenge in bounding box generation is the orientation estimation, 
+
+일반적 방법은 : common approaches are by calculating the minimum area of clustered points[86], 
+
+단점은, 가려진 부분이 있으면 성능이 않좋다. however in the presence of partial occlusion the results can be spurious in term of dimension and orientation accuracy, 
+
+문제 해결 #1 : to tackle this problem Rieken, et al.[43] uses an L-, U- or I-like simple set of geometric classifier to derive most appropriate orientation. 
+
+문제 해결 #2 : An alternative approach is to use convex-hull method to generate bounding box[87, 52]; the idea is to minimize the average distance between the
+convex-hull points and fit a rectangle. (see Figure 2-6).
 
 
 
+![](https://i.imgur.com/XcTXYMv.png)
+
+Model-based pose estimation can also be combined with Bayesian probabilistic likelihood such as in the works of Vu and Aycard[88], Liu[64], and Nashashibi[89]. 
+
+They explicitly modelled the possible occlusion area to estimate the vehicle dimension based on scan-line distance.
+
+Liu[64] in particular uses "transitional region" between the inner-outer bounding box model object aiming to accommodate more measurement errors.
+
+
+모델 기반의 단점은 
+- 계산 시간이 큼 `Although model-based method offers optimal pose estimation, the major disadvantage of this method is the high computational time required, and this may not be suitable for realtime application. `
+- 최적화 측면에서 Local Minima에 빠질 가능성이 있다. `Moreover, the optimisation problem may reach a solution at local minima depending on the initialization and results in a sub-optimal pose. `
+
+그래서 특징 기반 방식이 선호 된다. `As a consequence, the feature-based pose estimation shall be preferred.`
+
+
+#### B. 
 
 
 
