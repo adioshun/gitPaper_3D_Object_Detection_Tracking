@@ -63,6 +63,7 @@
 * [README](Tracking/README.md)
 * [2017-Online learning for human classification in 3D LiDAR-based tracking](Tracking/2017-online-learning-for-human-classification-in-3d-lidar-based-tracking.md)
 * [2017-3D-LIDAR Multi Object Tracking for Autonomous Driving](Tracking/2017-3d-lidar-multi-object-tracking-for-autonomous-driving.md)
+* [2008-Model Based Vehicle Tracking for Autonomous Driving in Urban Environments](Tracking/2008-model-based-vehicle-tracking-for-autonomous-driving-in-urban-environments.md)
 
 ## Pose Estimation
 
