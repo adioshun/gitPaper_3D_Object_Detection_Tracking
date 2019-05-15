@@ -240,8 +240,21 @@ Liu[64] in particular uses "transitional region" between the inner-outer boundin
 그래서 특징 기반 방식이 선호 된다. `As a consequence, the feature-based pose estimation shall be preferred.`
 
 
-#### B. 
+#### B. Feature-based
 
+edge특징을 이용하여 물체의 차원을 유추 할 수 있다. `Feature-based pose estimation, on the other hand, deduces the object dimension based on the edge features. `
+
+For instance, 
+- Darms et al.[90] extracted edge targets from raw measurement as a part of the box model to represent the vehicle’s pose. 
+- Himmelsbach et. al.[25] used Random sample consensus (RANSAC) algorithm to fit the dominant line of the segment points with the orientations of the objects. 
+- Luo et al.[45] uses a graph-based method to fit clustered scans into an arbitrary shape, although this approach does not provide orientation information as is.
+- Another approach, as done by Ye et. al.[91] is to extract a sequence of points facing the sensor with the smallest radius among the others in similar observation azimuth. 
+    - then these points were fitted into L-shaped polyline using iteration endpoint algorithm. 
+- Mertz et al.[92] use corner-fitting method to iterate through set of edge points to deduce the possible corner points.
+- Similarly, Tay et al.[93] use edge filtering to deduce a bounding box vertex by iterating the edge lines to the nearest end point. (Refer to Figure 2-7)
+
+
+![](https://i.imgur.com/9IX0xMy.png)
 
 
 ---
