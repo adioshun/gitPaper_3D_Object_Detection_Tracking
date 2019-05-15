@@ -1,0 +1,1 @@
+PointFusion: Deep Sensor Fusion for 3D Bounding Box Estimation : http://openaccess.thecvf.com/content_cvpr_2018/papers/Xu_PointFusion_Deep_Sensor_CVPR_2018_paper.pdf
