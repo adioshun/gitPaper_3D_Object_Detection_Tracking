@@ -67,7 +67,6 @@
 
 * [README](Tracking/README.md)
 * [2007-Simultaneous Localization, Mapping and Moving Object Tracking](Tracking/2007-simultaneous-localization-mapping-and-moving-object-tracking.md)
-* [2007-Simultaneous Localization, Mapping and Moving Object Tracking](Tracking/2007-simultaneous-localization-mapping-and-moving-object-tracking.md)
 * [2008-Model Based Vehicle Tracking for Autonomous Driving in Urban Environments](Tracking/2008-model-based-vehicle-tracking-for-autonomous-driving-in-urban-environments.md)
 * [2010-Tracking People with a 360-Degree Lidar \|](Tracking/2010-tracking-people-with-a-360-degree-lidar.md)
 * [2011-Tracking People in 3D Using a Bottom-Up Top-Down Detector ](Tracking/2011-tracking-people-in-3d-using-a-bottom-up-top-down-detector.md)
@@ -75,7 +74,7 @@
 * [2014-Confidence-Based Pedestrian Tracking in Unstructured Environments Using 3D Laser Distance Measurements](Tracking/2014-confidence-based-pedestrian-tracking-in-unstructured-environments-using-3d-laser-distance-measurements.md)
 * [2015-Person Tracking and Following with 2D Laser Scanners](Tracking/2015-person-tracking-and-following-with-2d-laser-scanners.md)
 * [2017-Online learning for human classification in 3D LiDAR-based tracking](Tracking/2017-online-learning-for-human-classification-in-3d-lidar-based-tracking.md)
-* 2007-Simultaneous Localization, Mapping and Moving Object Tracking
+
 
 ## Pose Estimation
 
