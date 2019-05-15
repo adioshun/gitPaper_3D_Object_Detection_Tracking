@@ -69,6 +69,7 @@
 * [2012-LIDAR-BASED MULTI-OBJECT TRACKING SYSTEM WITH DYNAMIC MODELING](Tracking/2012-lidar-based-multi-object-tracking-system-with-dynamic-modeling.md)
 * [2014-Confidence-Based Pedestrian Tracking in Unstructured Environments Using 3D Laser Distance Measurements](Tracking/2014-confidence-based-pedestrian-tracking-in-unstructured-environments-using-3d-laser-distance-measurements.md)
 * [2015-Person Tracking and Following with 2D Laser Scanners](Tracking/2015-person-tracking-and-following-with-2d-laser-scanners.md)
+* [2017-Low resolution lidar-based multi-object tracking for driving application](Tracking/2017-low-resolution-lidar-based-multi-object-tracking-for-driving-application.md)
 
 ## Pose Estimation
 
