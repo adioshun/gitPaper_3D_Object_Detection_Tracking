@@ -257,6 +257,29 @@ For instance,
 ![](https://i.imgur.com/9IX0xMy.png)
 
 
+- 머신러닝 이용 : Machine-learning AdaBoost based detection methods can be found in the work of Zhang[94] et al., 
+    - they use positive training samples obtained from multiple viewpoints of the object to train the detector to find 3D Harr-like features from clustered points. 
+    - The trained detector is then used to generate a voxelized box for detection result. 
+
+- 딥러닝 이용 : More recently, Braun, et. al.[95] utilises sensor-fusion approach using Regional Convolutional Neural Network (R-CNN) to estimate object orientation based on the joint proposal of stereo camera as well as LIDAR data
+
+특징 기반 탐지 기법은 정확도-계산시간의 트레이드 오프 관계 이다. 일부에서는 불안정한 센서 측정값에 너무 민감하다는 우려도 있다. `Feature-based detection offers good trade-off between accurate pose estimation and computational time. However, Liu[28] also asserted that these approaches are notably sensitive to unstable measurement.`
+
+
+### 챕터 요약 
+
+To summarise this chapter, the 3D LIDAR sensor is selected due to its ability to acquire surround spatial information with feasible computational cost. 
+
+However, occlusion-aware detection method has to be used to utilise the full potential of LIDAR. 
+
+In addition, a real-time requirement calls for efficient methods. 
+
+Therefore, based on these two criteria, the **Slope-based channel classification** and **2D Connected Component Clustering** are to be used for segmentation process with embedded height. 
+
+Meanwhile, the pose estimation shall utilise minimum area rectangle augmented with L-shape fitting and cluster height information to form a 3D Box. 
+
+Both methods have been shown to yield fast but reasonably accurate detection result under urban environment[96, 15], which in turn is essential for mission-critical urban MOT task.
+
 ---
 
 ## 3. Tracking Fundamentals
