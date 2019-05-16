@@ -74,27 +74,32 @@ Alternatively, some other works have proposed a track-before-detect method that 
 ---
 ## 2. Detection Fundamentals
 
-### 2.1 Overview 
+  
+
+### 2.1 Overview
+
+  
 
 ### 2.2 Spatial Data Acquisition using 3D LIDAR
 
+  
+
 ### 2.3 Segmentation
 
-포인트 클라우드는 데ㅓ A large amount of point clouds data demand a high computational power to process, in addition, due to discontinuous nature of point cloud, it is useful to combine the geometric points into a semantically meaningful group. 
+  
 
+포인트 클라우드는 데이터 양이 많기 때문에 의미 있는 그룹으로 묶어 주는 작업이 선행되어야 한다. ` A large amount of point clouds data demand a high computational power to process, in addition, due to discontinuous nature of point cloud, it is useful to combine the geometric points into a semantically meaningful group.`
 
-Therefore, the raw measurement needs to be pre-processed to
-eliminate unnecessary element and reduce the dimensionality of possible target object before
-it passed to the detection process. The segmentation process mainly deals with differentiating
-non-trackable objects such as terrain and kerb from unique objects of interest such as cars,
-cyclists and pedestrians.
+따라서 탐지 작업 전에 전처리로 불필요한 부분을 제거 해야 한다. ` Therefore, the raw measurement needs to be pre-processed to eliminate unnecessary element and reduce the dimensionality of possible target object before it passed to the detection process. `
 
-Segmentation method can be divided into two groups based on the underlying tracking
-scheme[28]: the grid-based and the object-based. The grid-based segmentation is mainly
-used for track-before-detect scheme, and the object-based is used mostly for the track-by
-detect scheme. Although it is important to note the relation is not exclusive. For example,
-Himmelsbach et al.[25] used grid-based approach in the pre-processing stage (specifically
-clustering) but later used object-based approach to perform tracking.
+세그멘테인은 도로, 커브등과 같이 추적이 불 필요한 오브젝트와 차량, 보행자 같은 유니크한 물체로 구분시킨다. `The segmentation process mainly deals with differentiating non-trackable objects such as terrain and kerb from unique objects of interest such as cars, cyclists and pedestrians.`
+
+추적 방법에 따른 세그멘테이션 기법 분류 ` Segmentation method can be divided into two groups based on the underlying tracking scheme[28]: the grid-based and the object-based. `
+
+-  그리드 기반 : The grid-based segmentation is mainly used for **track-before-detect** scheme, and 
+- 오브젝트 기반 : the object-based is used mostly for the **track-by-detect** scheme. 
+
+혼합 형태도 있다. Although it is important to note the relation is not exclusive. For example, Himmelsbach et al.[25] used grid-based approach in the pre-processing stage (specifically clustering) but later used object-based approach to perform tracking.
 
 #### A. Grid-based
 The grid cell-based methods chiefly rely on the global occupancy grid maps to indicate the
