@@ -181,30 +181,41 @@ Ground measurement may also be incomplete due to occlusion by a large object.
 
   
 
+
 ##### 나. Clustering
-A large number of point clouds are computationally prohibitive if the detection and tracking
-are to be done over individual hits. Therefore, these massive point cloud is to be reduced
-into smaller clusters in which each of them is simply a combination of multiple, spatially
-close-range samples; the process is called clustering. Clustering can be either done in 3D, 2D
-(taking the top-view or XY plane) or 2.5D[79] which retain some z-axis information such as
-elevation in occupancy grids.
-2D clustering offers computationally simpler operation. Rubio et al.[80] presented a 2D clus-
-tering based on Connected Component Clustering which has shown to be implementable in
-real-time due to its low complexity, this method is also used in 3D object tracking method by
-Rieken et al.[14].
-Some literature in 2D object tracking[25, 45, 81] have shown that this approach is often
-sufficient in the application of object tracking. However, care should be taken as vertically
-stacked objects (e.g. pedestrian under a tree) will be merged into one single cluster, which
-might be undesirable depending on the vehicle navigation strategy.
-3D clustering offers high fidelity object cluster that incorporates the vertical (z-axis) features.
-Still, the resulting data and the computational effort required is some magnitude larger than
-its 2D counterpart. Compared to 2D clustering, there are fewer works which explicitly deal
-with 3D clustering for object tracking with LIDAR data. Klasing et. al.[63] proposed a 3D
-clustering method based on Radially Bounded Nearest Neighbor (RNN), and more recently
-Hwang, et. al[82] using DBSCAN (Density-Based Spatial Clustering of Applications with
-Noise) to employ full 3D clustering. Considering real-time requirement and significant number
-of points involved, 2 or 2.5D clustering is more preferred[83] owing to the fact vehicle onboard
-computer likely to have limited computational power.
+
+포인트클라우는 연산 부하가 크다. `A large number of point clouds are computationally prohibitive if the detection and tracking are to be done over individual hits.` 
+
+따라서 클러스터링 단계가 필요 하다. `Therefore, these massive point cloud is to be reduced into smaller clusters in which each of them is simply a combination of multiple, spatially close-range samples; the process is called clustering. `
+
+클러스터링 방법론은 3가지로 나뉠수 있다. `Clustering can be either done in`
+- 3D
+- 2D (taking the top-view or XY plane) or 
+- 2.5D[79] which retain some z-axis information such as elevation in occupancy grids.
+
+###### 2D clustering
+
+2D clustering offers computationally simpler operation. 
+
+[80]에서 2D에 Connected Component클러스터링을 적용 하였다. [14]에서는 이를 3D에 적용 하였다. `Rubio et al.[80] presented a 2D clustering based on Connected Component Clustering which has shown to be implementable in real-time due to its low complexity, this method is also used in 3D object tracking method by Rieken et al.[14].`
+
+일부 2D 추적 기법들도 사용 가능 하다. `Some literature in 2D object tracking[25, 45, 81] have shown that this approach is often sufficient in the application of object tracking. `
+
+그러나 나무 밑에 있는 사람 처럼 중첩된 환경에서는 하나로 인식 하기에 조심 해야 한다. `However, care should be taken as vertically stacked objects (e.g. pedestrian under a tree) will be merged into one single cluster, which might be undesirable depending on the vehicle navigation strategy.`
+
+###### 3D Clustering 
+
+-3D clustering offers high fidelity object cluster that incorporates the vertical (z-axis) features.
+
+Still, the resulting data and the computational effort required is some magnitude larger than its 2D counterpart. 
+
+Compared to 2D clustering, there are fewer works which explicitly deal with 3D clustering for object tracking with LIDAR data. 
+
+[63]에서는 RNN을 이용하였다. `Klasing et. al.[63] proposed a 3D clustering method based on Radially Bounded Nearest Neighbor (RNN), `
+
+[82]에서는 DBSCAN을 이용하였다. `and more recently Hwang, et. al[82] using DBSCAN (Density-Based Spatial Clustering of Applications with Noise) to employ full 3D clustering. `
+
+실시간성을 만족 하기 위해서 2D, 2.5D 기법이 좀더 선호 된다. `Considering real-time requirement and significant number of points involved, 2 or 2.5D clustering is more preferred[83] owing to the fact vehicle onboard computer likely to have limited computational power.`
 
 ### 2.4 Pose Estimation
 
