@@ -427,6 +427,22 @@ instance when compared to MHT[117].
 
 
 
+---
+
+## 4. MOT System Design and Implementation
+
+### 4.1 Overview
+
+챕터 구성 
+- First, the system architecture will be given to give the reader a bird-view of the implementation.
+- Subsequently, the development platform is presented to inform readers how the proposed framework is designed and implemented. 
+- Finally, each of the building blocks in the system will be visited to investigate the individual underlying reasons and how the theory is implemented in practice.
+
+
+### 4.2 System Architecture
+
+
+
 
 
 
