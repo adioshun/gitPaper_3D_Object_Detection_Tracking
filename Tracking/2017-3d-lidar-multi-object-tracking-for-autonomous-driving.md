@@ -101,58 +101,85 @@ Alternatively, some other works have proposed a track-before-detect method that 
 
 혼합 형태도 있다. Although it is important to note the relation is not exclusive. For example, Himmelsbach et al.[25] used grid-based approach in the pre-processing stage (specifically clustering) but later used object-based approach to perform tracking.
 
+
 #### A. Grid-based
-The grid cell-based methods chiefly rely on the global occupancy grid maps to indicate the
-probability of an object existing in a specific grid (i.e. occupied). One common approach to
-update the probabilities is to compare the occupancy in current time frame k with occupancy
-in time frame k − 1 with the Bayesian Occupancy Filter[74]. In some implementation, Particle
-Filter is also used in used derive velocity in each grid[75, 76]. The particles with positions
-and velocities in a particular cell represent its velocity distribution and occupancy likelihood.
-When the neighbouring cells with similar speeds are clustered, then each cluster can be
-represented in the form of an oriented cuboid. Grid-based tracking results in simpler detection
-process and less complicated data association process, however, the disadvantage of grid-based
-representations is if a moving object cannot be detected (e.g. due to occlusion), the area
-will be mapped as a static grid by default if no occlusion handling is applied. Additionally,
-grid-based representations contain a lot of irrelevant details such as unreachable free space
-areas and only have limited ability to represent dynamic objects[36]. The latter part suggests
-grid-based detection is insufficient for the purpose of urban autonomous vehicle perception
-which require detailed representation of dynamic objects to model the complex environment.
-Therefore, we shall focus on the track-by-detect scheme, and the object-based detection will
-be explored more in-depth.
 
+이 방식은 특정 그리드에 물체가 존재 확률을 나타내는 **global occupancy grid maps**에 의지 하고 있다. `The grid cell-based methods chiefly rely on the global occupancy grid maps to indicate the probability of an object existing in a specific grid (i.e. occupied). `
+
+가장 일반적인 존재 확률 갱신 방법은 **Bayesian Occupancy Filter**을 이용하여서 이전 프레임과 현 프레임의 존재 여부를 비교 하는 것이다. `One common approach to update the probabilities is to compare the occupancy in current time frame k with occupancy in time frame k − 1 with the Bayesian Occupancy Filter[74]. `
+
+파티클 필터가 사용되어 셀의 속도도 추출 한 연구도 있다. `In some implementation, Particle Filter is also used in used derive velocity in each grid[75, 76]. `
+
+The particles with positions and velocities in a particular cell represent its velocity distribution and occupancy likelihood.
+
+이웃셀과 속도가 비슷하다면 클러스터링 된다. When the neighbouring cells with similar speeds are clustered, then each cluster can be represented in the form of an oriented cuboid. 
+
+장점 : 그리드 기반 추적의 결과는  간단한 탐지 절차와 덜 복잡한 DA절차를 가진다. `Grid-based tracking results in simpler detection process and less complicated data association process,`
+
+단점 
+- 가려짐등으로 이동 물체를 탐지 하지 못하게 되면 해당 영역은 Static Grid로 간주 된다. ` however, the disadvantage of grid-based representations is if a moving object cannot be detected (e.g. due to occlusion), the area will be mapped as a static grid by default if no occlusion handling is applied. `
+
+- 또한,  Additionally, grid-based representations contain a lot of irrelevant details such as unreachable free space areas and only have limited ability to represent dynamic objects[36]. 
+
+그리드 기반 탐지는 자율주행에는 적합하지 않다. `The latter part suggests grid-based detection is insufficient for the purpose of urban autonomous vehicle perception which require detailed representation of dynamic objects to model the complex environment. `
+
+따라서, 본 논문에서는 **track-by-detect**와 **object-based ** 기법에 좀더 초점을 두어 살펴 본다. `Therefore, we shall focus on the track-by-detect scheme, and the object-based detection will be explored more in-depth.`
+  
 #### B. Object-based
-Object based segmentation on the other hand, uses the point model (or rather collections of
-bounded points) to describe objects. Unlike grid-based method, a separate pose estimation
-and tracking filter are required to derive dynamic attributes of the segmented object. The
-segmentation is chiefly done with ground extraction to separate non-trackable object with
-objects of interest, followed by clustering to reduce the dimensionality of tracked objects. The
-two steps will be discussed in the following subsections. Note that the step-wise results of
-object-based segmentation processes can be seen in Figure. 2-5.
 
+Point Model을 이용하여 물체를 표현한다. `Object based segmentation on the other hand, uses the point model (or rather collections of bounded points) to describe objects. `
+
+이전 방식과 달리 **pose estimation**와 **tracking filter**를 필요로 한다. `Unlike grid-based method, a separate pose estimation and tracking filter are required to derive dynamic attributes of the segmented object. `
+
+세그멘테이션 절차는 비-추적 물체를 분리하는 지표면 제거절차와 클러스터링을 거쳐 진행 된다. `The segmentation is chiefly done with ground extraction to separate non-trackable object with objects of interest, followed by clustering to reduce the dimensionality of tracked objects. `
+
+The two steps will be discussed in the following subsections. 
+
+Note that the step-wise results of object-based segmentation processes can be seen in Figure. 2-5.
+
+  ![](https://i.imgur.com/URg92zi.png)
+
+  
 
 ##### 가. Ground Extraction
-Due to non-planar nature of roads, a point cloud coming from 3D Laser scanner also includes
-terrain information which is considered as non-obstacle (i.e. navigable) by the vehicle. It is
-useful to semantically label the navigable terrain (hereby called ground) from the elevated
-point that might pose as an obstacle. Ground extraction is an important preliminary process
-in object detection process. As we are going to deal with a large number of raw LIDAR
-measurement, computation load must be factored during implementation. Chen et al.[77]divide ground extraction process into three subgroups: grid/cell-based methods, line-based
-methods and surface-based methods. Meanwhile, Rieken et al.[15] consider line-based and
-surface-based method as one big group called scan-based method. Grid-cell based method
-divides the LIDAR data into polar coordinate cells and channel. The method uses information
-of height and the radial distance between adjacent grid to deduct existence of obstacle when
-slope between cell cross certain threshold, i.e. slope-based method (see[12, 10]).
-On the other hand, scan-based method extracts a planar ground (i.e. flat world assumption)
-derived from specific criteria, one of the approaches is to take the lowest z value and applying
-Random sample consensus (RANSAC) fitting to determine possible ground[78]. The advantage
-of grid cell-based method is that the ground contour is preserved and flat terrain is represented
-better. However, compared to the scan-based method it does not consider the value of neig-
-hbourhood channels, and thus may lead to inconsistency of elevation due to over-sensitivity to
-slope change. Ground measurement may also be incomplete due to occlusion by a large object.
-One notable approach which factored the occlusion is by Rieken et all.[14], they combine of
-channel-wise ground classification with a grid-based representation of the ground height to
-cope with false spatial measurements and also use inter-channel dependency to compensate
-for missing data.
+
+도면이 2차 평면이 아니기 때문에 포인트 클라우드는 장애물이 아닌 지면 정보도 포함 하고 있다. `Due to non-planar nature of roads, a point cloud coming from 3D Laser scanner also includes terrain information which is considered as non-obstacle (i.e. navigable) by the vehicle. `
+
+운행 가능한 도면을 표시 해두는것은 중요 하다. `It is useful to semantically label the navigable terrain (hereby called ground) from the elevated point that might pose as an obstacle. `
+
+
+지표면 제거는 Object Detection에서 중요한 절차 이다. `Ground extraction is an important preliminary process in object detection process. `
+
+Lidar의 연산 부하는 무시 할수 없다. `As we are going to deal with a large number of raw LIDAR measurement, computation load must be factored during implementation. `
+
+[77]에서는 도로 제거를 3분류 하였다. `Chen et al.[77]divide ground extraction process into three subgroups:`
+- grid/cell-based methods, 
+- line-based methods and 
+- surface-based methods. 
+
+[15]에서는 후자 2개를 scan-based method로 합쳤다. `Meanwhile, Rieken et al.[15] consider line-based and surface-based method as one big group called scan-based method. `
+
+###### Grid-cell based method 
+- divides the LIDAR data into **polar coordinate cells** and **channel**. 
+- The method uses information of height and the radial distance between adjacent grid to deduct existence of obstacle when slope between cell cross certain threshold, i.e. slope-based method (see[12, 10]).
+
+###### scan-based method 
+- extracts a planar ground (i.e. flat world assumption) derived from specific criteria, 
+- one of the approaches is to take the lowest z value and applying Random sample consensus (RANSAC) fitting to determine possible ground[78]. 
+
+
+그리드 셀 기반 방식의 장점 : The advantage of grid cell-based method is that the ground contour is preserved and flat terrain is represented better. 
+
+그리드 셀 기반 방식의 단점 : However, compared to the scan-based method it does not consider the value of neighbourhood channels, and thus may lead to inconsistency of elevation due to over-sensitivity to slope change. 
+
+Ground measurement may also be incomplete due to occlusion by a large object.
+
+하이드리브 방법 : `One notable approach which factored the occlusion is by Rieken et all.[14],`
+- they combine of channel-wise ground classification with a grid-based representation of the ground height to cope with false spatial measurements and 
+- also use inter-channel dependency to compensate for missing data.
+
+
+  
 
 ##### 나. Clustering
 A large number of point clouds are computationally prohibitive if the detection and tracking
