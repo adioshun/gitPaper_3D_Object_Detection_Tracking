@@ -442,6 +442,47 @@ instance when compared to MHT[117].
 ### 4.2 System Architecture
 
 
+주요 구성 요소 `The MOT framework is divided into two major components based on the functional objective:`
+- (1) 탐지기: **Detector** which aims to produce meaningful, unambiguous segmented objects derived from raw LIDAR data and 
+- (2) 추적기: **Tracker**, whose task is to assign and maintain dynamic attributes of detected objects across all time frame.
+
+
+
+The component hierarchy and input-output flows can be seen in Figure 4-1. 
+
+입력 : The input of the system is the raw data from 3D LIDAR scan in point cloud representation of environmental spatial data in Cartesian coordinate, 
+
+출력 : while the output is a list of objects embedded with context aware attributes, namely the 
+- bounding boxes, 
+- trajectories and 
+- static/dynamic classification.
+
+
+탐지기 구성 3요소 `Detector consists of 3 sub-components which similarly, represent the subtask of detection process: `
+- the ground removal, to eliminate object of non-interest and reduce dimensionality of raw data, 
+- clustering, which segment the point clouds into collection of coherently grouped points (i.e. the object), and 
+- bounding box fitting, which embed a uniform object dimension and general direction heading information to each cluster.
+
+Tracker retrieves the list of bounding boxes and is responsible for keeping itself updated for the bounding box spatial and dimensional evolution on each time step change, handled by Position Tracker and Box Tracker sub-component, respectively. 
+
+Note that the spatial evolution is expected to change according to motion model, while the box dimension should stays constant with changing heading. 
+
+Both evolutions are perturbed by noise and uncertainties, therefore position tracker requires Bayesian filtering to reject the disturbance. 
+
+Tracker also stores the output state of every track iteration in box history, in turn, the Box Tracker relies on past information from Box History to filter out noise before updating the bounding box.
+
+다중 물체 추적(MOT)는 여러 구성 요소의 동작으로 작동한다. `The MOT tasks are largely sequential and inter-related, as each component relies on the output of preceding components to perform its task.`
+
+To exploit this behaviour, the so-called bottom-up top-down approach[25] is used. 
+- The Detector ("top" component) is to exchange information in a feedback-loop fashion with Tracker ("bottom" component) to reduce false detection. 
+- Since track-by-detection paradigm is used, this approach also augments Tracker component task.
+
+![](https://i.imgur.com/U0Ux5iU.png)
+
+
+### 4.3 Development Framework and Methodology
+
+
 
 
 
