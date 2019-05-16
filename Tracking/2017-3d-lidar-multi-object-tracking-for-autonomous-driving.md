@@ -483,6 +483,10 @@ To exploit this behaviour, the so-called bottom-up top-down approach[25] is used
 ### 4.3 Development Framework and Methodology
 
 
+C++ & Matlab 
+
+PCL, Opencv 사용 
+
 
 
 
