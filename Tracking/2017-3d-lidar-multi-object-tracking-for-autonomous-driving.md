@@ -80,9 +80,10 @@ Alternatively, some other works have proposed a track-before-detect method that 
 
 ### 2.3 Segmentation
 
-A large amount of point clouds data demand a high computational power to process, in addition,
-due to discontinuous nature of point cloud, it is useful to combine the geometric points into a
-semantically meaningful group. Therefore, the raw measurement needs to be pre-processed to
+포인트 클라우드는 데ㅓ A large amount of point clouds data demand a high computational power to process, in addition, due to discontinuous nature of point cloud, it is useful to combine the geometric points into a semantically meaningful group. 
+
+
+Therefore, the raw measurement needs to be pre-processed to
 eliminate unnecessary element and reduce the dimensionality of possible target object before
 it passed to the detection process. The segmentation process mainly deals with differentiating
 non-trackable objects such as terrain and kerb from unique objects of interest such as cars,
