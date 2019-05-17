@@ -569,5 +569,6 @@ At the last step, a tolerance value h tol is used during final classification to
 
 The whole procedure is summarized in Algorithm 1 (Appendix B).
 
-![](https://i.imgur.com/undefined.png)
+![](https://i.imgur.com/9WRG5rR.png)
 
+#### B. Object Clustering
