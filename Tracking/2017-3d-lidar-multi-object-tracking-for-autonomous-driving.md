@@ -631,3 +631,22 @@ This procedure is illustrated in Figure 4-9.
 
 따라서 **L-shape fitting**은 자동차에는 적합하지만 가려진 물체나 사람이나, 자전거에는 적합 하지 않다. `Therefore, the L-shape fitting is only applied on a car-like object, which correspondingly also suffer from occlusion more than smaller objects such as cyclist and pedestrian.`
 
+#### D. Rule-based Filter
+
+탐지의 마지막 절차는 비 관심 영역인 벽, 나무, 빌딩 등을 제거 하는 것이다. `The last step of the detection process is to eliminate majority object of non-interest, such as a wall, bushes, building, and tree. `
+
+치수 정보를 이용 하여 이를 진행 한다. `A dimensional thresholding is implemented to achieve this.`
+
+추가적으로 길이, 넓이, 높이 정보와 길이와 높이 비율 도 활용 된다. `In addition to 3 standard dimensional sizes (length, width, height), the ratio between length and width is considered to remove disproportionately thin objects such as wall and side rails.`
+
+또한, 포인트수와 밀집도 정보도 사용된다.(m^3당 포인트 수)  `Furthermore, amount of LIDAR points and its volumetric density (i.e. point per m 3 ) are also taken into account. `
+
+하지만 conservative한 임계치값이 탐지 실패를 막기 위해 사용된다. 비슷한 dimensional profile을 가진 물체는 필터링 되지 않는다. `However, conservative thresholds are used in order to prevent missed detection; it is expected that objects which share a similar dimensional profile, such as pole and pedestrian, or car and large bush are not to be filtered. `
+
+추가적으로 가려진 물체는 완벽한 바운딩 박스를 가지지 못한다는 점을 상기 해야 한다. `In addition, recall that occluded object will not have a full dimensional bounding box. `
+
+그러므로, Thus, the ratio check is not applicable for over-segmented box-(es) which may belong to object of interest. 
+
+따라서 Therefore, the ratio check is only applied for larger object to distinguish between thin wall-like object and fragment of a real object due to over-segmentation. 
+
+룰기반 필터링 방법이 단점도 많지만 불필요한 물체를 제거 하는데 좋다. `The rule-based filter is not intended as a catch all measure for false positive, but it is intended to reduce significant number of non-object of interest passed to tracker components.`
