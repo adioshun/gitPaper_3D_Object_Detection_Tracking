@@ -572,3 +572,62 @@ The whole procedure is summarized in Algorithm 1 (Appendix B).
 ![](https://i.imgur.com/9WRG5rR.png)
 
 #### B. Object Clustering
+
+Connected Component Clustering는 2D 이미지용으로 개발 되었지만 3D에서도 적용 가능 하다. `Connected Component Clustering is utilised in order to distinguish each possible object in the elevated points. The connected component clustering is originally designed to find the connected region of 2D binary images. However, it is also applicable to LIDAR point cloud[80] since in urban situation traffic object does not stack vertically, and thus the top view of the LIDAR measurement can be treated as a 2D binary image. However, the height information is retained by deriving the difference between the highest and the lowest point in each cluster. The choice of using this approach allows the MOT system to perform in real-time while still preserving the height information of detected objects.`
+
+
+Following two-pass row-by-row labelling[127] written in Algorithm 2 (Appendix B). 
+
+이 방식은 **one pass**는 connectedness에 대한 임식 label할당시 사용되며 ** second pass**는 각 label을 유니크한 클러스터 ID로 변경한다. ` The approach uses one pass to assign the temporary label of ’connectedness’ and the second pass is to replace each label with the unique cluster ID.`
+
+![](https://i.imgur.com/KSgmci3.png)
+
+The XY plane of the elevated points is discretized into grids with m × n cells. 
+
+The grid is assigned with 2 initial states, empty (0), occupied (-1) and assigned. 
+
+Subsequently, a single cell in x, y location is picked as a central cell, and the clusterID counter is incremented by one.
+
+Then all adjacent neighbouring cells (i.e. x − 1, y + 1, x, y + 1, x + 1, y + 1 x − 1, y, x + 1, y,x − 1, y − 1, x, y − 1, x + 1, y + 1) are checked for occupancy status and labelled with current cluster ID. 
+
+This procedure is repeated for every and each x, y in the m × n grid, until all non-empty cluster has been assigned an ID.
+
+
+#### C. Bounding Box Fitting
+
+클러스터링 절차는 추적할 후보 물체들을 생성해 된다. `The clustering process produced candidate object to be tracked. `
+
+물체에 대한 **intuitive semantic information** 정보 생성을 위해서 바운딩 박스를 활용한다. `In order to make intuitive semantic information about the object, bounding box is fitted to have uniform dimensional information and yaw direction. `
+
+MAR을 적용하여 2D Box를 만들고, 높이 정보가 더해 지면 3D box를 만든다. `A Minimum Area Rectangle (MAR)[128] is applied to each clustered object which results in a 2D box, and when combined with height information retained in the clustering process, becomes a 3D bounding box (see Figure 4-7).`
+
+MAR은 가려진 물체에는 성능이 좋지 않다. `The MAR approach is sufficient for most well-defined measurement of a target object, however it is not guaranteed to correctly enclose partially-occluded object (c.f. Figure 4-8). `
+
+이를 해결 하기 위해 ** feature-based L-shape fitting**[91]이 제안 되었다. `To tackle this issue, a feature-based L-shape fitting as proposed by Ye[91] is used to deduce correct yaw orientation.`
+
+![](https://i.imgur.com/5lGi5ec.png)
+
+##### 가. L-shape fitting procedure 
+
+동작과정 `The L-shape fitting procedure is done as follows: `
+
+먼저 센서에서 반대로 가장 멀리 있는 점 x1, x2를 선택 한다. `first, we select two farthest outlier point x_1 and x_2 which lies on the opposite sides of the object facing the LIDAR sensor. `
+
+선택된 두 점을 Line_d로 연결 한다. 직교선 L_o를 그린다. `A line L_d is then drawn between the two points, then an orthogonal line L o is projected from L d toward the available points.` 
+
+**end-point fit**알고리즘을 이용하여 직교선 L_o와 최대 거리 d_max 와 90도 각도를 구한다. `The projected L_o with maximum distance d_max and angle close to 90 degrees is then obtained using iteration end-point fit algorithm[129]. `
+
+직교 선에 연결된 점을 x3로 정한다. `The points connected to the orthogonal line then becomes the corner point x 3 . `
+
+세 점을 이용하여 L-shaped polyline을 생성하여 완성 한다. `Closing a line between x 1 , x 2 and x 3 would form an L-shaped polyline. `
+
+진행 방향(Orientation)은 가장 긴 직선을 이용하여 구한다. `The orientation of the bounding box is then determined by the longest line, as most traffic object (e.g. car, cyclist) is heading in parallel with its longest dimensional side. `
+
+This procedure is illustrated in Figure 4-9.
+
+![](https://i.imgur.com/QXRAIqo.png)
+
+위 방식을 적용하려면 충분한 포인트들이 탐지 되어야 하며 탐지 대상이 cuboid형태여야 한다. `Note that this approach needs a sufficient amount of measurement points to be able to fit reliable line and is designed for a cuboid-like object. `
+
+따라서 **L-shape fitting**은 자동차에는 적합하지만 가려진 물체나 사람이나, 자전거에는 적합 하지 않다. `Therefore, the L-shape fitting is only applied on a car-like object, which correspondingly also suffer from occlusion more than smaller objects such as cyclist and pedestrian.`
+
