@@ -499,3 +499,75 @@ Note that the parameters of the detector used in implementations can be found in
 
 
 
+#### A. Ground Removal
+
+수 많은 라이다 데이터 중에서 대부분은 지표면 값이며 이는 불필요 한 정보로 제거가 필요 하다. `The raw LIDAR data consists of approximately 3.0 × 10 5 points and a large majority of the points belongs to the ground plane which does not carry meaningful information for tracking purpose, the first step in measurement pre-processing is thus the ground removal.`
+
+지표면 제거 방식은 아래와 같다. `In this process, the removal is done using`
+- slope-based channel classification augmented with consistency check and median filtering. 
+
+지표면이 제거된 Lidar 측정값은 **elevated points** 라고 불리운다. `The LIDAR measurement with the ground removed is called elevated points.`
+
+지표면 제거를 위해 **slope-based channel classification[14]**가 사용되었는데 이는 가려진 물체를 처리 하는데 좋은 성능을 보인다. `To achieve this purpose slope-based channel classification is utilised following[14] which is shown to handle partial occlusion on LIDAR data efficiently. `
+
+```
+[14] J. Rieken, R. Matthaei, and M. Maurer, “Benefits of using explicit ground-plane information for grid-based urban environment modeling,” Fusion, pp. 2049–2056, 2015.
+```
+
+**slope based channel classification**은 연속된 포인트들의 높이값 차이를 비교하여 구획을 구분한다. `The slope based channel classification determines the ground height by compartmentalizing the LIDAR point clouds and comparing the difference of height (i.e. slope) of the successive compartment.`
+
+![](https://i.imgur.com/d2VGFoC.png)
+
+절차 `The procedure is as follows`: 
+- 먼저 Lidar 스캔 영역을 NxM개의 셀로 나눈다. first, the raw LIDAR scans is divided into a polar grid with $$m_{bins} \× n_{channels} $$ -cells with minimum radius $$r_{min}$$ being the radius closest to ego vehicle and r max being the farthest radius also from ego-vehicle (see Figure 4-4). 
+- 최소 반경과 최대 반경을 정한다. The minimum radius is the radius in which the reflection of the ego vehicle is no longer can be seen while the maximum radius is determined by the effective range of the sensor. 
+- 아래 식을 이용하여 각 포인트 클라우드 데이터를 채널과 빈에 맵핑한다. Mapping of each point cloud data $$p_i = \{x_ i , y_ i , z_ i , I_ i\ }$$ (see Subsection 2-2-3) to each channel and bin is thus given as:
+
+![](https://i.imgur.com/dn0Z7Vc.png)
+
+높이 정보 z는 cell의 속성 정보로 맵핑 된다. `Note the height information of the point coming from z_i is stored as the mapped cell’s attribute.`
+
+가장 낮은 z는 **prototype point**로 불리우며 'Local' 그라운드로 사용되어 셀에서 가장 낮은 포인트를 나타낸다. The lowest z i point, hereby called prototype point is to be used as ’local’ ground to determine the lowest possible point for all cells. 
+
+절대 높이 **absolute (local) height** 정보는 가장 낮은 높이와 높은 높이의 차이 값으로 계산 된다. `Additionally, the absolute (local) height in the cell can be enumerated by computing the difference between lowest z i and the highest z i within the same cell.`
+
+다음, 지표면 높이의 **threshold**를 구한다. Next, we define the interval $$ \[T_{hmin} T_{hmax} \]$$ of possible ground height h i for threshold-based classification. 
+
+센서가 설치된 높이 정보는 사전에 알수 있기 때문에 이 정보도 활용한다. Since the sensor’s mounting height above ground level $$h_{sensor}$$ is known a priori, we can extrapolate that the closest point to the sensor must be situated above ground point.
+- 따라서 , 센서 높이 정보는 t_{hmax}로 지표면으로 간주된다. Thus $$h_{sensor}$$ is then used as the $$T_{hmax}$$ for a point to be considered as ground. 
+
+The cell information is filled from the **bins** which are closest to ego-vehicle to the farthest, if the **prototype point** of a cell lies inside the interval [T hmin T hmax ] then it is set as the h i of that cell. 
+
+If the **prototype point** is higher than T hmax , then the ground level is set to be equal to that of $$h_{sensor}$$ .
+
+각 셀들이 계산되고 나서 경사 m을 계산 하여 갑작스런 높이 변화가 있는지 체크 한다. `After all cells have been enumerated, a slope (simple Euclidean gradient) m between cells thus can be calculated to inspect if there is sudden height increase between cells. `
+
+또한, 절대 높이 차이도 계산하여 지표면이 아닌 물체를 판단 하는데 사용된다. `In addition, absolute height difference is also computed as a secondary check to identify possible non-ground object residing in the neighbouring cell. `
+
+경사면은 오랜지 색으로 표현 하였다. 일반적 지표면은 녹색이다. **elevated point **는 노란색으로 표시 하였다. The slopes are illustrated as an orange line in Figure 4-4, normal ground is represented by a green circle, and the elevated point is coloured as yellow 
+- due to slope change and height difference with the previous cell exceeding a predefined threshold T slope and T hdif f .
+
+비록 이 방법이 mooth terrain에는 성능이 좋으나 과속 방지턱이나 잔듸등 삐져나온 지표면은  elevated points로 인식 한다. `Although this approach is good for smooth terrain, a small, protruding terrain features, such as road bump and grass can still be classified as elevated points. `
+
+문제 해결을 위해 **Consistency Check** 와 **Median Filtering[14]**를 추가 적용 하였다. `To tackle this Consistency Check and Median Filtering[14] are employed to further flatten the ground plane and yield better ground estimate. `
+
+###### Consistency Check
+
+Consistency Check is done by iterating non-ground cells which are flanked by non-ambiguous ground cells and then comparing the cells’ height consistency with the neighbouring cells. 
+
+The cell height is compared against a predefined absolute height T f lat and its height difference with adjacent cells is compared to threshold T consistency . 
+
+A value below thresholds indicates the cells should belong to the ground and thus they are to be re-classified accordingly.
+
+###### Median filtering
+
+Median filtering on the other hand deals with missing ground plane information (common due to occlusion), as the name implies, the height value of the missing cell is to be replaced with the median value of neighbouring cells. 
+
+The polar grid is again iterated to identify ground cells which have missing information but is surrounded by ground cells, the tunable parameter of the filter is kernel (window) size s kernel which indicates the number of neighbouring cells involved.
+
+At the last step, a tolerance value h tol is used during final classification to further smooth the transition between ground and elevated points in noisy measurement. 
+
+The whole procedure is summarized in Algorithm 1 (Appendix B).
+
+![](https://i.imgur.com/undefined.png)
+
