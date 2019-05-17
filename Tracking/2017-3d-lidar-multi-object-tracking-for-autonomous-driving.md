@@ -489,5 +489,13 @@ PCL, Opencv 사용
 
 
 
+### 4.4 Detector 
+
+탐지기는 추적기에게 전달 하기전 바운딩 박스 등 전처리를 의미한다. `The detector component is responsible for initial pre-processing and fitting of bounding boxes which later are to be passed to the tracker. `
+
+Each step on detection process is going to be presented in the following subsections. 
+
+Note that the parameters of the detector used in implementations can be found in Appendix C.
+
 
 
