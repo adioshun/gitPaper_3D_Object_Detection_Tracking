@@ -89,6 +89,7 @@
 * [2012-Car2X-based perception in a high-level fusion architecture for cooperative perception systems \(30%\)](Cooperative-Detection/2012-car2x-based-perception-in-a-high-level-fusion-architecture-for-cooperative-perception-systems.md)
 * [2013-Inter-Vehicle Object Association for Cooperative Perception Systems \(10%\)](Cooperative-Detection/2013-inter-vehicle-object-association-for-cooperative-perception-systems.md)
 * [2017-Survey on Ranging Sensors and Cooperative Techniques for Relative Positioning of Vehicles \(5%\)](Cooperative-Detection/2017-survey-on-ranging-sensors-and-cooperative-techniques-for-relative-positioning-of-vehicles.md)
+* [2017-Track-to-track fusion multi-target tracking using asynchronous and delayed data](Cooperative-Detection/2017-track-to-track-fusion-multi-target-tracking-using-asynchronous-and-delayed-data.md)
 
 ## Joint Detection and Tracking
 
