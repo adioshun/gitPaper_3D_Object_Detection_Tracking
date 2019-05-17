@@ -82,6 +82,7 @@
 * [2016-Simple online and realtime tracking](Tracking/2016-simple-online-and-realtime-tracking.md)
 * [2017-Detect to Track and Track to Detect](Tracking/2017-detect-to-track-and-track-to-detect.md)
 * [2006-A Review of Object Detection and Tracking Methods](Tracking/2006-a-review-of-object-detection-and-tracking-methods.md)
+* [2017-High-Speed Tracking-by-Detection Without Using Image Information](Tracking/2017-high-speed-tracking-by-detection-without-using-image-information.md)
 
 ## Pose Estimation
 
