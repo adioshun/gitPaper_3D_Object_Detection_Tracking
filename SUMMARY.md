@@ -83,6 +83,7 @@
 
 * [README.md](Pose-Estimation/README.md)
 * [2017-3D Bounding Box Estimation Using Deep Learning and Geometry](2017-3d-bounding-box-estimation-using-deep-learning-and-geometry.md)
+* [2017-Vehicle Detection and Pose Estimation in Autonomous Convoys](Pose-Estimation/2017-vehicle-detection-and-pose-estimation-in-autonomous-convoys.md)
 
 ## 협조탐지
 
