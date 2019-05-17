@@ -77,6 +77,7 @@
 * [2017-Low resolution lidar-based multi-object tracking for driving application](Tracking/2017-low-resolution-lidar-based-multi-object-tracking-for-driving-application.md)
 * [\[추천\] 2017-3D-LIDAR Multi Object Tracking for Autonomous Driving](Tracking/2017-3d-lidar-multi-object-tracking-for-autonomous-driving.md)
 * [2017-Online learning for human classification in 3D LiDAR-based tracking](Tracking/2017-online-learning-for-human-classification-in-3d-lidar-based--tracking.md)
+* [2019-A portable three-dimensional LIDARbased system for long-term and widearea people behavior measurement](Tracking/2019-a-portable-three-dimensional-lidarbased-system-for-long-term-and-widearea-people-behavior-measurement.md)
 
 ## Pose Estimation
 
