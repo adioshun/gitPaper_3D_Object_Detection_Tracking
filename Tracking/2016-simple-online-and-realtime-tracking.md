@@ -5,7 +5,7 @@
 | Citation ID / 키워드 | |
 | 데이터셋(센서)/모델 |25 FPS(맥북 프로) |
 | 관련연구||
-| 참고 | [홈페이지](https://motchallenge.net/tracker/SORT), [Youtube](https://motchallenge.net/movies/ETH-Linthescher-SORT.mp4), [한글정리](https://jjeamin.github.io/paper/2019/04/25/sort/) |
+| 참고 | [홈페이지](https://motchallenge.net/tracker/SORT), [Youtube](https://motchallenge.net/movies/ETH-Linthescher-SORT.mp4), [[추천]한글정리](https://jjeamin.github.io/paper/2019/04/25/sort/) |
 | 코드 | [python/C++](https://github.com/abewley/sort), [Tracking-with-darkflow](https://github.com/bendidi/Tracking-with-darkflow) |
 
 
