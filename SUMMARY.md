@@ -88,7 +88,6 @@
 * [2014-Survey-Multi-target Tracking Filters and Data Association](Tracking/2014-survey-multi-target-tracking-filters-and-data-association.md)
 * [2016-Simple online and realtime tracking](Tracking/2016-simple-online-and-realtime-tracking.md)
 * [2017-Detect to Track and Track to Detect](Tracking/2017-detect-to-track-and-track-to-detect.md)
-* [2006-A Review of Object Detection and Tracking Methods](Tracking/2006-a-review-of-object-detection-and-tracking-methods.md)
 * [2017-High-Speed Tracking-by-Detection Without Using Image Information](Tracking/2017-high-speed-tracking-by-detection-without-using-image-information.md)
 * [2016-Lidar-based Methods for Tracking and Identification](Tracking/2016-lidar-based-methods-for-tracking-and-identification.md)
 * [\[추천\] 2017-pedestrian tracking using velodyne data -stochastic optimization for extended tracking](Tracking/2017-pedestrian-tracking-using-velodyne-data-stochastic-optimization-for-extended-tracking.md)
