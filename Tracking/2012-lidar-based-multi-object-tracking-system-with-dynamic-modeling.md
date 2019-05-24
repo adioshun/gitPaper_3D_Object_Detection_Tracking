@@ -527,30 +527,57 @@ Greedy Nearest Neighbor \(GNN\) 알고리즘 사용
 * because it\(=Mahalanobis distance\) takes into account the distribution of the data
 
 ![](https://i.imgur.com/qw7nNeg.png)
+![](https://i.imgur.com/s46YsoT.png)
 
 #### A. GNN data association
 
 ![](https://i.imgur.com/TA6CjPP.png)
 
-Shown in Figure 4.15 are two consecutive frames of the same object \(red circles\).
+전 프레임에서 탐지된 물체는 새로 분류된 클러스터와 nearest match를 위해 비교 작업을 수행 한다. `Every existing object in the last frame is compared to all the new classified clusters to find the nearest match. `
 
-검은 십자가는 4개의 모서리 특징점\(Corner Feature points\)이다. `The black crossings are the four corner feature points of the vehicle.`
+이 알고리즘은 Miss match를 방지 하기 위해 Oldest Object에 우선권을 부여 한다. `The algorithm gives priority to the oldest objects first, which helps to eliminate the accidental miss matching caused by noise or wrong classification of dark objects (Figure 4.15).`
 
-Since the error or accuracy of the sensor, there is gap between two edges of the right angle.
+위 그림은 동일한 물체에 대한 두개의 연속적인 프레임이다. (빨간원) `Shown in Figure 4.15 are two consecutive frames of the same object (red circles).` 
 
-In the first frame \(shown at left\),
+검은 십자가는 차량의 4개 코너 특징점이다. `The black crossings are the four corner feature points of the vehicle.`
 
-* the gap is notable such that the DBSCAN regarded them as different clusters and association
-  step marks the horizontal edge as an “adding” object \(blue circles\). 
-
-In the new frame \(shown at right\),
-
-* the object is tracked successfully again because the older objects have priority to match
-  to the segments. 
+센서의 오차로 오른쪽 앵글의 두 모서리에 gap이 발생 하였다. `Since the error or accuracy of the sensor, there is gap between two edges of the right angle. `
+- 첫 프레임에는 오류가 있지만 `In the first frame (shown at left), the gap is notable such that the DBSCAN regarded them as different clusters and association step marks the horizontal edge as an “adding” object (blue circles). `
+- 두번째 프레임은 Older에게 할당한 우선순위로 오류가 수정 되었다. `In the new frame (shown at right), the object is tracked successfully again because the older objects have priority to match to the segments. `
 
 The artificial “added” object is deleted since it does not last for enough time
 
 #### B. Feature point association
+
+특징점 기반 연동을 위해 물체의 새 postion과 speed가 계산 된다. `To form a feature point association, the new position and speed of the object`
+- are calculated by determining the feature correspondence between measured data and previously associated object. 
+
+본 연구에서는 두 종류의 특징점이 활용 되었다. `In this study, there are two kinds of feature points considered: `
+- feature points representing the mean position of the segment, and corner figure points.
+
+앞장에서 기술 하였듯이 **feature points**는 분류 단계에서 계산 된다. `As discussed in section 4.2.8, the feature points of the segment are computed during the classification step.`
+
+물체는 feature points를 계속 유지 하며, 새 feature points가 생기면 추가 한다. `The object will keep the feature points of prior data after successful matching, and the object will add new feature points when the segment is associated with more information from new data. `
+
+결과적으로 모든 물체는 4개의 모서리 feature points를 가지고 있어야 한다. `Eventually, every object should have four corner feature points unless the segments it matched cannot provide enough information.`
+
+불충분한 정보를 가지게 되는 하나의 예로 차량에 가려지는 것이다. `One example of where there is insufficient information would be when the vehicle is scanned from the frontal direction such that the back of the vehicle is never visible. `
+
+![](https://i.imgur.com/Z6gHubO.png)
+
+Figure 4.16 is an example of data association of 20 consecutive frames. 
+
+검은점은 그리드맵기법으로 배경 제거가 된것이다. 빨간점은 센서가 탐지한 것이고 검은 십자가는 차량의 feature point이다. `The black dots are background extracted by grid map approach, the red dots the segments obtained by sensor and the black crossing the feature points of the vehicle object.`
+
+숫자는 순서로 추적기에서 작동으로 계산 된다.  정답값은 foreground의 normal maked 물체를 카운팅 하여서 계산 한다. `The number is calculated automatically by the tracking system, which represents the order of the object (including the noise object with short survival time and the obstacle on background). The true number of the moving objects can be computed by counting the normal marked objects on foreground.`
+
+![](https://i.imgur.com/XttkmSv.png)
+Figure 4.17 is another example of data association. Black star represents the feature point of the pedestrian object. It indicates the algorithm can deal with the vehicle object and pedestrian object at the same time. The feature statistics such as the mean and corner positions will obviously change as the object moves through the scanning field, and sometimes these changes are quite abrupt. To make the model of the vehicle stable, the length of the edge is computed by averaging all the corresponding history valid edge values. In other words, the feature “remembers” the extent of previous vehicle scans and uses this information to improve the expected mean and corner positions of the vehicle. 
+
+
+![](https://i.imgur.com/nsVkVgS.png)
+Figure 4.18 shows the lengths of two sides of the vehicle 15 in previous Figure 4.17 versus the time.
+
 
 ### 4.4 Model motion
 
