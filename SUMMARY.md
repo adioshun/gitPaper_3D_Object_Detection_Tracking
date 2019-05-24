@@ -8,7 +8,7 @@
 ## Clustering
 
 * [README](Clustering/README.md)
-
+* [2015-Octree-based region growing for point cloud segmentation](Clustering/2015-octree-based-region-growing-for-point-cloud-segmentation.md)
 
 ## Detection
 
