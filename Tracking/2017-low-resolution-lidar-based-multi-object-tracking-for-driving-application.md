@@ -2,7 +2,7 @@
 | --- | --- |
 | 저자\(소속\) | \(\) |
 | 학회/년도 | 2017, [논문](http://www.iri.upc.edu/files/scidoc/1924-Low-resolution-lidar-based-multi-object-tracking-for-driving-applications.pdf) |
-| Citation ID / 키워드 | |
+| Citation ID / 키워드 | Multi-Hypothesis Extended Kalman Filters (MH-EKF)|
 | 데이터셋(센서)/모델 | |
 | 관련연구||
 | 참고 | -|
