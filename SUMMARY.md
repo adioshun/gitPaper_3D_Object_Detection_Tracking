@@ -37,6 +37,7 @@
 * [2016-Lidar-based Methods for Tracking and Identification](Tracking/2016-lidar-based-methods-for-tracking-and-identification.md)
 * [\[추천\] 2017-pedestrian tracking using velodyne data -stochastic optimization for extended tracking](Tracking/2017-pedestrian-tracking-using-velodyne-data-stochastic-optimization-for-extended-tracking.md)
 * [2019-Self-Driving Cars: A Survey](Tracking/2019-self-driving-cars-a-survey.md)
+* [2019-Data Association for Multi-Object Tracking via Deep Neural Networks](Tracking/2019-data-association-for-multi-object-tracking-via-deep-neural-networks.md)
 
 ## Pose Estimation
 
