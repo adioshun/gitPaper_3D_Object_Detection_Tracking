@@ -38,6 +38,9 @@ The stages of the algorithm are presented next.
 
 ### 3.1 Prediction
 
+
+> 상세 설명 추후 확인 필요 
+
 ---
 
 # THE JOINT PROBABILISTIC DATA ASSOCIATION FILTER 
