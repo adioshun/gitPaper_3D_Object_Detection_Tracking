@@ -173,3 +173,51 @@ The PHD filter has been shown an effective way of tracking a time-varying multip
 
 
 
+> 제안 아이디어 부분 인듯 : 하나의 물체가 어떠한 이유로 중복 탐지 결과를 생성 할경우 
+
+### one detection per one target 
+
+대부분의 탐지 기반 추적 기법들은 타겟은 최대 한개의 detection만 유발 한다고 가정 하고 있다. `Most detection-based target tracking algorithms assume that a target generates at most one detection per scan with probability of detection less than unity. `
+
+이 경우 데이터 연동 문제는 탐지 측적 소스에 대한 불확실성 뿐이다. `In this case, the data association uncertainty is only the measurement origin uncertainty [14] [92]. `
+
+그러므로 measurement중에서 하나만 타겟에서 나온것이고 나머지는 잘못된 것이다. `Thus, given a set of measurements in a scan, at most one of them can originate from the target and the rest have to be false alarms. `
+
+이러한 가정으로 인해서 one-to-one 탐지값과 타겟 연도문제는 최적화나 enumeration문제로 해결 된다. `This basic assumption results in the formulation of one-to-one measurement-to-track association as an optimization or enumeration problem.`
+
+예를 들어 PDA나 JPDA의 경우 ` For example, in the Probabilistic Data Association (PDA) filter[1][15][44][92] and its multitarget version, the Joint Probabilistic Data Association (JPDA) filter [2][20][57][71], presented in Chapter 2, `
+- weights are assigned to measurements based on a Bayesian assumption that only one of the measurements is from the target and the rest are false alarms. 
+
+다른 예로 MHT의 경우 Similarly, in the Multiple Hypothesis Tracker (MHT) [19][45][49][69] hypotheses are generated based on one-to-one measurement-to-track association. 
+
+This assumption extends to the Multiframe Assignment (MFA) algorithm [76][91] since the measurement-to-track association is evaluated as one-to one combinatorial optimization in the best global hypothesis. 
+
+위 두경우 모두 one-to-one 기본 fundamental이다. `In all these cases, the one-to-one assumption is fundamental for the correct measurement-to-track associations and accurate target state estimation.`
+
+
+
+### Multiple detection per one target 
+
+
+그러나 Target은 여러개의 Detection을 생성 할수도 있다.  `However, a target can generate multiple detection in a scan due to, for example, multipath propagation or extended nature of the target with a high resolution radar. `
+
+When multiple detection from the same target fall within the association gate, the PDAF and its multitarget version, the JPDAF, tend to apportion the association probabilities, but still with the fundamental assumption that only one of them is correct. 
+
+When the measurements are not close to one other, as in the case of multipath detection, the PDAF and JPDAF initialize multiple tracks for the same target. 
+
+The MHT algorithm tends to generate multiple tracks to handle the additional measurements from the same target due to the basic assumption that at most one measurement originated from each target. 
+
+Thus, an algorithm that explicitly considers multiple detection from the same target in a scan needs to be developed so that all useful information in the received measurements about the target is processed with the correct assumption. 
+
+The presence of multiple detection per target per scan increases the complexity of a tracking algorithm due to uncertainty in the number of target-originated measurements, which can vary from time to time, in addition to the measurement origin uncertainty. 
+
+However, estimation accuracy can be improved and the number of false tracks can be reduced using the correct assumption with multiple-detection.
+
+
+> 이후 생략 필요시 참고 
+
+### 3.1 Multiple-Detection Pattern
+
+
+### 3.2 MD-PDAF and MD-JPDAF
+
