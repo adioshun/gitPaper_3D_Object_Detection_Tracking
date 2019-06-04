@@ -1,12 +1,12 @@
 |논문명 |Online learning for human classification in 3D LiDAR-based tracking |
 | --- | --- |
-| 저자\(소속\) | \(\) |
+| 저자\(소속\) | Zhi Yan\(Lincoln Uni.\) |
 | 학회/년도 | 2017, [논문](http://webpages.lincoln.ac.uk/nbellotto/doc/Yan2017.pdf) |
 | Citation ID / 키워드 | |
-| 데이터셋(센서)/모델 | |
+| 데이터셋(센서)/모델 |[L-CAS](https://lcas.lincoln.ac.uk/wp/research/data-sets-software/l-cas-3d-point-cloud-people-dataset/) |
 | 관련연구||
 | 참고 | [홈페이지](http://lcas.lincoln.ac.uk/wp/), [저자](https://yzrobot.github.io/), [Youtube](https://www.youtube.com/watch?v=bjztHV9rC-0) |
-| 코드 ||
+| 코드 |[Adaptive Clustering](https://github.com/yzrobot/adaptive_clustering), [BayesTracking](https://github.com/lcas/bayestracking)|
 
 
 연구 History
