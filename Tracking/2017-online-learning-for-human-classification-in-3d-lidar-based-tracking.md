@@ -99,5 +99,11 @@
 [18] A. Dewan, T. Caselitz, G. D. Tipaldi, and W. Burgard, “Motion-based detection and tracking in 3D LiDAR scans,” in Proceedings of the 2016 IEEE International Conference on Robotics and Automation (ICRA), 2016, pp. 4508–4513.
 ```
 
+하지만 이 방법들은 별로 좋지 않다 `These methods, however, are either not very accurate or unsuitable for slow and static pedestrians.`
 
-- 하지만 이 방법들은 별로 좋지 않다 `These methods, however, are either not very accurate or unsuitable for slow and static pedestrians.`
+annotation free방식은 최근 트랜드에 맞지 않아 보인다. `It is clear that there remains a large gap between the state of the art and what would be required for an annotation free, high-reliability human classification implementation that works with 3D LiDAR scans. `
+
+본 연구에서는 **Tracking**과 **Online Learning**을 합쳐서 사람 분류 정확도를 향상 시키고자 한다. `Our work helps to close this gap by demonstrating that human classification performance can be improved by combining tracking and online learning with a mobile robot in highly dynamic environments.`
+
+
+## 3.  GENERAL FRAMEWORK
