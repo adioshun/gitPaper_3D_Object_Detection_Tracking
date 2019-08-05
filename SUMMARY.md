@@ -34,7 +34,7 @@
 * [2015-Person Tracking and Following with 2D Laser Scanners](Tracking/2015-person-tracking-and-following-with-2d-laser-scanners.md)
 * [2017-Low resolution lidar-based multi-object tracking for driving application](Tracking/2017-low-resolution-lidar-based-multi-object-tracking-for-driving-application.md)
 * [\[추천\] 2017-3D-LIDAR Multi Object Tracking for Autonomous Driving](Tracking/2017-3d-lidar-multi-object-tracking-for-autonomous-driving.md)
-* [2017-Online learning for human classification in 3D LiDAR-based tracking](Tracking/2017-online-learning-for-human-classification-in-3d-lidar-based--tracking.md)
+* [2017-Online learning for human classification in 3D LiDAR-based tracking](Tracking/2017-online-learning-for-human-classification-in-3d-lidar-based-tracking.md)
 * [2019-A portable three-dimensional LIDARbased system for long-term and widearea people behavior measurement](Tracking/2019-a-portable-three-dimensional-lidarbased-system-for-long-term-and-widearea-people-behavior-measurement.md)
 * [2014-다중표적 추적필터와 자료연관 기법 동향](Tracking/2014-survey-multi-target-tracking-filters-and-data-association.md)
 * [2015-자율 주행 차량의 다중 물체 추적 알고리즘](Tracking/2015-multi-object-tracking-algorithm-for-autonomous-vehicle.md)
