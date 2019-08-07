@@ -4,6 +4,10 @@
 
 * [README](List/README.md)
 * [CVPR2019 Point Cloud](List/CVPR2019.md)
+* [Multi-Object-Tracking-Paper-List](https://github.com/SpyderXu/multi-object-tracking-paper-list)
+* [ALL MOT CORE PAPERS](https://github.com/huanglianghua/mot-papers/blob/master/README.md)
+* [Multi-target tracking recent papers and open source code summary](https://zhuanlan.zhihu.com/p/65177442)
+
 
 ## 전처리
 
