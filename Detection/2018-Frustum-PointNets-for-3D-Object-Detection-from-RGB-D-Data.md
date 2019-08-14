@@ -1,7 +1,7 @@
 
 # [Frustum PointNets for 3D Object Detection from RGB-D Data](https://arxiv.org/pdf/1711.08488.pdf)
 
-> [홈페이지](http://stanford.edu/~rqi/frustum-pointnets/), [깃허브](https://github.com/charlesq34/frustum-pointnets)
+> [홈페이지](http://stanford.edu/~rqi/frustum-pointnets/), [깃허브](https://github.com/charlesq34/frustum-pointnets), [Article](https://blog.csdn.net/shuqiaos/article/details/82752100)
 
 In this work, we study 3D object detection from RGBD data in both indoor and outdoor scenes. While previous methods focus on images or 3D voxels, often obscuring natural 3D patterns and invariances of 3D data, we directly operate on raw point clouds by popping up RGB-D scans. However, a key challenge of this approach is how to efficiently localize objects in point clouds of large-scale scenes (region proposal). Instead of solely relying on 3D proposals, our method leverages both mature 2D object detectors and advanced 3D deep learning for object localization, achieving efficiency as well as high recall for even small objects. Benefited from learning directly in raw point clouds, our method is also able to precisely estimate 3D bounding boxes even under strong occlusion or with very sparse points. Evaluated on KITTI and SUN RGB-D 3D detection benchmarks, our method outperforms the state of the art by remarkable margins while having real-time capability.
 
@@ -30,9 +30,6 @@ In this work, we study 3D object detection from RGBD data in both indoor and out
 - Second, learning in 3D space can better exploits the geometric and topological structure of 3D space. In principle, all objects live in 3D space; therefore, we believe that many geometric structures, such as repetition, planarity, and symmetry, are more naturally parameterized and captured by learners that directly operate in 3D space. The usefulness of this 3D-centric network design philosophy has been supported by much recent experimental evidence.
 
 Our method achieve leading positions on KITTI 3D object detection [1] and bird’s eye view detection [2] benchmarks. Compared with the previous state of the art [6], our method is 8.04% better on 3D car AP with high efficiency (running at 5 fps). Our method also fits well to indoor RGBD data where we have achieved 8.9% and 6.4% better 3D mAP than [16] and [30] on SUN-RGBD while running one to three orders of magnitude faster
-
-
-
 
 
 ---
