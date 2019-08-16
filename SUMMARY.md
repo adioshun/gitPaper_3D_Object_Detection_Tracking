@@ -24,6 +24,7 @@
 * [README](Detection/README.md)
 * [2018-PIXOR: Real-time 3D Object Detection from Point Clouds ](Detection/2018-pixor-real-time-3d-object-detection-from-point-clouds.md)
 * [2008-LIDAR-based 3D Object Perception](Detection/2008-lidar-based-3d-object-perception.md)
+* [2017-PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation](Detection/2017-pointnet-deep-learning-on-point-sets-for-3d-classification-and-segmentation.md)
 * [2017-Object Detection and Classification in 3D Point Cloud Data for Automated Driving](Detection/2017-object-detection-and-classification-in-3d-point-cloud-data-for-automated-driving.md)
 * [2018-Frustum PointNets for 3D Object Detection from RGB-D Data](Detection/2018-Frustum-PointNets-for-3D-Object-Detection-from-RGB-D-Data.md)
 
@@ -118,7 +119,6 @@
 * [2017-3D Object Proposals using Stereo Imagery for Accurate Object Class Detection](2017-3d-object-proposals-using-stereo-imagery-for-accurate-object-class-detection.md)
 * [2017-OctNet: Learning Deep 3D Representations at High Resolutions](2017-octnet-learning-deep-3d-representations-at-high-resolutions.md)
 * [2017-Depth Estimation from Single Image Using CNN-Residual Network](2017-depth-estimation-from-single-image-using-cnn-residual-network.md)
-* [2017-PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation](2017-pointnet-deep-learning-on-point-sets-for-3d-classification-and-segmentation.md)
 * [2017-Efficient Online Segmentation for Sparse 3D Laser Scans](2017-efficient-online-segmentation-for-sparse-3d-laser-scans.md)
 * [2017-Vote3Deep: Fast Object Detection in 3D Point Clouds Using Efficient Convolutional Neural Networks](2017-vote3deep-fast-object-detection-in-3d-point-clouds-using-efficient-convolutional-neural-networks.md)
 * [2017-Multi-View 3D Object Detection Network for Autonomous Driving ](2017-multi-view-3d-object-detection-network-for-autonomous-driving.md)
