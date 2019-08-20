@@ -1,7 +1,7 @@
 
 # [Frustum PointNets for 3D Object Detection from RGB-D Data](https://arxiv.org/pdf/1711.08488.pdf)
 
-> [홈페이지](http://stanford.edu/~rqi/frustum-pointnets/), [깃허브](https://github.com/charlesq34/frustum-pointnets), [Article](https://blog.csdn.net/shuqiaos/article/details/82752100)
+> [홈페이지](http://stanford.edu/~rqi/frustum-pointnets/), [깃허브](https://github.com/charlesq34/frustum-pointnets), [Article](https://blog.csdn.net/shuqiaos/article/details/82752100), [Docker](https://hub.docker.com/r/luca911014/frustum-pointnet)
 
 In this work, we study 3D object detection from RGBD data in both indoor and outdoor scenes. While previous methods focus on images or 3D voxels, often obscuring natural 3D patterns and invariances of 3D data, we directly operate on raw point clouds by popping up RGB-D scans. However, a key challenge of this approach is how to efficiently localize objects in point clouds of large-scale scenes (region proposal). Instead of solely relying on 3D proposals, our method leverages both mature 2D object detectors and advanced 3D deep learning for object localization, achieving efficiency as well as high recall for even small objects. Benefited from learning directly in raw point clouds, our method is also able to precisely estimate 3D bounding boxes even under strong occlusion or with very sparse points. Evaluated on KITTI and SUN RGB-D 3D detection benchmarks, our method outperforms the state of the art by remarkable margins while having real-time capability.
 
