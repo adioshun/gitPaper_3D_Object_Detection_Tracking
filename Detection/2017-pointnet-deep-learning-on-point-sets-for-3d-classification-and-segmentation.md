@@ -6,7 +6,7 @@
 | 데이터셋(센서)/모델| ModelNet40,  ShapeNet part data, Stanford 3D semantic parsing data|
 |관련연구|이후연구 : Pointnet++|
 | 참고 | [ppt](https://www.facebook.com/thinking.factory/posts/1408857052524274), [홈페이지](http://stanford.edu/~rqi/pointnet/),[CVPR2017](https://www.youtube.com/watch?v=Cge-hot0Oc0), [Youtube](https://youtu.be/8CenT_4HWyY?t=1h16m39s), [ppt](http://3ddl.stanford.edu/CVPR17_Tutorial_PointCloud.pdf), [한글설명](http://daddynkidsmakers.blogspot.com/2017/07/3-pointnet.html)  |
-| 코드 | [TF](https://github.com/charlesq34/pointnet), [pyTorch](https://github.com/fxia22/pointnet.pytorch) |
+| 코드 | [TF](https://github.com/charlesq34/pointnet), [pyTorch](https://github.com/fxia22/pointnet.pytorch)|
 
 > 같은 이름의 다른 논문 :  PointNet: A 3D Convolutional Neural Network for real-time object class recognition, A. Garcia-Garcia, [링크](http://ieeexplore.ieee.org/document/7727386/authors)
 
@@ -17,10 +17,13 @@ PointNet++ : [pyTorch-Open3D](https://github.com/intel-isl/Open3D-PointNet2-Sema
 
 도커 : [PointNet-pyTorch](https://hub.docker.com/r/dkwatson/pointnet-pytorch1), [PointNet++](https://hub.docker.com/r/zjuncd/pointnet2)
 
-![image](https://user-images.githubusercontent.com/17797922/49631762-16f86680-f9a8-11e8-94be-fdf2fbba6d7c.png)
+
+포인트 클라우드를 직접 사용함으로써 **permutation invariance**한 입력 정보의 속성을 고려 하였다. 제안 방식은 **object classification, part segmentation, to scene semantic parsing**가 가능 하다. `Point cloud is an important type of geometric data structure. Due to its irregular format, most researchers transform such data to regular 3D voxel grids or collections of images. This, however, renders data unnecessarily voluminous and causes issues. In this paper, we design a novel type of neural network that directly consumes point clouds, which well respects the permutation invariance of points in the input. Our network, named PointNet, provides a unified architecture for applications ranging from object classification, part segmentation, to scene semantic parsing. Though simple, PointNet is highly efficient and effective. Empirically, it shows strong performance on par or even better than state of the art. Theoretically, we provide analysis towards understanding of what the network has learnt and why the network is robust with respect to input perturbation and corruption.`
 
 
 
+```
+# [페이스북정리글](https://www.facebook.com/groups/TensorFlowKR/permalink/508389389502124/)
 
 PointNet : End-to-end learning for scattered, unordered point data, Unified framework for various tasks
 
@@ -37,8 +40,7 @@ Two Challenges
 PointNet은 max pooling을 기준으로 앞부분의 local feature단과 뒷부분의 global feature단을 보는 것으로 나눌 수 있는데, 논문에서는 critical point로 불리는 global feature에 영향을 주는 point set은 매우 적고 주요 경계마다만 있고 대다수의 point들은 영향을 주지 않기 떄문에 전에 point clouds에서 50%까지 data loss가 있더라도 전혀 성능에 문제가 발생하지 않는다. \(robustness to missing data\)
 
 
-```
-- Qi et al. [53] propose a Multilayer Perceptron(MLP) architecture 
+- Qi et al.  propose a Multilayer Perceptron(MLP) architecture 
 	-  that extracts a global feature vector from a 3D point cloud of $$1m^3$$ physical size 
 	-  and processes each point using the extracted feature vector and additional **point level** transformations. 
 
@@ -46,6 +48,7 @@ PointNet은 max pooling을 기준으로 앞부분의 local feature단과 뒷부�
 
 - It works well for indoor semantic scene understanding,although there is no evidence that it scales to larger input dimensions without additional training or adaptation required. 
 ```
+
 
 
 # PointNet
@@ -63,7 +66,7 @@ PointNet은 max pooling을 기준으로 앞부분의 local feature단과 뒷부�
 
 제안 방식 
 - 입력 
-    - s three coordinates (x, y, z)
+    - three coordinates (x, y, z)
     - normals 
     - local or global features
 - 출력 
@@ -199,19 +202,19 @@ For simplicity and clarity, unless otherwise noted, we only use the (x, y, z) co
 
 ### 3.1 classification
 
-For the object classification task, the **input **point cloud is 
-    - either directly sampled from a shape 
-    - or pre-segmented from a scene point cloud. 
+입력 : For the object classification task, the **input **point cloud is 
+    - 물체에서 직접 샘플링됨 `either directly sampled from a shape `
+    - 공간에서 사전 분활됨 `or pre-segmented from a scene point cloud. `
 
-Our proposed deep network outputs k scores for all the k candidate classes. 
+출력 : 후보 분류에 대한 확률 정보를 제공한다. `Our proposed deep network outputs k scores for all the k candidate classes. `
 
 ### 3.2 semantic segmentation
 
-For semantic segmentation, the **input** can be 
+입력 : For semantic segmentation, the **input** can be 
     - a single object for part region segmentation, 
     - or a sub-volume from a 3D scene for object region segmentation. 
 
-Our model will output $$n × m$$ scores for each of the $$n$$ points and each of the $$m$$ semantic subcategories.
+출력 : Our model will output `n × m` scores for each of the `n` points and each of the `m` semantic subcategories.
 
 
 ## 4. Deep Learning on Point Sets
@@ -227,26 +230,24 @@ Our input is a subset of points from an **Euclidean space**.
 
 3가지 주요 특징 `It has three main properties:`
 
-#### A. Unordered
+#### A. Unordered  (순서 관련 없음)
 
 - Unlike pixel arrays in images or voxel arrays in volumetric grids, point cloud is a set of points without specific order. 
 
 - In other words, a network that consumes $$N$$ 3D point sets needs to be invariant to $$N!$$ permutations of the input set in data feeding order.
 
-#### B. Interaction among points. 
+#### B. Interaction among points. (포인트간 상호성)
 
-- The points are from a space with a distance metric. 
-
-- It means that points are not isolated, and neighboring points form a meaningful subset. 
-
-- Therefore, the model needs to be able to capture local structures from nearby points, and the combinatorial interactions among local structures.
+- 포인트 들은 거리정보를 가지고 서로 떨어져 있다. `The points are from a space with a distance metric. `
+	- It means that points are not isolated, and neighboring points form a meaningful subset. 
+	- Therefore, the model needs to be able to capture local structures from nearby points, and the combinatorial interactions among local structures.
 
 
-#### C. Invariance under transformations
+#### C. Invariance under transformations (변화에 불변성)
 
 - As a geometric object, the learned representation of the point set should be invariant to certain transformations. 
 
-- For example, rotating and translating points all together should 
+- For example, **rotating** and **translating** points all together should 
     - not modify the global point cloud category 
     - nor the segmentation of the points.
 
@@ -255,14 +256,16 @@ Our input is a subset of points from an **Euclidean space**.
 ![](https://i.imgur.com/LZiDf16.png)
 ```
 [Figure 2. PointNet Architecture.] 
-- The classification network takes n points as input, applies input and feature transformations, and then aggregates point features by max pooling. 
+- 분류 네트워크는 The classification network takes n points as input, applies input and feature transformations, and then aggregates point features by max pooling. 
     - The output is classification scores for k classes. 
-- The segmentation network is an extension to the classification net. 
+- 분할 네트워크 The segmentation network is an extension to the classification net. 
     - It concatenates global and local features and outputs per point scores. 
     - “mlp” stands for multi-layer perceptron, numbers in bracket are layer sizes. 
     - Batchnorm is used for all layers with ReLU. 
     - Dropout layers are used for the last mlp in classification net.
 ```
+
+Our full network architecture is visualized in Fig 2, where the classification network and the segmentation network share a great portion of structures. Please read the caption of Fig 2 for the pipeline.
 
 Our network has three key modules: 
 1. The max pooling layer as a **symmetric function** to aggregate information from all the points, 
@@ -272,14 +275,14 @@ Our network has three key modules:
 
 #### A. Symmetry Function for Unordered Input
 
-입력 순서에 영향받지 않는 모델 만드는 3가지 방법 `In order to make a model invariant to input permutation, three strategies exist:` 
+입력 순서(`=permutation`)에 영향받지 않는 모델 만드는 3가지 방법 `In order to make a model invariant to input permutation, three strategies exist:` 
 1. sort input into a canonical order
 2. treat the input as a sequence to train an RNN, but augment the training data by all kinds of permutations;
 3. use a simple symmetric function to aggregate the information from each point. 
 
 ##### 가. symmetric function (3번)
 
-Here, a symmetric function takes n vectors as input and outputs a new vector that is invariant to the input order. 
+이 함수는 입력으로 n벡터를 받아서 출력으로 새 백터를 출력한다. 새 백터는 **입력 순서**에 강건하게 된다. `Here, a symmetric function takes `n` vectors as input and outputs a new vector that is invariant to the input order.` 
 
 - For example, `+` and `∗` operators are **symmetric binary functions**.
 
@@ -308,19 +311,19 @@ Empirically, we have also shown that model based on RNN does not perform as well
 
 ##### 라. 제안 방식 
 
-Our idea is to approximate a general function defined on a point set by applying a symmetric function on transformed elements in the set:
+Our idea is to approximate a general function defined on a point set by applying a **symmetric function** on transformed elements in the set:
 
 ![](https://i.imgur.com/RxCawYT.png)
 
-- we approximate $$h$$ by a multi-layer perceptron network and $$g$$ by a composition of a single variable function and a max pooling function. 
+- we approximate `h` by a multi-layer perceptron network and `g` by a composition of a single variable function and a max pooling function. 
 
 - This is found to work well by experiments. 
 
-- Through a collection of $$h$$, we can learn a number of $$f’s$$ to capture different properties of the set. 
+- Through a collection of `h`, we can learn a number of `f’s` to capture different properties of the set. 
 
 
 
-
+### [ 입력 순서에 강건성을 가지는 3가지 방법 ]
 ![](https://i.imgur.com/aFUsYsC.png)
 ```
 [Figure 5. Three approaches to achieve order invariance.] 
@@ -328,9 +331,47 @@ Our idea is to approximate a general function defined on a point set by applying
 - The MLP close to the output consists of two layers with sizes 512,256.
 ```
 
+While our key module seems simple, it has interesting properties (see Sec 5.3) and can achieve strong performace (see Sec 5.1) in a few different applications. 
+
+Due to the simplicity of our module, we are also able to provide theoretical analysis as in Sec 4.3.
+
+
 #### B. Local and Global Information Aggregation
 
+위 섹션의 산출물은 `[f1, . . . , fK]`형태의 백터이며 입력 데이터에 대한 **global signature**이다. 여기에 SVM이나 MLP분류기를 적용하여 분류작업을 수행 할수 있다. `The output from the above section forms a vector [f1, . . . , fK], which is a global signature of the input set. We can easily train a SVM or multi-layer perceptron classifier on the shape global features for classification.`
+
+하지만, 세그멘테이션을 위해서는 Local + Global 정보가 필요하다.  `However, point segmentation requires a combination of local and global knowledge. We can achieve this by a simple yet highly effective manner.`
+
+전역(Global) 특징 벡터 계산 후 이 정보를 다시 각 포인트별 특징과 합친후 입력으로 사용한다. 이후 추출된 각 포인트들은 전역/지역 특징을 모두 가지고 있다. ` Our solution can be seen in Fig 2 (Segmentation Network). After computing the global point cloud feature vector, we feed it back to per point features by concatenating the global feature with each of the point features. Then we extract new per point features based on the combined point features - this time the per point feature is aware of both the local and global information.`
+
+이러한 조정후 With this modification our network is able to predict per point quantities that rely on both local geometry and global semantics. 
+
+예를들어 Normal을 계산 하거나, 이웃 포인트간의 관계 정보를 축양 할수 있다. `For example we can accurately predict per-point normals (fig in supplementary), validating that the network is able to summarize information from the point’s local neighborhood. `
+
+성능도 좋다. `In experiment session, we also show that our model can achieve state-of-the-art performance on shape part segmentation and scene segmentation.`
+
 #### C. Joint Alignment Network
+
+강제 변화의 영향을 받지 않아야 한다. `The semantic labeling of a point cloud has to be invariant if the point cloud undergoes certain geometric transformations, such as rigid transformation. We therefore expect that the learnt representation by our point set is invariant to these transformations.`
+
+해결 방법은 특징 추출 전에 모든 입력을 **canonical space **에 정렬 하는것이다. ` A natural solution is to align all input set to a canonical space before feature extraction. `
+- Jaderberg et al. [9] introduces the idea of spatial transformer to align 2D images through sampling and interpolation, achieved by a specifically tailored layer implemented on GPU.
+
+```
+[9] M. Jaderberg, K. Simonyan, A. Zisserman, et al. Spatial transformer networks. In NIPS 2015. 4
+```
+
+포인트 클라우드 입력 형태는 이미지 처리인 [9]보다 간단한게 목표를 달성 한다. `Our input form of point clouds allows us to achieve this goal in a much simpler way compared with [9]. We do not need to invent any new layers and no alias is introduced as in the image case. `
+- **T-net**을 이용하여 **아핀 매트릭스**를 획득 한후 입력 포인트클라우드에 바로 적용한다. `We predict an affine transformation matrix by a mini-network (T-net in Fig 2) and directly apply this transformation to the coordinates of input points. `
+- **T-net**은 특징 추출, 맥스풀링, FC등을 가지고 있는 네트워크 이다. `The mininetwork itself resembles the big network and is composed by basic modules of point independent feature extraction, max pooling and fully connected layers. More details about the T-net are in the supplementary.`
+
+이 방법은 추후 특징 공간을 정렬 하는데도 활용 될수 있다. 하지만 **transformation matrix** 고차원이라 최적화가 어려워 본 논문에서는 은 **softmax training loss**에 **regularization**을 포함 시켰다. `This idea can be further extended to the alignment of feature space, as well. We can insert another alignment network on point features and predict a feature transformation matrix to align features from different input point clouds. However, transformation matrix in the feature space has much higher dimension than the spatial transform matrix, which greatly increases the difficulty of optimization. We therefore add a regularization term to our softmax training loss.`
+
+We constrain the feature transformation matrix to be close to orthogonal matrix:
+![](https://i.imgur.com/hniMboU.png)
+- A가 **T-net**을 통해 구해진 특징 정렬 매트릭스 이다. `where A is the feature alignment matrix predicted by a mini-network. `
+
+An orthogonal transformation will not lose information in the input, thus is desired. We find that by adding the regularization term, the optimization becomes more stable and our model achieves better performance.
 
 ### 4.3. Theoretical Analysis
 
@@ -339,6 +380,72 @@ Our idea is to approximate a general function defined on a point set by applying
 
 
 
+
+---
+
+# Supplementary 
+
+## A. Overview 
+
+This document provides additional quantitative results, technical details and more qualitative test examples to the main paper. 
+- In Sec B we extend the robustness test to compare PointNet with VoxNet on incomplete input. 
+- In Sec C we provide more details on neural network architectures, training parameters 
+- and in Sec D we describe our detection pipeline in scenes. 
+- Then Sec E illustrates more applications of PointNet, 
+- while Sec F shows more analysis experiments. 
+- Sec G provides a proof for our theory on PointNet. 
+- At last, we show more visualization results in Sec H.
+
+
+## C. Network Architecture and Training Details (Sec 5.1)
+
+### C.1 PointNet Classification Network
+
+기본 구조는 이미 설명 하였으므로 ** joint alignment/transformation**에 대하여 살펴 보겠다. `As the basic architecture is already illustrated in the main paper, here we provides more details on the joint alignment/transformation network and training parameters.`
+
+- 첫번째 네트워크는 입력은 3 × 3 매트릭스 ` The first transformation network is a mini-PointNet that takes raw point cloud as input and regresses to a 3 × 3 matrix. `
+
+- 구성은 It’s composed of a 
+	- shared MLP(64, 128, 1024) network (with layer output sizes 64, 128, 1024) on each point, 
+	- a max pooling across points and 
+	- two fully connected layers with output sizes 512, 256. 
+
+- 출력 매트릭스는 *identity matrix* 로 초기화 된다. 마지막 레이어를 제외 하고 모든 레이어는 ReLU와 BN이 적용 되어 있다. `The output matrix is initialized as an identity matrix. All layers, except the last one, include ReLU and batch normalization.`
+
+
+- 두번째 네트워크는 첫번째와 같다. 단지 출력만 64x64 매트릭스 이다. `The second transformation network has the same architecture as the first one except that the output is a 64 × 64 matrix. The matrix is also initialized as an identity. A regularization loss (with weight 0.001) is added to the softmax classification loss to make the matrix close to orthogonal.`
+
+
+사용된 파라미터는 다음과 같다. `We use dropout with keep ratio 0.7 on the last fully connected layer, whose output dimension 256, before class score prediction. The decay rate for batch normalization starts with 0.5 and is gradually increased to 0.99. We use adam optimizer with initial learning rate 0.001, momentum 0.9 and batch size 32. The learning rate is divided by 2 every 20 epochs. Training on ModelNet takes 3-6 hours to converge with TensorFlow and a GTX1080 GPU.`
+
+### C.2 PointNet Segmentation Network
+
+분활 네트워크는 분류 네트워크의 확장형이다. `The segmentation network is an extension to the classification PointNet.` 
+
+지역 특징(두번째 변환 네트워크 결과물)과 전역 특징(맥스 풀링 결과물)을 각 포인트 별로 합쳐 진다. `Local point features (the output after the second transformation network) and global feature (output of the max pooling) are concatenated for each point.`
+
+드랍아웃을 수행 되지 않으며, 각 파라미터는 분류기와 같다. ` No dropout is used for segmentation network. Training parameters are the same as the classification network.`
+
+As to the task of shape part segmentation, we made a few modifications to the basic segmentation network architecture (Fig 2 in main paper) in order to achieve best performance, as illustrated in Fig 9. 
+
+We add a one-hot vector indicating the class of the input and concatenate it with the max pooling layer’s output. We also increase neurons in some layers and add skip links to collect local point features in different layers and concatenate them to form point feature input to the segmentation network.
+
+While [27] and [29] deal with each object category independently, due to the lack of training data for some categories (the total number of shapes for all the categories in the data set are shown in the first line), we train our PointNet across categories (but with one-hot vector input to indicate category). To allow fair comparison, when testing these two models, we only predict part labels for the given specific object category.
+
+As to semantic segmentation task, we used the architecture as in Fig 2 in the main paper. It takes around six to twelve hours to train the model on ShapeNet part dataset and around half a day to train on the Stanford semantic parsing dataset.
+
+
+## D. Details on Detection Pipeline (Sec 5.1)
+
+We build a simple 3D object detection system based on the semantic segmentation results and our object classification PointNet.
+
+전체에서 후보 물체를 찾기 위하여 connected component를 분할점수와 함께 사용 하였다. 전체에서 랜덤 포인트를 잡고 라벨값을 예측한후 BFS를 이용하여 같은 라벨을 가진 이웃 포인트들을 검색(탐색반경 0.2m)해 나아 간다. 클러스터링된 포인트가 200개 이사ㅇ이면 하나의 물체로 바운딩 박스 처리 된다. 각 후보 물체에 대하여 점수의 평균을 내어 detection score를 계산 한다. 너무 작은 물체는 제거 된다. `We use connected component with segmentation scores to get object proposals in scenes. Starting from a random point in the scene, we find its predicted label and use BFS to search nearby points with the same label, with a search radius of 0.2 meter. If the resulted cluster has more than 200 points (assuming a 4096 point sample in a 1m by 1m area), the cluster’s bounding box is marked as one object proposal. For each proposed object, it’s detection score is computed as the average point score for that category. Before evaluation, proposals with extremely small areas/volumes are pruned. For tables, chairs and sofas, the bounding boxes are extended to the floor in case the legs are separated with the seat/surface.`
+
+많은 물체가 있어 가까운 경우에는 CC 알고리즘의 분할이 잘 동작 하지 않는다. 따라서, **sliding shape method** 방식을 이용하여 위자 분류 분제를 해결 하였다. `We observe that in some rooms such as auditoriums lots of objects (e.g. chairs) are close to each other, where connected component would fail to correctly segment out individual ones. Therefore we leverage our classification network and uses sliding shape method to alleviate the problem for the chair class. `
+
+각 분류에 대해 바이너리 분류기를 학습 시켰다. We train a binary classification network for each category and use the classifier for sliding window detection. 결과 박스는 **non-maximum suppression**을 통해 제거 해 나갔다. CC와 **sliding shapes**를 통해 후보 박스 영역은 최종 평가를 위해 합쳐 졌다. `The resulted boxes are pruned by non-maximum suppression. The proposed boxes from connected component and sliding shapes are combined for final evaluation.`
+
+In Fig 11, we show the precision-recall curves for object detection. We trained six models, where each one of them is trained on five areas and tested on the left area. At test phase, each model is tested on the area it has never seen. The test results for all six areas are aggregated for the PR curve generation.
 
 ---
 
