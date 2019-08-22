@@ -25,6 +25,7 @@
 * [2018-PIXOR: Real-time 3D Object Detection from Point Clouds ](Detection/2018-pixor-real-time-3d-object-detection-from-point-clouds.md)
 * [2008-LIDAR-based 3D Object Perception](Detection/2008-lidar-based-3d-object-perception.md)
 * [2017-PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation](Detection/2017-pointnet-deep-learning-on-point-sets-for-3d-classification-and-segmentation.md)
+* [2017-PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space](Detection/2017-PointNet++Deep-Hierarchical-Feature-Learning-on-Point-Sets-in-a-Metric-Space.md)
 * [2017-Object Detection and Classification in 3D Point Cloud Data for Automated Driving](Detection/2017-object-detection-and-classification-in-3d-point-cloud-data-for-automated-driving.md)
 * [2018-Frustum PointNets for 3D Object Detection from RGB-D Data](Detection/2018-Frustum-PointNets-for-3D-Object-Detection-from-RGB-D-Data.md)
 
