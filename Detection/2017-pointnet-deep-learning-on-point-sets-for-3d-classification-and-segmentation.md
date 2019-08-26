@@ -372,7 +372,7 @@ We constrain the feature transformation matrix to be close to orthogonal matrix:
 
 An orthogonal transformation will not lose information in the input, thus is desired. We find that by adding the regularization term, the optimization becomes more stable and our model achieves better performance.
 
-> T-Net의 기본 아이디어는 [Spatial Transformer Network](https://arxiv.org/abs/1506.02025)에서 가져옴 [[출처]](https://github.com/charlesq34/pointnet/issues/31)
+> T-Net의 기본 아이디어는 [Spatial Transformer Network](https://arxiv.org/abs/1506.02025)에서 가져옴 [[출처]](https://github.com/charlesq34/pointnet/issues/31), [[코드위치]](https://github.com/charlesq34/pointnet/issues/74)
 
 ### 4.3. Theoretical Analysis
 
