@@ -28,6 +28,7 @@
 * [2017-PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space](Detection/2017-PointNet++Deep-Hierarchical-Feature-Learning-on-Point-Sets-in-a-Metric-Space.md)
 * [2017-Object Detection and Classification in 3D Point Cloud Data for Automated Driving](Detection/2017-object-detection-and-classification-in-3d-point-cloud-data-for-automated-driving.md)
 * [2018-Frustum PointNets for 3D Object Detection from RGB-D Data](Detection/2018-Frustum-PointNets-for-3D-Object-Detection-from-RGB-D-Data.md)
+* [2018-RoarNet: A Robust 3D Object Detection based on RegiOn Approximation Refinement](Detection/2018-RoarNet-A-Robust-3D-Object-Detection-based-on-RegiOn-Approximation-Refinement.md)
 
 ## Tracking
 
