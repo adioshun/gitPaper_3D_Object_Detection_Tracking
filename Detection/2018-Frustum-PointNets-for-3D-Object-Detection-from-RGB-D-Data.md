@@ -112,6 +112,8 @@ We will introduce each module in the following subsections. We will focus on the
 
 2D 물체 탐지로 추출된 3D 포인트 클라우드는 frustum형태이다. 위 그림에서 보듯이 frustum의 방향은 여러 곳일수 있다. 따라서 Normalization이 필요 하다. 본 논문에서는 이미지 평면과 수직이도록 frustum의 중심 axis를 회전 시켰다. 이러한 normalization을 통해 알고리즘이 ** rotation-invariance** 할수 있다. `With a known camera projection matrix, a 2D bounding box can be lifted to a frustum (with near and far planes specified by depth sensor range) that defines a 3D search space for the object. We then collect all points within the frustum to form a frustum point cloud. As shown in Fig 4 (a), frustums may orient towards many different directions, which result in large variation in the placement of point clouds. We therefore normalize the frustums by rotating them toward a center view such that the center axis of the frustum is orthogonal to the image plane. This normalization helps improve the rotation-invariance of the algorithm. We call this entire procedure for extracting frustum point clouds from RGB-D data frustum proposal generation.`
 
+> normalize  방법 : rotating them toward a center view (=orthogonal to the image plane)
+
 2D 물체 탐지기의 학습 방법 설명 들 `While our 3D detection framework is agnostic to the exact method for 2D region proposal, we adopt a FPN [20] based model. We pre-train the model weights on ImageNet classification and COCO object detection datasets and further fine-tune it on a KITTI 2D object detection dataset to classify and predict amodal 2D boxes. More details of the 2D detector training are provided in the supplementary.`
 
 ### 4.2. 3D Instance Segmentation
@@ -134,7 +136,7 @@ We will introduce each module in the following subsections. We will focus on the
 
 Specifically, in our architecture we encode the semantic category as a one-hot class vector (k dimensional for the pre-defined k categories) and concatenate the one-hot vector to the intermediate point cloud features. More details of the specific architectures are described in the supplementary.
 
-인스턴스 세그멘테이션 이후에는 관심 물체라고 생각되는 물체로 분류되어 추출 된다. 추출된 포인트 클라우드는 이후 **translational**에 강건한 알고리즘을 위해  좌료를 노멀라이즈 한다. `After 3D instance segmentation, points that are classified as the object of interest are extracted (“masking” in Fig. 2). Having obtained these segmented object points, we further normalize its coordinates to boost the translational invariance of the algorithm, following the same rationale as in the frustum proposal step.`
+인스턴스 세그멘테이션 이후에는 관심 물체라고 생각되는 포인트들 **masking**에서 추출 된다. 추출된 포인트 클라우드는 이후 **translational**에 강건한 알고리즘을 위해  좌료를 노멀라이즈 한다. `After 3D instance segmentation, points that are classified as the object of interest are extracted (“masking” in Fig. 2). Having obtained these segmented object points, we further normalize its coordinates to boost the translational invariance of the algorithm, following the same rationale as in the frustum proposal step.`
 
 본 구현물에서는 물체의 중앙을 기준으로 x,y,z의 좌표계를 변경한다.  중요한점은 고의적으로 크기를 조정하지 않는것이다. 왜냐 하면 보는 방향에 따라서  bounding sphere 크기가 영향을 받기 때문이다. 그리고 실제 포인트의 크기 정보는 박스 크기 예측에 도움을 주기 때문이다. `In our implementation, we transform the point cloud into a local coordinate by subtracting XYZ values by its centroid. This is illustrated in Fig. 4 (c). Note that we intentionally do not scale the point cloud, because the bounding sphere size of a partial point cloud can be greatly affected by viewpoints and the real size of the point cloud helps the box size estimation.`
 
