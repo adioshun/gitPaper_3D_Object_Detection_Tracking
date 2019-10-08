@@ -1,7 +1,18 @@
+| 논문명 |PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space|
+| --- | --- |
+| 저자\(소속\) | Charles R. Qi \(Stanford University\)|
+| 학회/년도 | NIPS'17,  [논문](https://arxiv.org/pdf/1706.02413.pdf) |
+| 키워드 |   |
+| 데이터셋(센서)/모델| ModelNet40,  ShapeNet part data, Stanford 3D semantic parsing data|
+|관련연구|이후연구 : Pointnet++|
+| 참고 | [ppt](https://www.facebook.com/thinking.factory/posts/1408857052524274), [홈페이지](http://stanford.edu/~rqi/pointnet/),[CVPR2017](https://www.youtube.com/watch?v=Cge-hot0Oc0), [Youtube](https://youtu.be/8CenT_4HWyY?t=1h16m39s), [ppt](http://3ddl.stanford.edu/CVPR17_Tutorial_PointCloud.pdf), [한글설명](http://daddynkidsmakers.blogspot.com/2017/07/3-pointnet.html)  |
+| 코드 | [TF](https://github.com/charlesq34/pointnet), [pyTorch](https://github.com/fxia22/pointnet.pytorch)|
 
-PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space
 
-NIPS'17
+
+
+
+
 
 [Arxiv](https://arxiv.org/pdf/1706.02413.pdf), [홈페이지](http://stanford.edu/~rqi/pointnet2/)
 
@@ -245,5 +256,5 @@ This supplementary material provides more details on experiments in the main pap
 
 -  [거리공간이란? Metric Space](https://freshrimpsushi.tistory.com/381)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY4MjIyODI2OV19
+eyJoaXN0b3J5IjpbLTcxNDExMTMxMl19
 -->
