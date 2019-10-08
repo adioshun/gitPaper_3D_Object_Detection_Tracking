@@ -6,18 +6,11 @@
 | 데이터셋(센서)/모델| |
 |관련연구| PointNet, FrustumNet|
 | 참고 | [홈페이지](http://stanford.edu/~rqi/pointnet2/)  |
-| 코드 | [TF](https://github.com/charlesq34/pointnet), [pyTorch](https://github.com/fxia22/pointnet.pytorch)|
+| 코드 | PointNet++ : [TF-Official](https://github.com/charlesq34/pointnet2), [TF-Open3D](https://github.com/intel-isl/Open3D-PointNet2-Semantic3D), [TF-Open3D-설명](http://www.open3d.org/index.php/2019/01/16/on-point-clouds-semantic-segmentation/), [도커](https://hub.docker.com/r/zjuncd/pointnet2)|
 
 
 
 
-
-
-
-[Arxiv](https://arxiv.org/pdf/1706.02413.pdf), [홈페이지](http://stanford.edu/~rqi/pointnet2/)
-
-
-PointNet++ : [TF-Official](https://github.com/charlesq34/pointnet2), [TF-Open3D](https://github.com/intel-isl/Open3D-PointNet2-Semantic3D), [TF-Open3D-설명](http://www.open3d.org/index.php/2019/01/16/on-point-clouds-semantic-segmentation/), [도커](https://hub.docker.com/r/zjuncd/pointnet2)
 
 
 ---
@@ -254,5 +247,5 @@ This supplementary material provides more details on experiments in the main pap
 
 -  [거리공간이란? Metric Space](https://freshrimpsushi.tistory.com/381)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY3OTY2MDAzNF19
+eyJoaXN0b3J5IjpbOTg0MDc3NTM4XX0=
 -->
