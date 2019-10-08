@@ -9,10 +9,6 @@
 | 코드 | PointNet++ : [TF-Official](https://github.com/charlesq34/pointnet2), [TF-Open3D](https://github.com/intel-isl/Open3D-PointNet2-Semantic3D), [TF-Open3D-설명](http://www.open3d.org/index.php/2019/01/16/on-point-clouds-semantic-segmentation/), [도커](https://hub.docker.com/r/zjuncd/pointnet2)|
 
 
-
-
-
-
 ---
 
 
@@ -27,7 +23,7 @@
 
 CNN은 그리드로 정의된 입력 데이터에서 Low/High level에 따른 receptive fields를 사용한다. 이 방식을 통해 처음 접하는 환경에서도 좋은 성능을 보인다. ` A CNN takes data defined on regular grids as the input and is able to progressively capture features at increasingly larger scales along a multi-resolution hierarchy. At lower levels neurons have smaller receptive fields whereas at higher levels they have larger receptive fields. The ability to abstract local patterns along the hierarchy allows better generalizability to unseen cases.`
 
-본 논문에서는 계측적 성격으로 가지며 metric space에서 포인트 샘플링을 수행 한는 PointNET2를 제안 한다. `We introduce a hierarchical neural network, named as PointNet++, to process a set of points sampled in a metric space in a hierarchical fashion.`
+본 논문에서는 계층적 성격으로 가지며 metric space에서 포인트 샘플링을 수행 한는 PointNET2를 제안 한다. `We introduce a hierarchical neural network, named as PointNet++, to process a set of points sampled in a metric space in a hierarchical fashion.`
 
 기본 아이디어는 아래와 같다. ` The general idea of PointNet++ is simple.`
 - We first partition the set of points into overlapping local regions by the distance metric of the underlying space. 
@@ -247,5 +243,5 @@ This supplementary material provides more details on experiments in the main pap
 
 -  [거리공간이란? Metric Space](https://freshrimpsushi.tistory.com/381)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTg0MDc3NTM4XX0=
+eyJoaXN0b3J5IjpbLTEyNTEyNzczMDYsOTg0MDc3NTM4XX0=
 -->
