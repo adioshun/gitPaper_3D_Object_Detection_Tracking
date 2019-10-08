@@ -3,9 +3,9 @@
 | 저자\(소속\) | Charles R. Qi \(Stanford University\)|
 | 학회/년도 | NIPS'17,  [논문](https://arxiv.org/pdf/1706.02413.pdf) |
 | 키워드 |   |
-| 데이터셋(센서)/모델| ModelNet40,  ShapeNet part data, Stanford 3D semantic parsing data|
-|관련연구|이후연구 : Pointnet++|
-| 참고 | [ppt](https://www.facebook.com/thinking.factory/posts/1408857052524274), [홈페이지](http://stanford.edu/~rqi/pointnet/),[CVPR2017](https://www.youtube.com/watch?v=Cge-hot0Oc0), [Youtube](https://youtu.be/8CenT_4HWyY?t=1h16m39s), [ppt](http://3ddl.stanford.edu/CVPR17_Tutorial_PointCloud.pdf), [한글설명](http://daddynkidsmakers.blogspot.com/2017/07/3-pointnet.html)  |
+| 데이터셋(센서)/모델| |
+|관련연구| PointNet, FrustumNet|
+| 참고 | [홈페이지](http://stanford.edu/~rqi/pointnet2/)  |
 | 코드 | [TF](https://github.com/charlesq34/pointnet), [pyTorch](https://github.com/fxia22/pointnet.pytorch)|
 
 
@@ -17,9 +17,7 @@
 [Arxiv](https://arxiv.org/pdf/1706.02413.pdf), [홈페이지](http://stanford.edu/~rqi/pointnet2/)
 
 
-PointNet++ : [TF-Official](https://github.com/charlesq34/pointnet2), [TF-Open3D](https://github.com/intel-isl/Open3D-PointNet2-Semantic3D), [TF-Open3D-설명](http://www.open3d.org/index.php/2019/01/16/on-point-clouds-semantic-segmentation/)
-
-도커 :  [PointNet++](https://hub.docker.com/r/zjuncd/pointnet2)
+PointNet++ : [TF-Official](https://github.com/charlesq34/pointnet2), [TF-Open3D](https://github.com/intel-isl/Open3D-PointNet2-Semantic3D), [TF-Open3D-설명](http://www.open3d.org/index.php/2019/01/16/on-point-clouds-semantic-segmentation/), [도커](https://hub.docker.com/r/zjuncd/pointnet2)
 
 
 ---
@@ -256,5 +254,5 @@ This supplementary material provides more details on experiments in the main pap
 
 -  [거리공간이란? Metric Space](https://freshrimpsushi.tistory.com/381)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxNDExMTMxMl19
+eyJoaXN0b3J5IjpbLTY3OTY2MDAzNF19
 -->
