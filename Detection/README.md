@@ -24,11 +24,13 @@
 PointNet버젼별 도입된 주요 기능 
 - v1
     - Input/Freature Transform Net
+
 -v2
     - SA module
     - SA module msg
     - FP Module 
     - Sample and group 
+
 -v3 
     - Center Regresiion Net
     - 3D Box Estimation Net 
