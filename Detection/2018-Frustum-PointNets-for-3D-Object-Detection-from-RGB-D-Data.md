@@ -181,7 +181,7 @@ $$ C_{pred} = C_{mask} + ∆C_{t−net} + ∆C_{box−net} $$
 ![](https://i.imgur.com/FeqtMzQ.png)
 
 
-#### 나. Size 
+#### 나. Size ,  heading angle
 
 박스 크기와 방향계산을 위해서는 이전 [29,24]연구를 따르고,  여기에 분류와 회귀공식을 혼합하였다. `For box size and heading angle, we follow previous works [29, 24] and use a hybrid of classification and regression formulations.`
 -  Specifically we pre-define NS size templates and NH equally split angle bins. 
@@ -194,7 +194,8 @@ $$ C_{pred} = C_{mask} + ∆C_{t−net} + ∆C_{box−net} $$
 
 
 ```
-
+[29] S. Ren, K. He, R. Girshick, and J. Sun. Faster r-cnn: Towards real-time object detection with region proposal networks. In Advances in neural information processing systems, pages 91–99, 2015.
+[24] A. Mousavian, D. Anguelov, J. Flynn, and J. Kosecka. 3d bounding box estimation using deep learning and geometry. arXiv preprint arXiv:1612.00496, 2016.
 ```
 
 ### 4.4. Training with Multi-task Losses
@@ -748,5 +749,5 @@ def get_loss(mask_label, center_label, \
 
 https://medium.com/@yckim/%EC%A0%95%EB%A6%AC-roarnet-a-robust-3d-object-detection-based-on-region-approximation-refinement-91c66201eaf2
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDQ4ODkyMTZdfQ==
+eyJoaXN0b3J5IjpbMTgwNjY0NjY5N119
 -->
