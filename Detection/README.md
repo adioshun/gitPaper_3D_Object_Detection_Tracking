@@ -1,6 +1,8 @@
 # PointNet을 기반으로한 3D Point cloud 딥러닝 방법론 
 
 
+
+
 > PointNet(2017) - PointNet2(2017) - Frustum-pointNet(2018) - RoarNet(2018)
 
 이미지는 픽셀이라고 하는 2D 배열 형태의 표준화된 단일 데이터 구조체 및 표현 방법(Representive)을 가지고 있어 이를 기반으로한 여러 분석 방법론이 개발 되었습니다. 
@@ -185,5 +187,5 @@ abstraction levels을 추출된 각 scale의 Feature의 합치고 학습하기 �
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTE3NDcyMTMzXX0=
+eyJoaXN0b3J5IjpbLTIxMDE1Njc5MDMsOTE3NDcyMTMzXX0=
 -->
