@@ -32,7 +32,7 @@ PointNet버젼별 도입된 주요 기능
     - FP Module : SA로 축약화시 세그멘테이션수행을 위한 포인트별 특징 정보 사라짐, 서브셈플에서 원폰 포인트를 특징을 전파하여 문제 해결 
    
 -v3 
-    - Center Regresiion Net
+    - Center Regression Net
     - 3D Box Estimation Net 
 
 ---
@@ -185,5 +185,5 @@ abstraction levels을 추출된 각 scale의 Feature의 합치고 학습하기 �
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzODY2MDQ2N119
+eyJoaXN0b3J5IjpbMjA5MTg0NTUzXX0=
 -->
