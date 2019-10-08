@@ -27,9 +27,9 @@ PointNet버젼별 도입된 주요 기능
     - Input/Freature Transform Net : 학습시 특정 공간으로 정렬하여 회전 등 변화에 대한 강건성 확보 
 
 -v2
-    - SA module : CNN에서는 일반화 성능을 올리기 위해 Local 특징이 중요, SA로 계층적 구조 형성 하여 가능 
-    - SA module msg
-    - FP Module 
+    - SA module : CNN에서는 일반화 성능을 올리기 위해 Local 특징이 중요, SA로 계층적 구조 형성 하여 가능  (구성 : Sample + Grouping + Mini Net)
+    - SA module MSG(Multi-Scale Grouping) : 거리에 따른 밀집도 강건성 확보, 서로 다른 밀집도 끼리 특징 생성  
+    - FP Module : SA는 
     - Sample and group 
 
 -v3 
@@ -186,5 +186,5 @@ abstraction levels을 추출된 각 scale의 Feature의 합치고 학습하기 �
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjM4MDQ4NjEwXX0=
+eyJoaXN0b3J5IjpbMTI0NDIxMjc1OF19
 -->
