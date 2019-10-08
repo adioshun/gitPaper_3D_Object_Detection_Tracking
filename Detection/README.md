@@ -3,7 +3,6 @@
 
 > PointNet(2017) - PointNet2(2017) - Frustum-pointNet(2018) - RoarNet(2018)
 
-
 이미지는 픽셀이라고 하는 2D 배열 형태의 표준화된 단일 데이터 구조체 및 표현 방법(Representive)을 가지고 있어 이를 기반으로한 여러 분석 방법론이 개발 되었습니다. 
 
 하지만 3D Pointcloud 는 이러한 표준화된 표현 방법론(Representive)이 정의 되지 않아 많은 방식들이 제안되고 테스트 되고 있습니다. 
@@ -20,6 +19,19 @@
 - Interaction among points. (포인트간 상호성)
 - Invariance under transformations (변화에 불변성) : 물체가 회전(rotating)하거나 위치(translating)가 변하더라도 결과에 영향을 미치지 않아야 한다. 
 - Scales Invariance : 거리가 멀어 짐에 따라 포인트의 밀집도가 변함 
+
+
+PointNet버젼별 도입된 주요 기능 
+- v1
+    - Input/Freature Transform Net
+-v2
+    - SA module
+    - SA module msg
+    - FP Module 
+    - Sample and group 
+-v3 
+    - Center Regresiion Net
+    - 3D Box Estimation Net 
 
 ---
 
