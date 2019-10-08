@@ -29,9 +29,8 @@ PointNet버젼별 도입된 주요 기능
 -v2
     - SA module : CNN에서는 일반화 성능을 올리기 위해 Local 특징이 중요, SA로 계층적 구조 형성 하여 가능  (구성 : Sample + Grouping + Mini Net)
     - SA module MSG(Multi-Scale Grouping) : 거리에 따른 밀집도 강건성 확보, 서로 다른 밀집도 끼리 특징 생성  
-    - FP Module : SA는 축약화 기능을 가지고 있어 
-    - Sample and group 
-
+    - FP Module : SA로 축약화시 세그멘테이션수행을 위한 포인트별 특징 정보 사라짐, 서브셈플에서 원폰 포인트를 특징을 전파하여 문제 해결 
+   
 -v3 
     - Center Regresiion Net
     - 3D Box Estimation Net 
@@ -186,5 +185,5 @@ abstraction levels을 추출된 각 scale의 Feature의 합치고 학습하기 �
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUxMDIxMDE0M119
+eyJoaXN0b3J5IjpbMTQzODY2MDQ2N119
 -->
