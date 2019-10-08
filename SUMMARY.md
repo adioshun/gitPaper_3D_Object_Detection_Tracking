@@ -73,6 +73,7 @@
 
 * [README.md](Joint-Detection-Tracking/README.md)
 * [2018-Fast and Furious: Real Time End-to-End 3D Detection, Tracking and Motion Forecasting with a Single Convolutional Net](Joint-Detection-Tracking/2018-fast-and-furious-real-time-end-to-end-3d-detection-tracking-and-motion-forecasting-with-a-single-convolutional-net.md)
+* [2019-Integrated Detection and Tracking for ADAS Using Deep Neural Network](Joint-Detection-Tracking/Joint-Detection-Tracking/2019-Integrated-detection-and-tracking-for-ADAS-using-deep-neural-network.md)
 
 ## 미분류
 
