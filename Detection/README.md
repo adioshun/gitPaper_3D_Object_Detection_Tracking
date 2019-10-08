@@ -36,6 +36,7 @@
 ##### v3 
     - Center Regression Net
     - 3D Box Estimation Net 
+    - augmentation : 2D box augmentation, point cloud augmentation
 
 ---
 
@@ -187,5 +188,5 @@ abstraction levels을 추출된 각 scale의 Feature의 합치고 학습하기 �
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMDE1Njc5MDMsOTE3NDcyMTMzXX0=
+eyJoaXN0b3J5IjpbMjUwODUyNTc0LDkxNzQ3MjEzM119
 -->
