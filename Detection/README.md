@@ -23,7 +23,8 @@
 
 PointNet버젼별 도입된 주요 기능 
 - v1
-    - Input/Freature Transform Net
+	- 
+    - Input/Freature Transform Net : 학습시 특정 공간으로 정렬하여 회전, 
 
 -v2
     - SA module
@@ -185,5 +186,5 @@ abstraction levels을 추출된 각 scale의 Feature의 합치고 학습하기 �
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTkxODYyODg4XX0=
+eyJoaXN0b3J5IjpbMzg0OTQ1NTAxXX0=
 -->
