@@ -152,6 +152,11 @@ Specifically, in our architecture we encode the semantic category as a one-hot c
 
 따라서 본 논문에서는  **light-weight regression PointNet (T-Net)**를 사용하여서 물체의 진짜 중앙을 찾고 좌표계를 변환 하였다.  즉, 예측된 중앙이 origin이 되게 한것이다. 사용된 T-Net은 [25]와 비슷하며 STN[15]의 일종이다. 다른점은 기존은 비 지도 방식인데 우리는 지도 방식이다. `  We therefore propose to use a light-weight regression PointNet (T-Net) to estimate the true center of the complete object and then transform the coordinate such that the predicted center becomes the origin (Fig. 4 (d)). The architecture and training of our T-Net is similar to the T-Net in [25], which can be thought of as a special type of spatial transformer network (STN) [15]. However, different from the original STN that has no direct supervision on transformation, we explicitly supervise our translation network to predict center residuals from the mask coordinate origin to real object center.`
 
+```
+[25] C. R. Qi, H. Su, K. Mo, and L. J. Guibas. Pointnet: Deep learning on point sets for 3d classification and segmentation. Proc. Computer Vision and Pattern Recognition (CVPR), IEEE, 2017.
+
+```
+
 #### B. Amodal 3D Box Estimation PointNet 
 
 이 네트워크는 바운딩박스의 3D 좌표를 출력한다. 네트워크 구조는 분류기와 비슷 하지만 산출물이 바운딩 박스 좌표 이다. `The box estimation network predicts amodal bounding boxes (for entire object even if part of it is unseen) for objects given an object point cloud in 3D object coordinate (Fig. 4 (d)). The network architecture is similar to that for object classification [25, 27], however the output is no longer object class scores but parameters for a 3D bounding box.`
@@ -731,3 +736,6 @@ def get_loss(mask_label, center_label, \
 ---
 
 https://medium.com/@yckim/%EC%A0%95%EB%A6%AC-roarnet-a-robust-3d-object-detection-based-on-region-approximation-refinement-91c66201eaf2
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMjA5NzQwMjcwNl19
+-->
