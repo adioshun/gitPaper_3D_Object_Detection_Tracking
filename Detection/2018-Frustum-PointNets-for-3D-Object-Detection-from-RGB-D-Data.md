@@ -5,16 +5,10 @@
 | 키워드 |   |
 | 데이터셋(센서)/모델| |
 |관련연구| PointNet, PointNet++|
-| 참고 | [홈페이지](http://stanford.edu/~rqi/pointnet2/)  |
-| 코드 | PointNet++ : [TF-Official](https://github.com/charlesq34/pointnet2), [TF-Open3D](https://github.com/intel-isl/Open3D-PointNet2-Semantic3D), [TF-Open3D-설명](http://www.open3d.org/index.php/2019/01/16/on-point-clouds-semantic-segmentation/), [도커](https://hub.docker.com/r/zjuncd/pointnet2)|
+| 참고 | [홈페이지](http://stanford.edu/~rqi/frustum-pointnets/), [깃허브](https://github.com/charlesq34/frustum-pointnets), [Article](https://blog.csdn.net/shuqiaos/article/details/82752100), [Docker](https://hub.docker.com/r/luca911014/frustum-pointnet) |
+| 코드 | [TF1(Official)](https://github.com/charlesq34/frustum-pointnets), [pyTorch](https://github.com/LoFaiTh/frustum_pointnes_pytorch) |
 
 
-# [Frustum PointNets for 3D Object Detection from RGB-D Data](https://arxiv.org/pdf/1711.08488.pdf)
-
-> [홈페이지](http://stanford.edu/~rqi/frustum-pointnets/), [깃허브](https://github.com/charlesq34/frustum-pointnets), [Article](https://blog.csdn.net/shuqiaos/article/details/82752100), [Docker](https://hub.docker.com/r/luca911014/frustum-pointnet)
-
-> [TF](https://github.com/charlesq34/frustum-pointnets)
-> [pyTorch](https://github.com/LoFaiTh/frustum_pointnes_pytorch) : 미완성??
 
 In this work, we study 3D object detection from RGBD data in both indoor and outdoor scenes. While previous methods focus on images or 3D voxels, often obscuring natural 3D patterns and invariances of 3D data, we directly operate on raw point clouds by popping up RGB-D scans. However, a key challenge of this approach is how to efficiently localize objects in point clouds of large-scale scenes (region proposal). Instead of solely relying on 3D proposals, our method leverages both mature 2D object detectors and advanced 3D deep learning for object localization, achieving efficiency as well as high recall for even small objects. Benefited from learning directly in raw point clouds, our method is also able to precisely estimate 3D bounding boxes even under strong occlusion or with very sparse points. Evaluated on KITTI and SUN RGB-D 3D detection benchmarks, our method outperforms the state of the art by remarkable margins while having real-time capability.
 
@@ -343,5 +337,5 @@ Together with all data augmentation, we modify the ground truth labels for 3D ma
 
 https://medium.com/@yckim/%EC%A0%95%EB%A6%AC-roarnet-a-robust-3d-object-detection-based-on-region-approximation-refinement-91c66201eaf2
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQwNDYzNjAxNywxODA2NjQ2Njk3XX0=
+eyJoaXN0b3J5IjpbLTgxNjgwOTU2MCwxODA2NjQ2Njk3XX0=
 -->
