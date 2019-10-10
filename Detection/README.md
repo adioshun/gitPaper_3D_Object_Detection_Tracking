@@ -1,8 +1,6 @@
 # PointNet을 기반으로한 3D Point cloud 딥러닝 방법론 
 
 
-
-
 > PointNet(2017) - PointNet2(2017) - Frustum-pointNet(2018) - RoarNet(2018)
 
 이미지는 픽셀이라고 하는 2D 배열 형태의 표준화된 단일 데이터 구조체 및 표현 방법(Representive)을 가지고 있어 이를 기반으로한 여러 분석 방법론이 개발 되었습니다. 
@@ -26,7 +24,7 @@
 #### PointNet버젼별 도입된 주요 기능 
 #####  v1
 	- Symmetry Function : 입력 순서에 대한 강건성 확보 (?? Max Pool 레이어로 끝??)
-    - Input/Freature Transform Net : 학습시 특정 공간으로 정렬하여 회전 등 변화에 대한 강건성 확보 
+    - Input/Freature Transform Net : 학습시 특정 공간으로 정렬하여 회전 등 변화에 대한 강건성 확보(=Pose Normalization)
 
 ##### v2
     - SA module : CNN에서는 일반화 성능을 올리기 위해 Local 특징이 중요, SA로 계층적 구조 형성 하여 가능  (구성 : Sample + Grouping + Mini Net)
@@ -44,17 +42,6 @@
 
 Symmetry Function을 이용하면 이러한 입력 순서에 대한 영향을 줄일수 있다. Symmetry Function은 입력으로 n개의 벡터를 받고 출력으로 입력 순서에 간건한 새 벡터를 출력 한다. +,x이 대표적인 Symmetry Function이다. 
 
-
-```python 
-# Symmetric function: max pooling
-net = tf_util.max_pool2d(net, [num_point,1],padding='VALID', scope='maxpool')
-net = tf.reshape(net, [batch_size, -1])
-net = tf_util.fully_connected(net, 512, bn=True, is_training=is_training,scope='fc1', bn_decay=bn_decay)
-net = tf_util.dropout(net, keep_prob=0.7, is_training=is_training,scope='dp1')
-net = tf_util.fully_connected(net, 256, bn=True, is_training=is_training,scope='fc2', bn_decay=bn_decay)
-net = tf_util.dropout(net, keep_prob=0.7, is_training=is_training,scope='dp2')
-net = tf_util.fully_connected(net, 40, activation_fn=None, scope='fc3')
-```
 
 
 > Sort와 RNN방식도 있다. 
@@ -82,95 +69,6 @@ net = tf_util.fully_connected(net, 40, activation_fn=None, scope='fc3')
 ![](https://camo.githubusercontent.com/9a61e74fe903a0e0518376aa9a8607eb0963a95a/68747470733a2f2f692e696d6775722e636f6d2f4c5a69446631362e706e67)
 
 
-```python 
-
-def input_transform_net(point_cloud, is_training, bn_decay=None, K=3):
-    """ Input (XYZ) Transform Net, input is BxNx3 gray image
-        Return:
-            Transformation matrix of size 3xK """
-    batch_size = point_cloud.get_shape()[0].value
-    num_point = point_cloud.get_shape()[1].value
-
-    input_image = tf.expand_dims(point_cloud, -1)
-    net = tf_util.conv2d(input_image, 64, [1,3],
-                         padding='VALID', stride=[1,1],
-                         bn=True, is_training=is_training,
-                         scope='tconv1', bn_decay=bn_decay)
-    net = tf_util.conv2d(net, 128, [1,1],
-                         padding='VALID', stride=[1,1],
-                         bn=True, is_training=is_training,
-                         scope='tconv2', bn_decay=bn_decay)
-    net = tf_util.conv2d(net, 1024, [1,1],
-                         padding='VALID', stride=[1,1],
-                         bn=True, is_training=is_training,
-                         scope='tconv3', bn_decay=bn_decay)
-    net = tf_util.max_pool2d(net, [num_point,1],
-                             padding='VALID', scope='tmaxpool')
-
-    net = tf.reshape(net, [batch_size, -1])
-    net = tf_util.fully_connected(net, 512, bn=True, is_training=is_training,
-                                  scope='tfc1', bn_decay=bn_decay)
-    net = tf_util.fully_connected(net, 256, bn=True, is_training=is_training,
-                                  scope='tfc2', bn_decay=bn_decay)
-
-    with tf.variable_scope('transform_XYZ') as sc:
-        assert(K==3)
-        weights = tf.get_variable('weights', [256, 3*K],
-                                  initializer=tf.constant_initializer(0.0),
-                                  dtype=tf.float32)
-        biases = tf.get_variable('biases', [3*K],
-                                 initializer=tf.constant_initializer(0.0),
-                                 dtype=tf.float32)
-        biases += tf.constant([1,0,0,0,1,0,0,0,1], dtype=tf.float32)
-        transform = tf.matmul(net, weights)
-        transform = tf.nn.bias_add(transform, biases)
-
-    transform = tf.reshape(transform, [batch_size, 3, K])
-    return transform
-
-def feature_transform_net(inputs, is_training, bn_decay=None, K=64):
-    """ Feature Transform Net, input is BxNx1xK
-        Return:
-            Transformation matrix of size KxK """
-    batch_size = inputs.get_shape()[0].value
-    num_point = inputs.get_shape()[1].value
-
-    net = tf_util.conv2d(inputs, 64, [1,1],
-                         padding='VALID', stride=[1,1],
-                         bn=True, is_training=is_training,
-                         scope='tconv1', bn_decay=bn_decay)
-    net = tf_util.conv2d(net, 128, [1,1],
-                         padding='VALID', stride=[1,1],
-                         bn=True, is_training=is_training,
-                         scope='tconv2', bn_decay=bn_decay)
-    net = tf_util.conv2d(net, 1024, [1,1],
-                         padding='VALID', stride=[1,1],
-                         bn=True, is_training=is_training,
-                         scope='tconv3', bn_decay=bn_decay)
-    net = tf_util.max_pool2d(net, [num_point,1],
-                             padding='VALID', scope='tmaxpool')
-
-    net = tf.reshape(net, [batch_size, -1])
-    net = tf_util.fully_connected(net, 512, bn=True, is_training=is_training,
-                                  scope='tfc1', bn_decay=bn_decay)
-    net = tf_util.fully_connected(net, 256, bn=True, is_training=is_training,
-                                  scope='tfc2', bn_decay=bn_decay)
-
-    with tf.variable_scope('transform_feat') as sc:
-        weights = tf.get_variable('weights', [256, K*K],
-                                  initializer=tf.constant_initializer(0.0),
-                                  dtype=tf.float32)
-        biases = tf.get_variable('biases', [K*K],
-                                 initializer=tf.constant_initializer(0.0),
-                                 dtype=tf.float32)
-        biases += tf.constant(np.eye(K).flatten(), dtype=tf.float32)
-        transform = tf.matmul(net, weights)
-        transform = tf.nn.bias_add(transform, biases)
-
-    transform = tf.reshape(transform, [batch_size, K, K])
-    return transform
-
-```
 
 ## Scales Invariance 
 
@@ -188,5 +86,6 @@ abstraction levels을 추출된 각 scale의 Feature의 합치고 학습하기 �
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjUwODUyNTc0LDkxNzQ3MjEzM119
+eyJoaXN0b3J5IjpbMTQ4MDk3MzQ3OSwyNTA4NTI1NzQsOTE3ND
+cyMTMzXX0=
 -->
