@@ -6,7 +6,7 @@
 | 데이터셋(센서)/모델| ModelNet40,  ShapeNet part data, Stanford 3D semantic parsing data|
 |관련연구|이후연구 : Pointnet++|
 | 참고 | [ppt](https://www.facebook.com/thinking.factory/posts/1408857052524274), [홈페이지](http://stanford.edu/~rqi/pointnet/),[CVPR2017](https://www.youtube.com/watch?v=Cge-hot0Oc0), [Youtube](https://youtu.be/8CenT_4HWyY?t=1h16m39s), [ppt](http://3ddl.stanford.edu/CVPR17_Tutorial_PointCloud.pdf), [한글설명](http://daddynkidsmakers.blogspot.com/2017/07/3-pointnet.html)  |
-| 코드 | [TF1_Official](https://github.com/charlesq34/pointnet), [TF2](https://github.com/luis-gonzales/pointnet_own/blob/master/src/model.py)[pyTorch](https://github.com/fxia22/pointnet.pytorch)|
+| 코드 | [TF1(Official)](https://github.com/charlesq34/pointnet), [TF2](https://github.com/luis-gonzales/pointnet_own/blob/master/src/model.py)[pyTorch](https://github.com/fxia22/pointnet.pytorch)|
 
 > 같은 이름의 다른 논문 :  PointNet: A 3D Convolutional Neural Network for real-time object class recognition, A. Garcia-Garcia, [링크](http://ieeexplore.ieee.org/document/7727386/authors)
 
@@ -542,5 +542,5 @@ def load(path):
 pcd = read_point_cloud('./sample.pts')
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3ODkyNTU0M119
+eyJoaXN0b3J5IjpbLTMyMjExNDExXX0=
 -->
