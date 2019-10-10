@@ -84,8 +84,10 @@ abstraction levels을 추출된 각 scale의 Feature의 합치고 학습하기 �
 
 
 
+---
 
+- [An In-Depth Look at PointNet](https://medium.com/@luis_gonzales/an-in-depth-look-at-pointnet-111d7efdaa1a): PointNet_v1에 대한 요약 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4MDk3MzQ3OSwyNTA4NTI1NzQsOTE3ND
-cyMTMzXX0=
+eyJoaXN0b3J5IjpbLTE5NjE5NDE5NDYsMjUwODUyNTc0LDkxNz
+Q3MjEzM119
 -->
