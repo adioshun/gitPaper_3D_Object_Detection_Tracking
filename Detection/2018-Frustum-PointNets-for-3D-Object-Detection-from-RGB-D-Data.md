@@ -1,3 +1,13 @@
+| 논문명 |Frustum PointNets for 3D Object Detection from RGB-D Data|
+| --- | --- |
+| 저자\(소속\) | Charles R. Qi \(Stanford University\)|
+| 학회/년도 | CVPR2018,  [논문](https://arxiv.org/pdf/1711.08488.pdf) |
+| 키워드 |   |
+| 데이터셋(센서)/모델| |
+|관련연구| PointNet, PointNet++|
+| 참고 | [홈페이지](http://stanford.edu/~rqi/pointnet2/)  |
+| 코드 | PointNet++ : [TF-Official](https://github.com/charlesq34/pointnet2), [TF-Open3D](https://github.com/intel-isl/Open3D-PointNet2-Semantic3D), [TF-Open3D-설명](http://www.open3d.org/index.php/2019/01/16/on-point-clouds-semantic-segmentation/), [도커](https://hub.docker.com/r/zjuncd/pointnet2)|
+
 
 # [Frustum PointNets for 3D Object Detection from RGB-D Data](https://arxiv.org/pdf/1711.08488.pdf)
 
@@ -333,5 +343,5 @@ Together with all data augmentation, we modify the ground truth labels for 3D ma
 
 https://medium.com/@yckim/%EC%A0%95%EB%A6%AC-roarnet-a-robust-3d-object-detection-based-on-region-approximation-refinement-91c66201eaf2
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwODQwMTE1OTksMTgwNjY0NjY5N119
+eyJoaXN0b3J5IjpbMTQwNDYzNjAxNywxODA2NjQ2Njk3XX0=
 -->
