@@ -339,3 +339,40 @@ https://medium.com/@yckim/%EC%A0%95%EB%A6%AC-roarnet-a-robust-3d-object-detectio
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTgxNjgwOTU2MCwxODA2NjQ2Njk3XX0=
 -->
+
+---
+
+# 시각화 
+```python 
+
+data = provider.FrustumDataset(...)
+
+print(('Center: ', data[2], \
+    'angle_class: ', data[3], 'angle_res:', data[4], \
+    'size_class: ', data[5], 'size_residual:', data[6], \
+    'real_size:', g_type_mean_size[g_class2type[data[5]]]+data[6]))
+#print(('Frustum angle: ', dataset.frustum_angle_list[i]))
+median_list.append(np.median(data[0][:,0]))
+#print((data[2], dataset.box3d_list[i], median_list[-1]))
+
+ps = data[0] #Pointcloud 
+seg = data[1]
+
+#3D Box 
+box3d_from_label = get_3d_box(class2size(data[5],data[6]), class2angle(data[3], data[4],12), data[2])
+box3d_from_label = get_3d_box(box_size, #class2size(data[5],data[6])  #l,w,h
+                              heading_angle, #class2angle(data[3], data[4],12)  #ry 
+                              center) # data[2]
+
+# 시각화 
+fig = mlab.figure(figure=None, bgcolor=(0.4,0.4,0.4), fgcolor=None, engine=None, size=(1000, 500))
+
+mlab.points3d(ps[:,0], ps[:,1], ps[:,2], seg, mode='point', colormap='gnuplot', scale_factor=1, figure=fig)
+mlab.points3d(0, 0, 0, color=(1,1,1), mode='sphere', scale_factor=0.2, figure=fig)
+
+draw_gt_boxes3d([box3d_from_label], fig, color=(1,0,0))
+mlab.orientation_axes()
+mlab.show()
+```
+
+
