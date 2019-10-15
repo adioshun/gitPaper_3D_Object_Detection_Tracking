@@ -335,6 +335,12 @@ Together with all data augmentation, we modify the ground truth labels for 3D ma
 
 ---
 
+# 설치 
+`tf_interpolate_so.so: undefined symbol: _ZN10tensorflow15OpKernelContext21CtxFailureWithWarningENS_6StatusE`에러시 `-D_GLIBCXX_USE_CXX11_ABI=1`수정 후 재 컴파일
+
+[[출처]](https://github.com/charlesq34/pointnet-autoencoder/issues/8)
+
+```
 https://medium.com/@yckim/%EC%A0%95%EB%A6%AC-roarnet-a-robust-3d-object-detection-based-on-region-approximation-refinement-91c66201eaf2
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTgxNjgwOTU2MCwxODA2NjQ2Njk3XX0=
