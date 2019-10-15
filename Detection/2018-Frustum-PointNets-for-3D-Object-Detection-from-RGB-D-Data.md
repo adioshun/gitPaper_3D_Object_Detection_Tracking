@@ -387,6 +387,7 @@ box3d_from_label = get_3d_box(box_size, #class2size(data[5],data[6])  #l,w,h
 fig = mlab.figure(figure=None, bgcolor=(0.4,0.4,0.4), fgcolor=None, engine=None, size=(1000, 500))
 
 mlab.points3d(ps[:,0], ps[:,1], ps[:,2], seg, mode='point', colormap='gnuplot', scale_factor=1, figure=fig)
+#seg = 0 = human 
 mlab.points3d(0, 0, 0, color=(1,1,1), mode='sphere', scale_factor=0.2, figure=fig)
 
 draw_gt_boxes3d([box3d_from_label], fig, color=(1,0,0))
