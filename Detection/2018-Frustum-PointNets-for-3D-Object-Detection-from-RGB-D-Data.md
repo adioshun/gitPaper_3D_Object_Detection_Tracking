@@ -342,6 +342,23 @@ eyJoaXN0b3J5IjpbLTgxNjgwOTU2MCwxODA2NjQ2Njk3XX0=
 
 ---
 
+# Data sets 
+
+```python 
+
+batch_data, batch_label, batch_center, \
+        batch_hclass, batch_hres, batch_sclass, batch_sres, \
+        batch_rot_angle, batch_one_hot_vec = \
+            get_batch(TEST_DATASET, test_idxs, start_idx, end_idx,
+                NUM_POINT, NUM_CHANNEL)
+
+g_type2onehotclass = {'Car': 0, 'Pedestrian': 1, 'Cyclist': 2}
+g_type2class={'Car':0, 'Van':1, 'Truck':2, 'Pedestrian':3,
+              'Person_sitting':4, 'Cyclist':5, 'Tram':6, 'Misc':7}
+```
+
+
+---
 # 시각화 
 ```python 
 
