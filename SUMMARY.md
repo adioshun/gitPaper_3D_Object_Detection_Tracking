@@ -55,6 +55,7 @@
 * [2019-Self-Driving Cars: A Survey](Tracking/2019-self-driving-cars-a-survey.md)
 * [2019-Data Association for Multi-Object Tracking via Deep Neural Networks](Tracking/2019-data-association-for-multi-object-tracking-via-deep-neural-networks.md) :30%
 * [2019-A portable three-dimensional LIDARbased system for long-term and widearea people behavior measurement](Tracking/2019-a-portable-three-dimensional-lidarbased-system-for-long-term-and-widearea-people-behavior-measurement.md)
+* [2019-DeepMOT A Differentiable Framework for Training Multiple Object Trackers](Tracking/2019-DeepMOT-A-Differentiable-Framework-for-Training-Multiple-Object-Trackers.md)
 
 ## Pose Estimation
 
