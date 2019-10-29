@@ -8,7 +8,6 @@
 * [ALL MOT CORE PAPERS](https://github.com/huanglianghua/mot-papers/blob/master/README.md)
 * [Multi-target tracking recent papers and open source code summary](https://zhuanlan.zhihu.com/p/65177442)
 
-
 ## 전처리
 
 * [README](Preprocessing/README.md)
@@ -51,11 +50,11 @@
 * [2017-Low resolution lidar-based multi-object tracking for driving application](Tracking/2017-low-resolution-lidar-based-multi-object-tracking-for-driving-application.md)
 * [\[추천\] 2017-3D-LIDAR Multi Object Tracking for Autonomous Driving](Tracking/2017-3d-lidar-multi-object-tracking-for-autonomous-driving.md)
 * [2017-Online learning for human classification in 3D LiDAR-based tracking](Tracking/2017-online-learning-for-human-classification-in-3d-lidar-based-tracking.md)
-* [2018-Tracklet-Association-Tracker(30%)](Tracking/2018-Tracklet-Association-Tracker.md)
+* [2018-Tracklet-Association-Tracker\(30%\)](Tracking/2018-Tracklet-Association-Tracker.md)
 * [2019-Self-Driving Cars: A Survey](Tracking/2019-self-driving-cars-a-survey.md)
-* [2019-Data Association for Multi-Object Tracking via Deep Neural Networks](Tracking/2019-data-association-for-multi-object-tracking-via-deep-neural-networks.md) :30%
+* [2019-Data Association for Multi-Object Tracking via Deep Neural Networks](Tracking/2019-data-association-for-multi-object-tracking-via-deep-neural-networks.md)
 * [2019-A portable three-dimensional LIDARbased system for long-term and widearea people behavior measurement](Tracking/2019-a-portable-three-dimensional-lidarbased-system-for-long-term-and-widearea-people-behavior-measurement.md)
-* [2019-DeepMOT A Differentiable Framework for Training Multiple Object Trackers](Tracking/2019-DeepMOT-A-Differentiable-Framework-for-Training-Multiple-Object-Trackers.md)
+* [2019-DeepMOT A Differentiable Framework for Training Multiple Object Trackers \(30%\)](Tracking/2019-DeepMOT-A-Differentiable-Framework-for-Training-Multiple-Object-Trackers.md)
 
 ## Pose Estimation
 
