@@ -233,15 +233,56 @@ Different approaches are adopted to model the detection level exclusion. Basical
 
 #### 3.5.1 Part-to-whole
 
+가려짐이 발생 하여도 일부분은 보인다는 가정하에 진행 된다. 보이는 일부분으로 전체 모습을 추론 하여 동작 한다. `This strategy is built on the assumption that a part of the object is still visible when an occlusion happens. This assumption holds in most cases. Based on this assumption, approaches adopting this strategy observe and utilize the visible part to infer the state of the whole object. `
 
+The popular way is dividing a holistic object (like a bounding box) into several parts and computing affinity based on individual parts. If an occlusion happens, affinities regarding occluded parts should be low. Tracker would be aware of this and adopt only the un-occluded parts for estimation. Specifically, parts are derived by dividing objects into grids uniformly [52], or fitting multiple parts into a specific kind of object like human, e.g. 15 non-overlap parts as in [49], and parts detected from the DPM detector [110] in [77], [111].
+
+Based on these individual parts, observations of the occluded parts are ignored. For instance, part-wise appearance model is constructed in [52]. Reconstructed error is used to determine which part is occluded or not. The appearance model of the holistic object is selectively updated by only updating the unoccluded parts. This is the “hard” way of ignoring the occluded part, while there is a “soft” way in [49]. 
+
+Specifically, the affinity concerning two tracklets j and k is computed as P where f is feature, i is the index of parts. 
+
+The weights are learned according to the occlusion relationship of parts. In [77], human body part association is conducted to recover the part trajectory and further assists whole object trajectory recovery. “Part-to-whole” strategy is also applied in tracking based on feature point clustering, which assumes feature points with similar motion should belong to the same object. As long as some parts of an object are visible, the clustering of feature point trajectories will work [62], [68], [112].
 
 #### 3.5.2 Hypothesize-and-test
 
 
+This strategy sidesteps challenges from occlusion by hypothesizing proposals and testing the proposals according to observations at hand. As the name indicates, this strategy is composed of two steps, hypothesize and test. 
+
+##### Hypothesize. 
+
+Zhang et al. [38] generate occlusion hypotheses based on the occludable pair of observations, which are close and with similar scale. 
+
+
+##### Test
+
+The hypotheses would be employed for MOT when they are ready. Let us revisit the two approaches described above. 
+
+In [38], the hypothesized observations along with the original ones are given as input to the cost-flow framework and MAP is conducted to obtain the optimal solution. 
+
+In [114] and [113], a multi-person detector is trained based on the detection hypotheses. 
+
+This detector greatly reduces the difficulty of detection in case of occlusion.
+
 #### 3.5.3 Buffer-and-recover
 
+This strategy buffers observations when occlusion happens and remembers states of objects before occlusion. 
+
+When occlusion ends, object states are recovered based on the buffered observations and the stored states before occlusion.
+
+Mitzel et al. [71] keep a trajectory alive for up to 15 frames when occlusion happens, and extrapolates the position to grow the dormant trajectory through occlusion. 
+
+In case the object reappears, the track is triggered again and the identity is maintained. This idea is followed in [34]. Observation mode is activated when the tracking state becomes ambiguous due to occlusion [115]. 
+
+As soon a enough observations are obtained, hypotheses are generated to explain the observations. This could also be treated as “buffer-and-recover” strategy
 
 #### 3.5.4 Others
+
+The strategies described above may not cover all the tactics explored in the community. 
+
+For example, Andriyenko et al. [116] represent targets as Gaussian distributions in image space and explicitly model pair-wise occlusion ratios between all targets as part of a differentiable energy
+function. 
+
+In general, it is non-trivial to distinctly separate or categorize various approaches to occlusion modeling, and in some cases, multiple strategies are used in combination.
 
 ---
 
