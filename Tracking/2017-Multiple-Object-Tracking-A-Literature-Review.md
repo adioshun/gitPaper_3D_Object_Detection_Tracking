@@ -160,21 +160,128 @@ This would help one to understand a specific approach easier.
 ## 3 MOT COMPONENTS
 
 
+MOT의 목적은 연속된 프레임에서 각 물체를 추출 하고, 물체 식별자를 부여 하는 것이다. `In this section, we represent the primary components of an MOT approach. As mentioned above, the goal of MOT is to discover multiple objects in individual frames and recover the identity information across continuous frames, i.e., trajectory, from a given sequence. `
+
+MOT 개발시 두가지 요소를 고려 해야 한다. `When developing MOT approaches, two major issues should be considered.`
+- 프레임간 물체의 **유사도**를 어떻게 측정할 것인가? `One is how to measure similarity between objects in frames, `
+- 프레임간 물체의 유사도를 기반으로 어떻게 **식별자**를 부여할 것인가? `the other one is how to recover the identity information based on the similarity measurement between objects across frames. `
+
+Roughly speaking, 
+- 유사도는 외형, 움직임등의 **모델링**에 관련된 일이다. `the first issue involves the modeling of appearance, motion, interaction, exclusion, and occlusion. `
+- 식별자 부여는 **추론**에 관련된 일이다. `The second one involves with the inference problem. `
+
+
+We review recent progress regarding both items as the following.
+
+
+### 3.1 Appearance Model
+
+
+### 3.2 Motion Model
+
+#### 3.2.1 Linear Motion Model
+
+#### 3.2.2 Non-linear Motion Model
+
+
+### 3.3 Interaction Model (=mutual motion model)
+
+Interaction model, also known as mutual motion model, captures the influence of an object on other objects. 
+
+In the crowd scenery, an object would experience some “force” from other agents and objects. 
+- For instance, when a pedestrian is walking on the street, he would adjust his speed, direction and destination, in order to avoid collisions with others. 
+
+Another example is when a crowd of people walk across a street, each of them follows other people and guides others at the same time. 
+
+In fact, these are examples of two typical interaction models known as 
+- the social force models [100] and 
+- the crowd motion pattern models [101].
+
+#### 3.3.1 Social Force Models
+
+#### 3.3.2 Crowd Motion Pattern Models.
+
+
+### 3.4 Exclusion Model
+
+Exclusion is a constraint employed to avoid physical collisions when seeking a solution to the MOT problem. 
+
+이 가정은 물리적 환경에서 한 공간에 두 물체가 존재 할수 없기 때문이다. `It arises from the fact that two distinct objects cannot occupy the same physical space in the real world. `
+
+Given multiple detection responses and multiple trajectory hypotheses,generally there are two constraints. 
+- 탐지 단계에서의 배제 : 두개의 탐지값은 동일한 대상에 할당 되지 못한다. `The first one is the so called detection-level exclusion [105], i.e., two different detection responses in the same frame cannot be assigned to the same target. `
+- 추적 단계에서의 배제 : 두 경로는 일치 할수 없다. `The second one is the so-called trajectory-level exclusion, i.e., two trajectories cannot be infinitely close to each other.`
+
+#### 3.4.1 Detection-level Exclusion Modeling
+
+Different approaches are adopted to model the detection level exclusion. Basically, there are “soft” and “hard” models.
+
+##### “Soft” modeling.
+
+##### “Hard” modeling
+
+
+#### 3.4.2 Trajectory-level Exclusion Modelin
+
+
+### 3.5 Occlusion Handling
+
+![](https://i.imgur.com/t2reTSu.png)
+
+**가려짐**은 MOT에서 가장 큰 문제점이다. 이로 인해서 ID 교환이나 경로 단절 등의 문제가 발생 한다. 다양한 해결 방법이 제안 되었다. `Occlusion is perhaps the most critical challenge in MOT.It is a primary cause for ID switches or fragmentation of trajectories. In order to handle occlusion, various kinds of strategies have been proposed`
+
+
+#### 3.5.1 Part-to-whole
 
 
 
+#### 3.5.2 Hypothesize-and-test
+
+
+#### 3.5.3 Buffer-and-recover
+
+
+#### 3.5.4 Others
+
+---
+
+## 3.6 Inference
+
+> 프레임간 물체의 유사도를 기반으로 어떻게 **식별자**를 부여할 것인가?
+
+### 3.6.1 Probabilistic Inference
+
+
+#### Kalman filter
+
+
+#### Extended Kalman filter
+
+
+#### Particle filter
+
+
+### 3.6.2 Deterministic Optimization
+
+#### Bipartite graph matching
+
+#### Dynamic Programming
+
+#### Min-cost max-flow network flow
+
+#### Conditional random field
+
+#### MWIS
 
 
 
+### 3.6.3 Discussion
 
+현실에서는 확률적 방법보다 결정론적 방법이 더 많이 사용된다. `In practice, deterministic optimization or energy minimization is employed more popularly compared with probabilistic approaches. `
 
+비록 확률적 방법이 좀더 직관적이고 완벽한 해결책으로 보이지만 대부분의 경우 infer가 제대로 수행되지 않는다. `Although the probabilistic approaches provide a more intuitive and complete solution to the problem, they are usually difficult to infer. `
 
-
-
-
-
-
-
+반면에 **energy minimization**는 제한된 시간동안 나쁘지 않은 결과를 도출 해낸다. `On the contrary, energy minimization could obtain a “good enough” solution in a reasonable time.`
 
 
 
