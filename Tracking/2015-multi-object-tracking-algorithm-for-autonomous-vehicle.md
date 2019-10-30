@@ -33,12 +33,12 @@ False separations 을 제거하기 위하여 군집들을 병합하는 단계를
 관계 분석 과정에는 2 가지 중요한요소가 있다.
 
 * 특징\(Feature\)의 선택
-* 일반적으로 위치 특징이 주로 특징 벡터로 사용되며 높이, 길이, 너비 등이 추가적인 특징으로 사용된다.
-* 하지만 LIDAR 의 특성상 때때로 길이, 너비등과 같은 특징은 움직이는 물체들에서 심하게 변동하는 특성을 보이기 때문에 위치와 높이만을 사용하였다.
+  * 일반적으로 위치 특징이 주로 특징 벡터로 사용되며 높이, 길이, 너비 등이 추가적인 특징으로 사용된다.
+  * 하지만 LIDAR 의 특성상 때때로 길이, 너비등과 같은 특징은 움직이는 물체들에서 심하게 변동하는 특성을 보이기 때문에 위치와 높이만을 사용하였다.
 * 할당\(Assignment\) 전략
-* 모든 군집과 추적 물체조합의 거리의 합을 근사적으로 최소화시키는 GNN\(Global Nearest Neighbor\)의 근사\(Approximation\)방식을 사용하였다.
-* 할당 전략은 군집-추적물체 테이블에서 가장 낮은 거리의 조합부터 차례대로 할당해 나가는 전략\[2\]을 취하였다.
-* 헝가리언 알고리즘을 적용 하기도 한다. [\[상세\]](https://cafe.naver.com/opencv/50555)
+  * 모든 군집과 추적 물체조합의 거리의 합을 근사적으로 최소화시키는 GNN\(Global Nearest Neighbor\)의 근사\(Approximation\)방식을 사용하였다.
+  * 할당 전략은 군집-추적물체 테이블에서 가장 낮은 거리의 조합부터 차례대로 할당해 나가는 전략\[2\]을 취하였다.
+  * 헝가리언 알고리즘을 적용 하기도 한다. [\[상세\]](https://cafe.naver.com/opencv/50555)
 
 ```
 [2] F. Bourgeois and J. C. Lassalle, “An Extension of the Munkres Algorithm for the Assignment Problem to Rectangular Matrices.” Communications of the ACM, vol. 14, no. 12, p. 802, December, 1971.
