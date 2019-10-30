@@ -1,4 +1,4 @@
-|논문명 |Confidence-Based Pedestrian Tracking in Unstructured Environments Using 3D Laser Distance Measurements |
+|논문명 |Confidence Based Pedestrian Tracking in Unstructured Environments Using 3D Laser Distance Measurements |
 | --- | --- |
 | 저자\(소속\) | \(\) |
 | 학회/년도 | 2014, [논문](https://userpages.uni-koblenz.de/~agas/Documents/Haeselich2014CBP.pdf) |
