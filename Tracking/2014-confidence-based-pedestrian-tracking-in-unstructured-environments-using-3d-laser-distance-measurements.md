@@ -1,3 +1,4 @@
+
 |논문명 |Confidence Based Pedestrian Tracking in Unstructured Environments Using 3D Laser Distance Measurements |
 | --- | --- |
 | 저자\(소속\) | \(\) |
@@ -284,11 +285,29 @@ Hence, we developed a new measurement model and decided to focus on an sophistic
 
 This allows our approach to discard hypotheses early and enables it to deal efficiently with false detection that occur frequently in unstructured environments.
 
-
-
 ### 4.1 Measurement Model
 
+Our measurement model approximates pedestrian geometry as cylindrical shape of non-zero depth (cf. Fig. 4). 
+
+The likelihood of range readings is modeled according to three different regions omitting the height value. 
+
+A region of free space in form of an outer cylinder is modeled around an inner cylinder with one half facing the sensor and the other half facing away. 
+
+The majority of range readings are expected to fall in the region facing the sensor (green cylinder-half). 
+
+A minority is expected on the other side (yellow cylinderhalf) as humans represent solid objects and laser rays passing a human occur infrequently, e.g. during limb movement. 
+
+The region around the pedestrian is expected to contain few to none points. 
+
+Hence, the measurement models separates neighboring obstacles adequately while taking pedestrians very close to other objects into account, too.
+
+
 ### 4.2 Particle Filter & Particle Extinction
+
+Tracking is performed using a Rao-Blackwellized particle filter [7] with 40 particles for each target where we estimate target extent separately for each positional hypothesis. 
+
+For the measurement model we follow the derivations of [16]. Each pedestrian hypothesis consists of a 2D position, an orientation, a rotation angle wrt. the sensor, a velocity, and a circular extent. The velocity compensates for pedestrian movement by applying a model of constant velocity due to the small possible change within one rotation of the LRF. In case of a false detection, e.g., caused by a tree or a bush, a particle filter would be initiated and remain on the target until it disappears from view. Since false detections occur inevitably in the target domain, we sought a solution to handle them. Confidence-based approaches (in images [2], [22]) additionally grade system estimations to reinforce correct inferences. In our approach, a particle filter is discarded if either no re-detection occurs for a predefined time or if re-detections occur but the confidence is insufficiently low to maintain the target. The first criteria allows continuous tracking in case of occlusions for a short period of time and the second criteria ensures that no particle filter remains on invalid targets for a longer period of time. In other words, the idea is that many low-confidence detections or few highconfidence detections are both able to maintain a target, even if the tracker yields inaccurate results.
+
 
 ## V. EXPERIMENTS
 
