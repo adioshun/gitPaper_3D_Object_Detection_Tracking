@@ -142,7 +142,43 @@ This leads to the development of several hypothesis pruning, hypothesis merging 
 
 #### 2.3.3 Frame Based Assignment
 
+Frame based assignment algorithms formulate the measurement-to-track assignment as a **global cost minimization problem**.
 
+At a given time step, only the current frame (e.g. 2D assignment) or the current frame and previous frames (e.g. multiframe
+assignment) can be considered for the association.
+
+##### 가. 2D Assignment (eg. Hungarian algorithm)
+
+In 2D assignment, at a time a single frame is used to associate the detection with tracks.
+
+![](https://i.imgur.com/7rdl96c.png)
+` z : 측정값 / x : Tracks `
+
+The cost of measurement-to-track association is determined by the **negative loglikelihood ratio** of target-originated measurement likelihood to false alarm density [14].
+
+...
+
+For example, the Hungarian algorithm [48] and Jonker-Volgenant-Castanon (JVC) [40] algorithm solve the measurement-to-track association problem
+
+...
+
+
+
+##### 나. Multiframe Assignment
+
+Multiframe assignment, also called multidimensional assignment, extends the 2D problem into optimization of assignment from sequence of frames [76][91] as shown in Figure 2.4.
+
+![](https://i.imgur.com/ER9c9iK.png)
+
+The multiframe assignment algorithm determins the most likely set of frames such that each measurements is assigned to one and only one track, or declared as false alarm, and each track receives at most one detection from each frame used for association. 
+
+The multiframe assignment improves the association accuracy compared to the 2D assignment at the cost of increased computation and latency corresponding to the number of frames used in the association.
+
+The main challenge in associating data from three or more sequence of frames is that the resulting optimization problem is NP-hard. 
+- This issue is addressed by using a Lagrangian relaxation-based methods are used to successively solve the association
+problem as a series of 2-D assignments [62][63][64][67]. 
+
+Accordingly, the constraints in (2.20) are relaxed one set at a time there by solving the resulting subproblem iteratively and then reconstructing a feasible solution for the original multidimensional discrete optimization problem.
 
 
 ---
