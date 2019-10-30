@@ -1,9 +1,6 @@
-# Multi-object Tracking Algorithm for Autonomous Vehicle
+# [자율 주행 차량의 다중 물체 추적 알고리즘](http://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE06357975)
 
-자율 주행 차량의 다중 물체 추적 알고리즘, 이재준, 한국기술교육대학교, 2015
-
-http://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE06357975
-
+> 이재준, 한국기술교육대학교, 2015, Multi-object Tracking Algorithm for Autonomous Vehicle
 
 군집화시키고 각각의 군집들 을 추적\(Tracking\)하면 물체의 크기, 속도 등과 같이 더 많은 정보를 추출하는 것이 가능하다
 
