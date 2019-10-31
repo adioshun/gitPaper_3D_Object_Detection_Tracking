@@ -32,6 +32,8 @@
 ## Tracking
 
 * [README](Tracking/README.md)
+
+* [2006-A Review of Object Detection and Tracking Methods](Tracking/2006-A-Review-of-Object-Detection-and-Tracking-Methods.md)
 * [2007-Simultaneous Localization, Mapping and Moving Object Tracking\(0%\)](Tracking/2007-simultaneous-localization-mapping-and-moving-object-tracking.md)
 * [2008-Model Based Vehicle Tracking for Autonomous Driving in Urban Environments\(50%\)](Tracking/2008-model-based-vehicle-tracking-for-autonomous-driving-in-urban-environments.md)
 * [2010-Tracking People with a 360-Degree Lidar \(70%\)](Tracking/2010-tracking-people-with-a-360-degree-lidar.md)
