@@ -51,6 +51,7 @@
 * [2017-Detect to Track and Track to Detect](Tracking/2017-detect-to-track-and-track-to-detect.md)
 * [2016-Lidar-based Methods for Tracking and Identification](Tracking/2016-lidar-based-methods-for-tracking-and-identification.md)
 * [\[추천\] 2017-pedestrian tracking using velodyne data -stochastic optimization for extended tracking](Tracking/2017-pedestrian-tracking-using-velodyne-data-stochastic-optimization-for-extended-tracking.md)
+* [2017-SIMPLE ONLINE AND REALTIME TRACKING WITH A DEEP ASSOCIATION METRIC](Tracking/2017-SIMPLE-ONLINE-AND-REALTIME-TRACKING-WITH-A-DEEP-ASSOCIATION-METRIC.md))
 * [2017-Low resolution lidar-based multi-object tracking for driving application](Tracking/2017-low-resolution-lidar-based-multi-object-tracking-for-driving-application.md)
 * [2017-High-Speed Tracking-by-Detection Without Using Image Information](Tracking/2017-High-Speed-Tracking-by-Detection-Without-Using-Image-Information.md)
 * [\[추천\] 2017-3D-LIDAR Multi Object Tracking for Autonomous Driving](Tracking/2017-3d-lidar-multi-object-tracking-for-autonomous-driving.md)
