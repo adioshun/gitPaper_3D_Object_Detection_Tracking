@@ -52,6 +52,7 @@
 * [2016-Lidar-based Methods for Tracking and Identification](Tracking/2016-lidar-based-methods-for-tracking-and-identification.md)
 * [\[추천\] 2017-pedestrian tracking using velodyne data -stochastic optimization for extended tracking](Tracking/2017-pedestrian-tracking-using-velodyne-data-stochastic-optimization-for-extended-tracking.md)
 * [2017-Low resolution lidar-based multi-object tracking for driving application](Tracking/2017-low-resolution-lidar-based-multi-object-tracking-for-driving-application.md)
+* [2017-High-Speed Tracking-by-Detection Without Using Image Information](Tracking/2017-High-Speed-Tracking-by-Detection-Without-Using-Image-Information.md)
 * [\[추천\] 2017-3D-LIDAR Multi Object Tracking for Autonomous Driving](Tracking/2017-3d-lidar-multi-object-tracking-for-autonomous-driving.md)
 * [2017-Online learning for human classification in 3D LiDAR-based tracking](Tracking/2017-online-learning-for-human-classification-in-3d-lidar-based-tracking.md)
 * [2017-Multiple Object Tracking-A Literature Review(](Tracking/2017-Multiple-Object-Tracking-A-Literature-Review.md)
