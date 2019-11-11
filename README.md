@@ -3,5 +3,5 @@
 - GitBook : [3D Object Detection](https://legacy.gitbook.com/book/adioshun/deep_drive/details)
 
 개인적인 연구 노트로 간략한 주석 및 가독성 중심으로 정리 되어 있습니다. 
-- 진행 상태 : 개요(10%), 관련연구(30%), 제안 내용(70%), 구현/성능평가(100%)
+
 
