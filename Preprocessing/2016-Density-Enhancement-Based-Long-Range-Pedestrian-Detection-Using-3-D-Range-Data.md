@@ -1,1 +1,1 @@
-# [Density Enhancement-Ba sed Long-Range Pedestrian Detection Using 3-D Range Data](https://www.mendeley.com/viewer/?fileId=65226000-3fc9-c9d3-1678-718562374a6a&documentId=e944f9b3-3312-3e4f-a6f6-7b8595e2b66e)
+# [Density Enhancement-Based Long-Range Pedestrian Detection Using 3-D Range Data](https://www.mendeley.com/viewer/?fileId=65226000-3fc9-c9d3-1678-718562374a6a&documentId=e944f9b3-3312-3e4f-a6f6-7b8595e2b66e)
