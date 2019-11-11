@@ -18,7 +18,7 @@
 
 * [README](Clustering/README.md)
 * [2015-Octree-based region growing for point cloud segmentation](Clustering/2015-octree-based-region-growing-for-point-cloud-segmentation.md)
-* [2017-Fast segmentation of 3D point clouds: A paradigm on LiDAR data for autonomous vehicle applications](Clustering/2017-Fast-segmentation-of-3D-point-clouds-A-paradigm-on-LiDAR-data-for-autonomous-vehicle-applications.md)
+* [2017-Fast segmentation of 3D point clouds: A paradigm on LiDAR data for autonomous vehicle applications \(70%\)](Clustering/2017-Fast-segmentation-of-3D-point-clouds-A-paradigm-on-LiDAR-data-for-autonomous-vehicle-applications.md)
 
 ## Detection
 
@@ -43,7 +43,6 @@
 * [2013-Inter-Vehicle Object Association for Cooperative Perception Systems \(10%\)](Cooperative-Detection/2013-inter-vehicle-object-association-for-cooperative-perception-systems.md)
 * [2017-Survey on Ranging Sensors and Cooperative Techniques for Relative Positioning of Vehicles \(5%\)](Cooperative-Detection/2017-survey-on-ranging-sensors-and-cooperative-techniques-for-relative-positioning-of-vehicles.md)
 * [2017-Track-to-track fusion multi-target tracking using asynchronous and delayed data](Cooperative-Detection/2017-track-to-track-fusion-multi-target-tracking-using-asynchronous-and-delayed-data.md)
-
 
 ## 미분류
 
