@@ -31,6 +31,8 @@
 * [2017-Object Detection and Classification in 3D Point Cloud Data for Automated Driving](Detection/2017-object-detection-and-classification-in-3d-point-cloud-data-for-automated-driving.md)
 * [2018-Frustum PointNets for 3D Object Detection from RGB-D Data](Detection/2018-Frustum-PointNets-for-3D-Object-Detection-from-RGB-D-Data.md)
 * [2018-RoarNet: A Robust 3D Object Detection based on RegiOn Approximation Refinement](Detection/2018-RoarNet-A-Robust-3D-Object-Detection-based-on-RegiOn-Approximation-Refinement.md)
+* [2018-Joint 3D Proposal Generation and Object Detection from View Aggregation](Detection/2018-Joint-3D-Proposal-Generation-and-Object-Detection-from-View-Aggregation.md)
+* [2019-PointPillars: Fast Encoders for Object Detection from Point Clouds](Detection/2019-PointPillars-Fast-Encoders-for-Object-Detection-from-Point-Clouds.md)
 
 ## Pose Estimation
 
