@@ -14,6 +14,9 @@
 * [2015-Density Enhancement-Ba sed Long-Range Pedestrian Detection Using 3-D Range Data](Preprocessing/2016-Density-Enhancement-Based-Long-Range-Pedestrian-Detection-Using-3-D-Range-Data.md)
 * [2016-CHANGE DETECTION OF MOBILE LIDAR DATA USING CLOUD COMPUTING](Preprocessing/2016-change-detection-of-mobile-lidar-data-using-cloud-computing.md)
 - [2019-Learning to Sample](Preprocessing/2019-Learning-to-Sample.md)
+* [2018-PU-Net: Point Cloud Upsampling Network](2018-pu-net-point-cloud-upsampling-network.md)
+* [2019-Pseudo-LiDAR from Visual Depth Estimation](2019-pseudo-lidar-from-visual-depth-estimation.md)
+
 
 ## Clustering /Segmentation 
 
@@ -21,8 +24,7 @@
 * [2015-Octree-based region growing for point cloud segmentation](Clustering/2015-octree-based-region-growing-for-point-cloud-segmentation.md)
 * [2017-Fast segmentation of 3D point clouds: A paradigm on LiDAR data for autonomous vehicle applications \(70%\)](Clustering/2017-Fast-segmentation-of-3D-point-clouds-A-paradigm-on-LiDAR-data-for-autonomous-vehicle-applications.md)
 * [2019-PointRCNN: 3D Object Proposal Generation and Detection from Point Cloud](Clustering/2019-PointRCNN-3D-Object-Proposal-Generation-and-Detection-from-Point-Cloud.md)
-* [2018-PU-Net: Point Cloud Upsampling Network](2018-pu-net-point-cloud-upsampling-network.md)
-* [2019-Pseudo-LiDAR from Visual Depth Estimation](2019-pseudo-lidar-from-visual-depth-estimation.md)
+
 
 ## Detection
 
