@@ -14,10 +14,22 @@ https://arxiv.org/abs/1801.06761
 
 Alexa et al. [2] upsamples a point set by interpolating points at vertices of a Voronoi diagram in the local tangent space. 
 
+```
+[2] M. Alexa, J. Behr, D. Cohen-Or, S. Fleishman, D. Levin, and C. T. Silva. Computing and rendering point set surfaces. IEEE Trans. Vis. & Comp. Graphics, 9(1):3–15, 2003.
+```
+
 Lipman et al. [24] present a locally optimal projection (LOP) operator for points resampling and surface reconstruction based on an L1 median. 
 - The operator works well even when the input point set contains noise and outliers. 
 
+```
+[24] Y. Lipman, D. Cohen-Or, D. Levin, and H. Tal-Ezer. Parameterization-free projection for geometry reconstruction. ACM Trans. on Graphics (SIGGRAPH), 26(3):22:1–5, 2007.
+```
+
 Successively, Huang et al. [14] propose an improved weighted LOP to address the point set density problem.
+
+```
+[14] H. Huang, D. Li, H. Zhang, U. Ascher, and D. Cohen-Or. Consolidation of unorganized point clouds for surface reconstruction. ACM Trans. on Graphics (SIGGRAPH Asia), 28(5):176:1–8, 2009.
+```
 
 위 방법들은 제약(가정)하에 작동 한다. `Although these works have demonstrated good results, they make a strong assumption that`
 - the underlying surface is smooth, thus restricting the method’s scope. 
