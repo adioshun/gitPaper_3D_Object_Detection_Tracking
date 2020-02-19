@@ -16,7 +16,7 @@
 * [2018-PU-Net: Point Cloud Upsampling Network](2018-pu-net-point-cloud-upsampling-network.md)
 * [2019-Pseudo-LiDAR from Visual Depth Estimation](2019-pseudo-lidar-from-visual-depth-estimation.md)
 - [2019-Learning to Sample](Preprocessing/2019-Learning-to-Sample.md)
-
+- [2019-SampleNet: Differentiable Point Cloud Sampling](Preprocessing/2019-SampleNet-Differentiable-Point-Cloud-Sampling.md)
 
 ## Clustering /Segmentation 
 
