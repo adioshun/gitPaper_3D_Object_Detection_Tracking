@@ -14,6 +14,7 @@
 * [2015-Density Enhancement-Ba sed Long-Range Pedestrian Detection Using 3-D Range Data](Preprocessing/2016-Density-Enhancement-Based-Long-Range-Pedestrian-Detection-Using-3-D-Range-Data.md)
 * [2016-CHANGE DETECTION OF MOBILE LIDAR DATA USING CLOUD COMPUTING](Preprocessing/2016-change-detection-of-mobile-lidar-data-using-cloud-computing.md)
 * [2018-PU-Net: Point Cloud Upsampling Network](2018-pu-net-point-cloud-upsampling-network.md)
+* [2019-PU-GAN: a Point Cloud Upsampling Adversarial Network](Preprocessing/2019-PU-GAN-a-Point-Cloud-Upsampling-Adversarial-Network.md)
 * [2019-Pseudo-LiDAR from Visual Depth Estimation](2019-pseudo-lidar-from-visual-depth-estimation.md)
 - [2019-Learning to Sample](Preprocessing/2019-Learning-to-Sample.md)
 - [2019-SampleNet: Differentiable Point Cloud Sampling](Preprocessing/2019-SampleNet-Differentiable-Point-Cloud-Sampling.md)
