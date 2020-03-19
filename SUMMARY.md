@@ -109,6 +109,5 @@
 * [2017-Fast LIDAR-based Road Detection Using Fully Convolutional Neural Networks](2017-fast-lidar-based-road-detection-using-fully-convolutional-neural-networks.md)
 * [2017-SqueezeSeg: Convolutional Neural Nets with Recurrent CRF for Real-Time Road-Object Segmentation from 3D LiDAR Point Cloud](2017-squeezeseg-convolutional-neural-nets-with-recurrent-crf-for-real-time-road-object-segmentation-from-3d-lidar-point-cloud.md)
 * [2018-SECOND:Sparsely Embedded Convolutional Detection](2018-secondsparsely-embedded-convolutional-detection.md)
-
 * [2019-Stereo R-CNN based 3D Object Detection for Autonomous Driving](2019-stereo-r-cnn-based-3d-object-detection-for-autonomous-driving.md)
 
